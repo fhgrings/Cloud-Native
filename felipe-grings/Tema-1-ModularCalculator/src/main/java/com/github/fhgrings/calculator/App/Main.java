@@ -20,9 +20,5 @@ public class Main {
         calculator.finishCalculation(1,0,"/");
 
         calculator.printMapHistory();
-
-        double a = 82.133;
-        a=Math.round(a*10000.0)/10000.0;
-        System.out.println(a);
     }
 }
