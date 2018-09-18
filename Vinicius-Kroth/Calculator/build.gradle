@@ -10,6 +10,8 @@ dependencies {
 compile group: 'org.springframework', name: 'spring-core', version: '5.0.9.RELEASE'
 compile group: 'org.springframework', name: 'spring-context', version: '5.0.9.RELEASE'
 compile group: 'org.springframework', name: 'spring-beans', version: '5.0.9.RELEASE'
+testCompile group: 'org.springframework', name: 'spring-test', version: '5.0.9.RELEASE'
+
 
 }
 
