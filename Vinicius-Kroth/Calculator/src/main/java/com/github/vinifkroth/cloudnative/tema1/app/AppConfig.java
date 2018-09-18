@@ -7,36 +7,37 @@ import org.springframework.context.annotation.Configuration;
 import com.github.vinifkroth.cloudnative.tema1.model.*;
 
 @Configuration
-@ComponentScan(basePackages = "com.github.vinifkroth.cloudnative.tema1.model")
+@ComponentScan(basePackages = {"com.github.vinifkroth.cloudnative.tema1.model", "com.github.vinifkroth.cloudnative.tema1.service"})
 public class AppConfig {
 
 	@Bean
-	Operation addition() {
-		Operation operation = new Addition();
+	public Addition addition() {
+		Addition operation = new Addition();
 		return operation;
 	}
 
 	@Bean
-	Operation subtraction() {
-		Operation operation = new Subtraction();
+	public Subtraction subtraction() {
+		Subtraction operation = new Subtraction();
 		return operation;
 	}
 
 	@Bean
-	Operation multiplication() {
-		Operation operation = new Multiplication();
+	public Multiplication multiplication() {
+		Multiplication operation = new Multiplication();
 		return operation;
 	}
 
 	@Bean
-	Operation division() {
-		Operation operation = new Division();
+	public Division division() {
+		Division operation = new Division();
 		return operation;
 	}
 
 	@Bean
-	Operation power() {
-		Operation operation = new Power();
+	public Power power() {
+		Power operation = new Power();
 		return operation;
 	}
+	
 }

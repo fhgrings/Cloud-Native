@@ -3,12 +3,17 @@ package com.github.vinifkroth.cloudnative.tema1.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.github.vinifkroth.cloudnative.tema1.model.*;
 
+@Component
 public class Calculator {
 	private List<Double> resultsRecord;
 	private Operation addition, subtraction, multiplication, division, power;
 
+	@Autowired
 	public Calculator(Addition addition, Subtraction subtraction, Multiplication multiplication, Division division,
 			Power power) {
 		this.addition = addition;
