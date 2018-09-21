@@ -1,30 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a67bc057-74e3-45ef-bbdb-939dbbe0fb54" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema-1-ModularCalculator/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema-1-ModularCalculator/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema-1-ModularCalculator/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema-1-ModularCalculator/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema-1-ModularCalculator/src/main/java/com/github/fhgrings/calculator/App/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema-1-ModularCalculator/src/main/java/com/github/fhgrings/calculator/Config/AppConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema-1-ModularCalculator/src/main/java/com/github/fhgrings/calculator/Map/MapHistoryCalculator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema-1-ModularCalculator/src/main/java/com/github/fhgrings/calculator/Map/MapOperations.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema-1-ModularCalculator/src/main/java/com/github/fhgrings/calculator/Operations/Calculator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema-1-ModularCalculator/src/main/java/com/github/fhgrings/calculator/Operations/Division.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema-1-ModularCalculator/src/main/java/com/github/fhgrings/calculator/Operations/Multiply.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema-1-ModularCalculator/src/main/java/com/github/fhgrings/calculator/Operations/Operations.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema-1-ModularCalculator/src/main/java/com/github/fhgrings/calculator/Operations/Pow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema-1-ModularCalculator/src/main/java/com/github/fhgrings/calculator/Operations/Subtraction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema-1-ModularCalculator/src/main/java/com/github/fhgrings/calculator/Operations/Sum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema-1-ModularCalculator/src/test/java/ModularCalculatorTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema-1-ModularCalculator2/.idea/Tema-1-ModularCalculator2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema-1-ModularCalculator2/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema-1-ModularCalculator2/.idea/vcs.xml" beforeDir="false" />
+    <list default="true" id="7b420577-8346-40c4-841a-35f10934647f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Tema-1-ModularCalculator2/.idea/Tema-1-ModularCalculator2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema-1-ModularCalculator2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema-1-ModularCalculator2/.idea/vcs.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -41,89 +21,70 @@
     </projectState>
   </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="2007375869">
+    <session id="-383152046">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.4" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="gradle" value="1" />
-          <entry key="java" value="10" />
+          <entry key="gradle" value="2" />
+          <entry key="gradlew" value="1" />
+          <entry key="java" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Groovy" value="1" />
-          <entry key="JAVA" value="10" />
+          <entry key="Groovy" value="2" />
+          <entry key="JAVA" value="14" />
+          <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1111" />
+          <entry key="gradle" value="55" />
+          <entry key="java" value="2165" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1111" />
+          <entry key="Groovy" value="55" />
+          <entry key="JAVA" value="2165" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="577537213">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CheckOutService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/App/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/BasicApplicantion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="51" lean-forward="true" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Operations/Sum.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Config/AppConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Map/ListHistoryCalculator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Map/MapOperations.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Operations/Calculator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="127" selection-start-line="19" selection-start-column="127" selection-end-line="19" selection-end-column="127" />
+            <state relative-caret-position="300">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -132,10 +93,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Config/GESPONE.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DiscountGuiceModule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="210">
+              <caret line="15" column="63" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -144,28 +105,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Operations/Division.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DiscountGuiceProvidor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+            <state relative-caret-position="120">
+              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Operations/Operations.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Operations/Multiply.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="60">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -198,14 +156,14 @@
         <entry>
           <key>
             <ExternalProjectPojo>
-              <option name="name" value="Tema-1-ModularCalculatorCorrectExample" />
+              <option name="name" value="GuiceExample" />
               <option name="path" value="$PROJECT_DIR$" />
             </ExternalProjectPojo>
           </key>
           <value>
             <list>
               <ExternalProjectPojo>
-                <option name="name" value="Tema-1-ModularCalculatorCorrectExample" />
+                <option name="name" value="GuiceExample" />
                 <option name="path" value="$PROJECT_DIR$" />
               </ExternalProjectPojo>
             </list>
@@ -219,7 +177,7 @@
           <value>
             <list>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the components produced by root project 'Tema-1-ModularCalculatorCorrectExample'. [incubating]" />
+                <option name="description" value="Displays the components produced by root project 'GuiceExample'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="components" />
               </ExternalTaskPojo>
@@ -229,7 +187,7 @@
                 <option name="name" value="buildDependents" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the sub-projects of root project 'Tema-1-ModularCalculatorCorrectExample'." />
+                <option name="description" value="Displays the sub-projects of root project 'GuiceExample'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="projects" />
               </ExternalTaskPojo>
@@ -239,12 +197,12 @@
                 <option name="name" value="classes" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the dependent components of components in root project 'Tema-1-ModularCalculatorCorrectExample'. [incubating]" />
+                <option name="description" value="Displays the dependent components of components in root project 'GuiceExample'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependentComponents" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays all buildscript dependencies declared in root project 'Tema-1-ModularCalculatorCorrectExample'." />
+                <option name="description" value="Displays all buildscript dependencies declared in root project 'GuiceExample'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="buildEnvironment" />
               </ExternalTaskPojo>
@@ -269,7 +227,7 @@
                 <option name="name" value="jar" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the configuration model of root project 'Tema-1-ModularCalculatorCorrectExample'. [incubating]" />
+                <option name="description" value="Displays the configuration model of root project 'GuiceExample'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="model" />
               </ExternalTaskPojo>
@@ -279,7 +237,7 @@
                 <option name="name" value="processResources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the tasks runnable from root project 'Tema-1-ModularCalculatorCorrectExample'." />
+                <option name="description" value="Displays the tasks runnable from root project 'GuiceExample'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="tasks" />
               </ExternalTaskPojo>
@@ -299,7 +257,7 @@
                 <option name="name" value="compileJava" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the insight into a specific dependency in root project 'Tema-1-ModularCalculatorCorrectExample'." />
+                <option name="description" value="Displays the insight into a specific dependency in root project 'GuiceExample'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencyInsight" />
               </ExternalTaskPojo>
@@ -324,7 +282,7 @@
                 <option name="name" value="compileTestJava" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays all dependencies declared in root project 'Tema-1-ModularCalculatorCorrectExample'." />
+                <option name="description" value="Displays all dependencies declared in root project 'GuiceExample'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencies" />
               </ExternalTaskPojo>
@@ -349,7 +307,7 @@
                 <option name="name" value="buildNeeded" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the properties of root project 'Tema-1-ModularCalculatorCorrectExample'." />
+                <option name="description" value="Displays the properties of root project 'GuiceExample'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="properties" />
               </ExternalTaskPojo>
@@ -360,11 +318,11 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="6150188622000" />
+        <entry key="$PROJECT_DIR$" value="6150126327000" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="950411249" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="1170127285" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2007532874" />
-        <entry key="$PROJECT_DIR$/settings.gradle" value="1290251425" />
+        <entry key="$PROJECT_DIR$/settings.gradle" value="234622172" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -383,7 +341,7 @@
                   </entry>
                 </map>
               </option>
-              <option name="name" value="Tema-1-ModularCalculatorCorrectExample" />
+              <option name="name" value="GuiceExample" />
               <option name="projectBuildClasspath">
                 <list>
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/groovy-all-2.4.12.jar" />
@@ -473,31 +431,33 @@
     <option name="projectSyncType">
       <map>
         <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
-        <entry key="$PROJECT_DIR$/../../../../Core Engineering/Tarefas/jts.core-engineering.2018.2/felipe-grings/Tema-5-Biblioteca" value="PREVIEW" />
-        <entry key="$PROJECT_DIR$/../../../../Core Engineering/Tarefas/jts.core-engineering.2018.2/felipe-grings/Tema-6-BancoDado" value="PREVIEW" />
-        <entry key="$PROJECT_DIR$/../../../../Core Engineering/Tarefas/jts.core-engineering.2018.2/felipe-grings/Tema-9-Facade" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../Tema-5-Biblioteca" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../Tema-6-BancoDado" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../Tema-9-Facade" value="PREVIEW" />
       </map>
     </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/main/java/Discountable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/EarlyBirdDiscount.java" />
+        <option value="$PROJECT_DIR$/src/main/java/NightOwlDiscount.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Operations/Division.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Map/MapOperations.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Map/MapHistoryCalculator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Operations/Calculator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Config/AppConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Config/GESPONE.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/App/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DiscountGuiceModule2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CheckOutService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DiscountGuiceProvidor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DiscountGuiceModule.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BasicApplicantion.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="67" />
-    <option name="y" value="25" />
-    <option name="width" value="927" />
-    <option name="height" value="1055" />
+  <component name="ProjectFrameBounds" extendedState="4">
+    <option name="x" value="993" />
+    <option name="y" value="27" />
+    <option name="width" value="917" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -507,77 +467,33 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Tema-1-ModularCalculatorCorrectExample" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tema-1-ModularCalculatorCorrectExample" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="GuiceExample" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tema-2-GuiceExample" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
-              <item name="Tema-1-ModularCalculatorCorrectExample" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tema-1-ModularCalculatorCorrectExample" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="GuiceExample" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tema-2-GuiceExample" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Tema-1-ModularCalculatorCorrectExample" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tema-1-ModularCalculatorCorrectExample" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tema-1-ModularCalculatorCorrectExample" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tema-1-ModularCalculatorCorrectExample" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="GuiceExample" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tema-2-GuiceExample" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Tema-1-ModularCalculatorCorrectExample" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tema-1-ModularCalculatorCorrectExample" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="GuiceExample" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tema-2-GuiceExample" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="calculator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tema-1-ModularCalculatorCorrectExample" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tema-1-ModularCalculatorCorrectExample" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="calculator" type="462c0819:PsiDirectoryNode" />
-              <item name="App" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tema-1-ModularCalculatorCorrectExample" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tema-1-ModularCalculatorCorrectExample" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="calculator" type="462c0819:PsiDirectoryNode" />
-              <item name="Config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tema-1-ModularCalculatorCorrectExample" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tema-1-ModularCalculatorCorrectExample" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="calculator" type="462c0819:PsiDirectoryNode" />
-              <item name="Map" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tema-1-ModularCalculatorCorrectExample" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tema-1-ModularCalculatorCorrectExample" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="calculator" type="462c0819:PsiDirectoryNode" />
-              <item name="Operations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -586,7 +502,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537554841653" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537546955974" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -600,21 +517,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.github.fhgrings.calculator.App.Main" />
-      <module name="Tema-1-ModularCalculatorCorrectExample_main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.github.fhgrings.calculator.App.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+  <component name="RunManager" selected="Application.BasicApplicantion">
+    <configuration name="BasicApplicantion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BasicApplicantion" />
+      <module name="GuiceExample_main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tema-1-ModularCalculatorCorrectExample" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="GuiceExample_main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GuiceExample" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -631,13 +549,15 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.Tema-1-ModularCalculatorCorrectExample" />
+      <item itemvalue="Gradle.GuiceExample" />
       <item itemvalue="Application.Main" />
+      <item itemvalue="Application.BasicApplicantion" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BasicApplicantion" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Gradle.Tema-1-ModularCalculatorCorrectExample" />
+        <item itemvalue="Gradle.GuiceExample" />
       </list>
     </recent_temporary>
   </component>
@@ -646,132 +566,157 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a67bc057-74e3-45ef-bbdb-939dbbe0fb54" name="Default Changelist" comment="" />
-      <created>1537547136169</created>
+      <changelist id="7b420577-8346-40c4-841a-35f10934647f" name="Default Changelist" comment="" />
+      <created>1537530812267</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1537547136169</updated>
+      <updated>1537530812267</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
+    <frame x="993" y="27" width="917" height="1053" extended-state="4" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2086331" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Build" weight="0.32972974" />
-      <window_info anchor="bottom" id="Messages" weight="0.32972974" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32972974" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Gradle" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="Designer" order="0" />
+      <window_info id="Capture Tool" order="1" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.30769232" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Build" order="2" weight="0.32972974" />
+      <window_info anchor="bottom" id="Messages" order="3" weight="0.32972974" />
+      <window_info anchor="bottom" id="Version Control" order="4" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.2681081" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="right" id="Gradle" order="0" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Theme Preview" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/gradlew">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+        <state relative-caret-position="105">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Map/ListHistoryCalculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Map/MapOperations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Operations/Operations.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/EarlyBirdDiscount.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <caret line="2" selection-start-line="2" selection-end-line="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Operations/Multiply.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/NightOwlDiscount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="60">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Operations/Calculator.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.inject.extensions/guice-multibindings/3.0/1129825757fa4a2e87f381057bfb096aae410402/guice-multibindings-3.0-sources.jar!/com/google/inject/multibindings/MapBinder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="127" selection-start-line="19" selection-start-column="127" selection-end-line="19" selection-end-column="127" />
+        <state relative-caret-position="133">
+          <caret line="143" selection-start-line="143" selection-end-line="143" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Discountable.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.inject/guice/4.0/961359f8352b791c6443a207c847e25d6d3ca7cd/guice-4.0-sources.jar!/com/google/inject/Guice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="95" selection-start-line="95" selection-end-line="95" />
+          <folding>
+            <element signature="e#2103#2104#0" expanded="true" />
+            <element signature="e#2158#2159#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.inject/guice/4.0/961359f8352b791c6443a207c847e25d6d3ca7cd/guice-4.0-sources.jar!/com/google/inject/internal/InternalInjectorCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.inject/guice/4.0/961359f8352b791c6443a207c847e25d6d3ca7cd/guice-4.0-sources.jar!/com/google/inject/internal/InjectorShell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="137" selection-start-line="137" selection-end-line="137" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CheckOutService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Config/AppConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/DiscountGuiceModule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Config/GESPONE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="210">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Operations/Sum.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/DiscountGuiceProvidor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="120">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/Operations/Division.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        <state relative-caret-position="60">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/fhgrings/calculator/App/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/BasicApplicantion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="51" lean-forward="true" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
+        <state relative-caret-position="300">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
