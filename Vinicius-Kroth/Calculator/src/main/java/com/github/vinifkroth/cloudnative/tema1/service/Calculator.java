@@ -6,55 +6,47 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.github.vinifkroth.cloudnative.tema1.exception.InvalidOperationException;
 import com.github.vinifkroth.cloudnative.tema1.model.*;
 
 @Component
 public class Calculator {
-	private List<Double> resultsRecord;
-	private Operation addition, subtraction, multiplication, division, power;
+	private List<Operation> resultsRecord;
 
 	@Autowired
-	public Calculator(Addition addition, Subtraction subtraction, Multiplication multiplication, Division division,
-			Power power) {
-		this.addition = addition;
-		this.subtraction = subtraction;
-		this.multiplication = multiplication;
-		this.division = division;
-		this.power = power;
+	public Calculator() {
 		resultsRecord = new ArrayList<>();
 	}
 
-	public double add(double firstElement, double secondElement) {
-		return addToRecord(addition.calculate(firstElement, secondElement));
-	}
-
-	public double subtract(double firstElement, double secondElement) {
-		return addToRecord(subtraction.calculate(firstElement, secondElement));
-	}
-
-	public double multiplicate(double firstElement, double secondElement) {
-		return addToRecord(multiplication.calculate(firstElement, secondElement));
-	}
-
-	public double divide(double firstElement, double secondElement) {
-		return addToRecord(division.calculate(firstElement, secondElement));
-	}
-
-	public double power(double firstElement, double secondElement) {
-		return addToRecord(power.calculate(firstElement, secondElement));
-	}
-
-	private double addToRecord(double result) {
-		resultsRecord.add(result);
-		return result;
-	}
-
-	public String showRecord() {
-		StringBuilder str = new StringBuilder();
-		str.append("Históricos de resultados:\n");
-		for (Double result : resultsRecord) {
-			str.append(result).append("\n");
+	public double calculate(double firstElement, double secondElement, String operation) throws Exception {
+		switch (operation) {
+		case "*":
+			Multiplication multiplication = new Multiplication(firstElement, secondElement);
+			resultsRecord.add(multiplication);
+			return multiplication.calculate();
+		case "/":
+			Division division = new Division(firstElement, secondElement);
+			resultsRecord.add(division);
+			return division.calculate();
+		case "^":
+			Power power = new Power(firstElement, secondElement);
+			resultsRecord.add(power);
+			return power.calculate();
+		case "+":
+			Addition addition = new Addition(firstElement, secondElement);
+			resultsRecord.add(addition);
+			return addition.calculate();
+		case "-":
+			Subtraction subtraction = new Subtraction(firstElement, secondElement);
+			resultsRecord.add(subtraction);
+			return subtraction.calculate();
+		default:
+			throw new InvalidOperationException("INVALID_OPERATION_EXCEPTION");
 		}
-		return str.toString();
+
+	}
+
+	public List<Operation> showRecord() {
+		return resultsRecord;
 	}
 }

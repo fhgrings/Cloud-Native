@@ -1,9 +1,20 @@
 package com.github.vinifkroth.cloudnative.tema1.model;
 
-public class Subtraction implements Operation{
+import org.springframework.lang.NonNull;
+
+public class Subtraction implements Operation {
+	@NonNull
+	double firstElement;
+	@NonNull
+	double secondElement;
+
+	public Subtraction(double firstElement, double secondElement) {
+		this.firstElement = firstElement;
+		this.secondElement = secondElement;
+	}
 
 	@Override
-	public double calculate(double firstElement, double secondElement) {
+	public double calculate() {
 		return firstElement - secondElement;
 	}
 
