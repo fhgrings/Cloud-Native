@@ -22,9 +22,5 @@ public class Main {
 
         System.out.println("\n====================== Memory Data =====================\n");
         calculator.printMapHistory();
-
-        if(calculator.finishCalculation(1,1,"+") == 2){
-            System.out.println("ok");
-        }
     }
 }
