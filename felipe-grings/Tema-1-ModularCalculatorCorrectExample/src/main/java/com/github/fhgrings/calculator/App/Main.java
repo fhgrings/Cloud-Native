@@ -5,6 +5,7 @@ import com.github.fhgrings.calculator.Config.AppConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+
 public class Main {
 
     public static void main (String[] args) {
@@ -13,12 +14,17 @@ public class Main {
         Calculator calculator = (Calculator) applicationContext.getBean("calculator");
 
         calculator.finishCalculation(1,2,"+");
-        calculator.finishCalculation(1,2,"/");
+        calculator.finishCalculation(3,2.,"/");
         calculator.finishCalculation(2.5,2.2,"-");
         calculator.finishCalculation(1,2,"*");
-        calculator.finishCalculation(1,2,"k");
-        calculator.finishCalculation(1,0,"/");
+        calculator.finishCalculation(1,2,"kk");
+        calculator.finishCalculation(10,0,"/");
 
+        System.out.println("\n====================== Memory Data =====================\n");
         calculator.printMapHistory();
+
+        if(calculator.finishCalculation(1,1,"+") == 2){
+            System.out.println("ok");
+        }
     }
 }

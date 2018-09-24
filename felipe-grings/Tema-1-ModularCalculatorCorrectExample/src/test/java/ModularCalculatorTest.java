@@ -19,28 +19,27 @@ public class ModularCalculatorTest {
     public void shouldSaveOnMemory() {
         calculator.finishCalculation(3, 6, "+");
 
-        Assert.assertEquals("3.0 + 6.0 = 9.0\n", calculator.getMapHistory());
+        Assert.assertEquals(9.0+"\n", calculator.getMapHistory());
     }
 
     @Test
     public void shouldSum(){
-        Assert.assertEquals("1.2 + 3.0 = 4.2",calculator.finishCalculation(1.2,3,"+"));
+        Assert.assertEquals(4.2,calculator.finishCalculation(1.2,3,"+"), 0);
     }
-
 
     @Test
     public void shouldSub(){
-        Assert.assertEquals("2.2 - 2.4 = -0.2",calculator.finishCalculation(2.2,2.4,"-"));
+        Assert.assertEquals(-0.2,calculator.finishCalculation(2.2,2.4,"-"),0);
     }
 
     @Test
     public void shouldMultiply(){
-        Assert.assertEquals("2.0 * 3.0 = 6.0",calculator.finishCalculation(2,3,"*"));
+        Assert.assertEquals(6,calculator.finishCalculation(2,3,"*"),0);
     }
 
     @Test
     public void shouldDiv(){
-        Assert.assertEquals("3.0 / 3.0 = 1.0",calculator.finishCalculation(3,3,"/"));
+        Assert.assertEquals(1.0,calculator.finishCalculation(3,3,"/"),0);
     }
 
 }
