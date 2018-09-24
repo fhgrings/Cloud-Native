@@ -1,11 +1,7 @@
 package com.github.vinifkroth.cloudnative.tema1.model;
 
-import org.springframework.lang.NonNull;
-
 public class Division implements Operation {
-	@NonNull
 	private double firstElement;
-	@NonNull
 	private double secondElement;
 
 	public Division(double firstElement, double secondElement) {
@@ -16,7 +12,7 @@ public class Division implements Operation {
 	@Override
 	public double calculate() {
 		if (secondElement == 0)
-			throw new ArithmeticException("DIVIDENT_CANT_BE_ZERO");
+			throw new ArithmeticException("The informed divident cannot be zero");
 		return firstElement / secondElement;
 	}
 

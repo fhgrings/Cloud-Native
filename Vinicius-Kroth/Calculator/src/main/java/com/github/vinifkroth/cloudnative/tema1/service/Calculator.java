@@ -1,41 +1,41 @@
 package com.github.vinifkroth.cloudnative.tema1.service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.springframework.lang.NonNull;
-import org.springframework.stereotype.Component;
 
 import com.github.vinifkroth.cloudnative.tema1.exception.InvalidOperationException;
 import com.github.vinifkroth.cloudnative.tema1.model.*;
 
-@Component
 public class Calculator {
-	@NonNull
 	private List<Operation> resultsRecord;
-	@NonNull
-	private Map<String, Class> operations;
+	private Map<String, Class<Operation>> operations;
+
+	public Calculator() {
+		this.resultsRecord = new ArrayList<>();
+		Map map = new HashMap<String, Class<Operation>>();
+		map.put("+", Addition.class);
+		map.put("*", Multiplication.class);
+		map.put("/", Division.class);
+		map.put("^", Power.class);
+		map.put("-", Subtraction.class);
+		this.operations = map;
+
+	}
 
 	public double calculate(double firstElement, double secondElement, String operator) throws Exception {
-		try {
-			Operation operation = (Operation) operations.get(operator).getConstructor(double.class, double.class)
-					.newInstance(firstElement, secondElement);
-			return operation.calculate();
-		} catch (Exception e) {
-			throw new InvalidOperationException("INVALID_OPERATION_EXCEPTION");
+		Class<Operation> operationClass = operations.get(operator);
+		if (operationClass == null) {
+			throw new InvalidOperationException("Invalid operation selected");
 		}
-
+		Operation operation = operationClass.getConstructor(double.class, double.class)
+				.newInstance(firstElement, secondElement);
+		resultsRecord.add(operation);
+		return operation.calculate();
 	}
 
 	public List<Operation> getResultsRecord() {
 		return resultsRecord;
 	}
-
-	public void setResultsRecord(List<Operation> resultsRecord) {
-		this.resultsRecord = resultsRecord;
-	}
-
-	public void setOperations(Map<String, Class> operations) {
-		this.operations = operations;
-	}
-
 }

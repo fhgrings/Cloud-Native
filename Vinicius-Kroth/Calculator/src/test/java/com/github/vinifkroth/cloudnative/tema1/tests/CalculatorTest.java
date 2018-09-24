@@ -2,22 +2,19 @@ package com.github.vinifkroth.cloudnative.tema1.tests;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import com.github.vinifkroth.cloudnative.tema1.app.AppConfig;
 import com.github.vinifkroth.cloudnative.tema1.exception.InvalidOperationException;
+import com.github.vinifkroth.cloudnative.tema1.model.Operation;
 import com.github.vinifkroth.cloudnative.tema1.service.Calculator;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { AppConfig.class })
-
 public class CalculatorTest {
-	@Autowired
 	Calculator calculator;
+
+	@Before
+	public void createCalculator() {
+		calculator = new Calculator();
+	}
 
 	@Test
 	public void testAdition() throws Exception {
@@ -47,5 +44,18 @@ public class CalculatorTest {
 	@Test(expected = InvalidOperationException.class)
 	public void testInvalidOperation() throws Exception {
 		assertEquals(1000, calculator.calculate(10, 3, "o"), 0.0);
+	}
+
+	@Test
+	public void testResultsRecord() throws Exception {
+		calculator.calculate(10, 2, "^");
+		calculator.calculate(5, 3, "*");
+		calculator.calculate(5, 2, "/");
+
+		String results = "";
+		for (Operation operation : calculator.getResultsRecord()) {
+			results = results + Double.toString(operation.calculate()) + " ";
+		}
+		assertEquals("100.0 15.0 2.5 ", results);
 	}
 }
