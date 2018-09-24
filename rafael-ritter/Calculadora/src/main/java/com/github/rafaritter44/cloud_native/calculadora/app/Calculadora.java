@@ -1,7 +1,6 @@
 package com.github.rafaritter44.cloud_native.calculadora.app;
 
 import com.github.rafaritter44.cloud_native.calculadora.app.operacoes.*;
-
 import java.lang.reflect.Constructor;
 import java.util.*;
 
