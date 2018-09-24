@@ -1,11 +1,15 @@
 package com.github.vinifkroth.cloudnative.tema2.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.github.vinifkroth.cloudnative.tema2.model.Pet;
+import com.github.vinifkroth.cloudnative.tema2.util.IdGenerator;
 import com.google.inject.Inject;
+import com.google.inject.Singleton;
 
+@Singleton
 public class PetStore {
 	@Inject
 	DryBathWithPerfume dryBathWithPerfume;
@@ -23,6 +27,8 @@ public class PetStore {
 	AddPet addPet;
 	@Inject
 	RemovePet removePet;
+	@Inject
+	IdGenerator idGenerator;
 	private List<Pet> petList;
 	private List<String> servicesHistory;
 
@@ -32,14 +38,11 @@ public class PetStore {
 	}
 
 	public Object[] getPetByAge(int age) {
-		return petList.stream()
-				      .filter(pet -> pet
-				      .getAge() == age)
-				      .toArray();
+		return petList.stream().filter(pet -> pet.getAge() == age).toArray();
 	}
 
-	public boolean addPet(String id, String name, String race, int age) {
-		Pet pet = new Pet(id, name, race, age);
+	public boolean addPet(String name, String race, int age) {
+		Pet pet = new Pet(idGenerator.generateId(),name, race, age);
 		return addPet.add(petList, pet);
 	}
 
@@ -55,26 +58,60 @@ public class PetStore {
 		String serviceMessage;
 		if (fullTrim) {
 			serviceMessage = longTrim.doService(pet);
-			servicesHistory.add(serviceMessage);
 			pet.setTotalRevenue(pet.getTotalRevenue() + longTrim.getPrice());
-			return serviceMessage;
+		} else {
+			serviceMessage = shortTrim.doService(pet);
+			pet.setTotalRevenue(pet.getTotalRevenue() + shortTrim.getPrice());
 		}
 
-		serviceMessage = shortTrim.doService(pet);
 		servicesHistory.add(serviceMessage);
-		pet.setTotalRevenue(pet.getTotalRevenue() + shortTrim.getPrice());
-		return shortTrim.doService(pet);
+		return serviceMessage;
 
 	}
 
-	public String washPet(boolean dry, boolean perfume) {
-		return "";
+	public String washPet(boolean dry, boolean perfume, String petId) {
+		Pet pet = retrievePetById(petId);
+		if (pet == null)
+			return "ID_NOT_ENCOUNTERED_IN_OUR_DATABASE";
+		String serviceMessage;
+
+		if (dry) {
+			if (perfume) {
+				serviceMessage = dryBathWithPerfume.doService(pet);
+				pet.setTotalRevenue(pet.getTotalRevenue() + dryBathWithPerfume.getPrice());
+			} else {
+				serviceMessage = dryBathWithoutPerfume.doService(pet);
+				pet.setTotalRevenue(pet.getTotalRevenue() + dryBathWithoutPerfume.getPrice());
+			}
+		} else {
+			if (perfume) {
+				serviceMessage = waterBathWithPerfume.doService(pet);
+				pet.setTotalRevenue(pet.getTotalRevenue() + waterBathWithPerfume.getPrice());
+			} else {
+				serviceMessage = waterBathWithoutPerfume.doService(pet);
+				pet.setTotalRevenue(pet.getTotalRevenue() + waterBathWithoutPerfume.getPrice());
+			}
+
+		}
+		servicesHistory.add(serviceMessage);
+		return serviceMessage;
+	}
+
+	public List<String> getHistory() {
+		return servicesHistory;
 	}
 
 	private Pet retrievePetById(String id) {
-		return petList.stream()
-					  .filter(pet-> pet.getId()
-				      .equals(id)).findFirst()
-					  .orElse(null);		
+		return petList.stream().filter(pet -> pet.getId().equals(id)).findFirst().orElse(null);
+	}
+
+	public List<Pet> getTop10PetRevenue() {
+		Collections.sort(petList, (pet1, pet2) -> pet1.getTotalRevenue().compareTo(pet2.getTotalRevenue()));
+		Collections.reverse(petList);
+
+		if (petList.size() < 10)
+			return petList;
+
+		return petList.subList(0, 9);
 	}
 }

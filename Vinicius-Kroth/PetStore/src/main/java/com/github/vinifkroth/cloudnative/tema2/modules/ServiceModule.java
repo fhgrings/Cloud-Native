@@ -7,13 +7,14 @@ public class ServiceModule extends AbstractModule {
 
 	@Override
 	protected void configure() {
-		bind(DryBathWithoutPerfume.class).to(DryBathWithoutPerfume.class);
-		bind(DryBathWithPerfume.class).to(DryBathWithPerfume.class);
-		bind(WaterBathWithoutPerfume.class).to(WaterBathWithoutPerfume.class);
-		bind(WaterBathWithPerfume.class).to(WaterBathWithPerfume.class);
-		bind(LongTrim.class).to(LongTrim.class);
-		bind(ShortTrim.class).to(ShortTrim.class);
-		bind(AddPet.class).to(AddPet.class);
+		bind(DryBathWithoutPerfume.class);
+		bind(DryBathWithPerfume.class);
+		bind(WaterBathWithoutPerfume.class);
+		bind(WaterBathWithPerfume.class);
+		bind(LongTrim.class);
+		bind(ShortTrim.class);
+		bind(AddPet.class);
+		bind(PetStore.class);
 
 	}
 

@@ -9,7 +9,7 @@ public class WaterBathWithoutPerfume implements Service {
 
 	@Override
 	public String doService(Pet pet) {
-		return "The pet :" + pet.getName() + " took a water bath with no perfume, at the cost of: \" + price";
+		return "The pet :" + pet.getName() + " took a water bath with no perfume, at the cost of: " + price;
 	}
 	@Override
 	public double getPrice() {

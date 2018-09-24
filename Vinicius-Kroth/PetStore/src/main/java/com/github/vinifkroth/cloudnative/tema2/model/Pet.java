@@ -1,16 +1,18 @@
 package com.github.vinifkroth.cloudnative.tema2.model;
 
 public class Pet {
-	private String id, name, race;
-	private int age;
-	private double totalRevenue;
+	private String id;
+	private String name;
+	private String race;
+	private Integer age;
+	private Double totalRevenue;
 
-	public Pet(String id, String name, String race, int age) {
+	public Pet(String id, String name, String race, Integer age) {
 		this.id = id;
 		this.name = name;
 		this.race = race;
 		this.age = age;
-		totalRevenue = 0;
+		totalRevenue = 0.0;
 	}
 
 	public String getId() {
@@ -37,19 +39,19 @@ public class Pet {
 		this.race = race;
 	}
 
-	public int getAge() {
+	public Integer getAge() {
 		return age;
 	}
 
-	public void setAge(int age) {
+	public void setAge(Integer age) {
 		this.age = age;
 	}
 
-	public double getTotalRevenue() {
+	public Double getTotalRevenue() {
 		return totalRevenue;
 	}
 
-	public void setTotalRevenue(double totalRevenue) {
+	public void setTotalRevenue(Double totalRevenue) {
 		this.totalRevenue = totalRevenue;
 	}
 
