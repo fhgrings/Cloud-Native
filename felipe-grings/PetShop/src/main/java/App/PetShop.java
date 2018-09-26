@@ -28,38 +28,46 @@ public class PetShop {
         petList = new ArrayList<>();
     }
 
-    public void systemOptions(int option, int idPet) {
+    public boolean systemOptions(int option, int idPet) {
         if(option == 1 || option == 2) {
             try {
                 System.out.println(mapSystemOption.getMapSystemOption().get(option).execute(petList, idPet).toString());
+                return true;
             } catch (Exception e) {
                 System.out.println("Pet ID not found");
             }
         } else
             System.out.println("Option not found");
+        return false;
     }
 
-    public void addPet(int age, String name, String race) {
+    public boolean addPet(int age, String name, String race) {
         addPet.execute(petList,age,name,race);
+        return true;
     }
 
-    public void service(int option,boolean longCut, int idPet) {
+    public boolean service(int option,boolean longCut, int idPet) {
         if(option == 1 || option == 2) {
             try {
                 Pet pet = mapSystemOption.getMapSystemOption().get(2).execute(petList,idPet);
                 pet.setPetService(mapServices.getMapService().get(option).execute(longCut, pet));
+                return true;
             } catch (Exception e) {
                 System.out.println("Pet ID not found");
             }
         } else
             System.out.println("Option not found");
+        return false;
     }
 
-    public void historic(int option){
-        if(option == 1 || option == 2)
+    public boolean historic(int option){
+        if(option == 1 || option == 2) {
             mapHistoric.getMapHistoric().get(option).execute(petList);
+            return true;
+        }
         else
             System.out.println("Option not found");
+        return false;
     }
 
 }
