@@ -15,7 +15,6 @@ dependencies {
             'org.springframework:spring-beans:' + springVersion,
             'javax.ws.rs:jsr311-api:1.1.1',
 	        'com.sun.jersey:jersey-server:'+ jerseyVersion,
-	        'com.sun.jersey:jersey-core:' + jerseyVersion,
 			'com.sun.jersey:jersey-servlet:' + jerseyVersion,
 			'com.sun.jersey:jersey-json:' + jerseyVersion
 			

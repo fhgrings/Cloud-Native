@@ -8,22 +8,35 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import com.github.vinifkroth.cloudnative.tema1.app.AppConfig;
 import com.github.vinifkroth.cloudnative.tema1.dto.OperationDTO;
+import com.github.vinifkroth.cloudnative.tema1.model.Operation;
 import com.github.vinifkroth.cloudnative.tema1.service.Calculator;
+import com.github.vinifkroth.cloudnative.tema1.singleton.AppContextSingleton;
 
 @Path("calculator")
 public class CalculatorController {
-	ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
+	ApplicationContext appContext = AppContextSingleton.getInstance();
 	Calculator calculator = (Calculator) appContext.getBean("calculator");
 
 	@Path("/ping")
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String ping() {
-		return "pong1.1";
+		return "pongv1.2";
+	}
+
+	@Path("/record")
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String getRecord() {
+		StringBuilder str = new StringBuilder();
+		str.append("Operations Results Record: \n");
+		for (Operation operation : calculator.getResultsRecord()) {
+			str.append(operation.calculate())
+			   .append("\n");
+		}
+		return str.toString().equals("Operations Results Record: \n") ? "No results record available yet :("
+				: str.toString();
 	}
 
 	@Path("/calculate")
