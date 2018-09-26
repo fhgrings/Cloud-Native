@@ -7,9 +7,9 @@ import java.util.List;
 public class SearchPet implements SystemOption {
 
     @Override
-    public Pet execute(List<Pet> petList, int id) {
+    public Pet execute(List<Pet> petList, int idPet) {
         for(Pet pet : petList) {
-            if(pet.getId() == id) {
+            if(pet.getId() == idPet) {
                 return pet;
             }
         }
