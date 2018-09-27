@@ -1,4 +1,4 @@
-package com.github.vinifkroth.cloudnative.tema1.model;
+package com.github.vinifkroth.cloudnative.tema3.model;
 
 public class Multiplication implements Operation {
 	private double firstElement;

@@ -1,4 +1,4 @@
-package com.github.vinifkroth.cloudnative.tema1.dto;
+package com.github.vinifkroth.cloudnative.tema3.dto;
 public class OperationDTO {
 
 	private String operator;

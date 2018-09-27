@@ -1,12 +1,12 @@
-package com.github.vinifkroth.cloudnative.tema1.service;
+package com.github.vinifkroth.cloudnative.tema3.service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.github.vinifkroth.cloudnative.tema1.exception.InvalidOperationException;
-import com.github.vinifkroth.cloudnative.tema1.model.*;
+import com.github.vinifkroth.cloudnative.tema3.exception.InvalidOperationException;
+import com.github.vinifkroth.cloudnative.tema3.model.*;
 
 public class Calculator {
 	private List<Operation> resultsRecord;

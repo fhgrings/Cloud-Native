@@ -1,4 +1,4 @@
-package com.github.vinifkroth.cloudnative.tema1.exception;
+package com.github.vinifkroth.cloudnative.tema3.exception;
 
 public class InvalidOperationException extends Exception {
 

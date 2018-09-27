@@ -1,4 +1,4 @@
-package com.github.vinifkroth.cloudnative.tema1.controller;
+package com.github.vinifkroth.cloudnative.tema3.controller;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -8,10 +8,11 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import org.springframework.context.ApplicationContext;
-import com.github.vinifkroth.cloudnative.tema1.dto.OperationDTO;
-import com.github.vinifkroth.cloudnative.tema1.model.Operation;
-import com.github.vinifkroth.cloudnative.tema1.service.Calculator;
-import com.github.vinifkroth.cloudnative.tema1.singleton.AppContextSingleton;
+
+import com.github.vinifkroth.cloudnative.tema3.dto.OperationDTO;
+import com.github.vinifkroth.cloudnative.tema3.model.Operation;
+import com.github.vinifkroth.cloudnative.tema3.service.Calculator;
+import com.github.vinifkroth.cloudnative.tema3.singleton.AppContextSingleton;
 
 @Path("calculator")
 public class CalculatorController {

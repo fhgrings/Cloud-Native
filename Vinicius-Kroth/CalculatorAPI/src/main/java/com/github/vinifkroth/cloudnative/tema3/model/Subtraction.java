@@ -1,4 +1,4 @@
-package com.github.vinifkroth.cloudnative.tema1.model;
+package com.github.vinifkroth.cloudnative.tema3.model;
 
 public class Subtraction implements Operation {
 	double firstElement;
