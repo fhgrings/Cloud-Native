@@ -1,7 +1,7 @@
-package com.github.rafaritter44.cloud_native.tomcat.app.servlet;
+package com.github.rafaritter44.cloud_native.jetty.app.servlet;
 
-import com.github.rafaritter44.cloud_native.tomcat.app.Calculadora;
-import com.github.rafaritter44.cloud_native.tomcat.app.CalculadoraSingleton;
+import com.github.rafaritter44.cloud_native.jetty.app.Calculadora;
+import com.github.rafaritter44.cloud_native.jetty.app.CalculadoraSingleton;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

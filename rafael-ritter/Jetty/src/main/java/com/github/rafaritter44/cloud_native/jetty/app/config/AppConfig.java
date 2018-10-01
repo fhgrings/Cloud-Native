@@ -1,6 +1,6 @@
-package com.github.rafaritter44.cloud_native.tomcat.app.config;
+package com.github.rafaritter44.cloud_native.jetty.app.config;
 
-import com.github.rafaritter44.cloud_native.tomcat.app.Calculadora;
+import com.github.rafaritter44.cloud_native.jetty.app.Calculadora;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -11,8 +11,7 @@ public class AppConfig {
 
     @Bean
     public Calculadora calculadora() {
-        Calculadora calculadora = new Calculadora();
-        return calculadora;
+        return new Calculadora();
     }
 
 }
