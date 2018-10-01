@@ -1,10 +1,10 @@
-package SystemOptions;
+package Operation;
 
 import Model.Pet;
 
 import java.util.List;
 
-public class RemovePet implements SystemOption {
+public class RemovePet implements Operation {
 
     @Override
     public Pet execute(List<Pet> petList, int idPet) {
@@ -13,6 +13,7 @@ public class RemovePet implements SystemOption {
             if(findPet.getId() == idPet) {
                 pet = findPet;
                 System.out.print("Pet removed ");
+                break;
             }
         }
         petList.remove(pet);

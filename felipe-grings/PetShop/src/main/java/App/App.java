@@ -1,6 +1,7 @@
 package App;
 
 import Config.GuiceModule;
+import Model.EnumOperations;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
@@ -25,28 +26,28 @@ public class App {
         petShop.addPet(11,"Chico","Cat");
 
         System.out.println("\n\n ====List Pets Names by ID====");
-        petShop.systemOptions(2,1);
-        petShop.systemOptions(2,2);
+        petShop.systemOptions(EnumOperations.SEARCH_PET,1);
+        petShop.systemOptions(EnumOperations.SEARCH_PET,2);
         System.out.println("\n");
 
-        petShop.systemOptions(1,2);
-        petShop.systemOptions(2,2);
+        petShop.systemOptions(EnumOperations.REMOVE_PET,2);
+        petShop.systemOptions(EnumOperations.SEARCH_PET,2);
 
         System.out.println("\n\n ===Services====");
 
-        petShop.service(1,true,1);
-        petShop.service(1,true,1);
-        petShop.service(1,true,1);
-        petShop.service(1,true,3);
-        petShop.service(2,false,4);
-        petShop.service(2,false,4);
-        petShop.service(3,true,3);
+        petShop.service(EnumOperations.DRY_BATH,true,1);
+        petShop.service(EnumOperations.DRY_BATH,true,1);
+        petShop.service(EnumOperations.DRY_BATH,true,1);
+        petShop.service(EnumOperations.DRY_BATH,true,3);
+        petShop.service(EnumOperations.WATER_BATH,false,4);
+        petShop.service(EnumOperations.WATER_BATH,false,4);
+        petShop.service(EnumOperations.HAIR_CUT,true,3);
 
         System.out.println("\n\n ====Historic====");
-        petShop.historic(1);
+        petShop.listHistoric();
 
         System.out.println("\n\n ====Top 10 Pets Names====");
-        petShop.historic(2);
+        petShop.top10Pets();
 
     }
 }

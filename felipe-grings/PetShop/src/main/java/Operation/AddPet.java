@@ -1,4 +1,4 @@
-package SystemOptions;
+package Operation;
 
 import Model.Pet;
 
@@ -6,6 +6,14 @@ import java.util.List;
 
 public class AddPet{
     int idPetCounter;
+
+    public int getIdPetCounter() {
+        return idPetCounter;
+    }
+
+    public void setIdPetCounter(int idPetCounter) {
+        this.idPetCounter = idPetCounter;
+    }
 
     public AddPet() {
         idPetCounter =0;

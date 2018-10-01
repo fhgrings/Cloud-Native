@@ -3,18 +3,18 @@ package Services;
 import Model.Pet;
 
 public class WaterBath implements Service {
-    private double WaterBathPerfumeCost = 15;
-    private double WaterBathNoPerfumeCost = 10;
+    private static final double WATER_BATH_PERFUME_COST = 15;
+    private static final double WATER_BATH_NO_PERFUME_COST = 10;
 
     @Override
     public String execute(boolean perfume, Pet pet) {
         if(perfume) {
-            pet.addRevenue(WaterBathPerfumeCost);
+            pet.addRevenue(WATER_BATH_PERFUME_COST);
             System.out.println("Water bath with perfume");
             return "Water bath with perfume";
         }
         else {
-            pet.addRevenue(WaterBathNoPerfumeCost);
+            pet.addRevenue(WATER_BATH_NO_PERFUME_COST);
             System.out.println("Water bath with no perfume");
             return "Water bath with no perfume";
         }
