@@ -12,7 +12,6 @@ import com.github.vinifkroth.cloudnative.tema3.service.Calculator;
 public class AppConfig {
 	@Bean
 	public Calculator calculator() {
-		Calculator calculator = new Calculator();
-		return calculator;
+		return new Calculator();
 	}
 }

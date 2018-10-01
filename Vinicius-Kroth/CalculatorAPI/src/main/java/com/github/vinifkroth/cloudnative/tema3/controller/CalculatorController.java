@@ -19,13 +19,6 @@ public class CalculatorController {
 	ApplicationContext appContext = AppContextSingleton.getInstance();
 	Calculator calculator = (Calculator) appContext.getBean("calculator");
 
-	@Path("/ping")
-	@GET
-	@Produces(MediaType.TEXT_PLAIN)
-	public String ping() {
-		return "pongv1.2";
-	}
-
 	@Path("/record")
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
