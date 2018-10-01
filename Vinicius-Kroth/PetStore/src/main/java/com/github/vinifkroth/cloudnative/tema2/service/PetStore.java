@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.github.vinifkroth.cloudnative.tema2.exception.IdNotFoundException;
 import com.github.vinifkroth.cloudnative.tema2.model.Pet;
 import com.github.vinifkroth.cloudnative.tema2.util.IdGenerator;
 import com.google.inject.Inject;
@@ -50,10 +51,10 @@ public class PetStore {
 		return removePet.remove(petList, id);
 	}
 
-	public String trimHair(boolean fullTrim, String petId) {
-		Pet pet = retrievePetById(petId);
+	public String trimHair(boolean fullTrim, Integer id) throws IdNotFoundException {
+		Pet pet = retrievePetById(id);
 		if (pet == null)
-			return "ID_NOT_ENCOUNTERED_IN_OUR_DATABASE";
+			throw new IdNotFoundException("Id was not found in our database");
 
 		String serviceMessage;
 		if (fullTrim) {
@@ -69,10 +70,10 @@ public class PetStore {
 
 	}
 
-	public String washPet(boolean dry, boolean perfume, String petId) {
+	public String washPet(boolean dry, boolean perfume, Integer petId) throws IdNotFoundException {
 		Pet pet = retrievePetById(petId);
 		if (pet == null)
-			return "ID_NOT_ENCOUNTERED_IN_OUR_DATABASE";
+			throw new IdNotFoundException("Id was not found in our database");
 		String serviceMessage;
 
 		if (dry) {
@@ -101,7 +102,7 @@ public class PetStore {
 		return servicesHistory;
 	}
 
-	private Pet retrievePetById(String id) {
+	private Pet retrievePetById(Integer id) {
 		return petList.stream().filter(pet -> pet.getId().equals(id)).findFirst().orElse(null);
 	}
 

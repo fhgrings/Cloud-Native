@@ -11,8 +11,8 @@ public class IdGenerator {
 		idNumber = 0;
 	}
 
-	public synchronized String generateId() {
+	public synchronized Integer generateId() {
 		idNumber++;
-		return idNumber.toString();
+		return idNumber;
 	}
 }

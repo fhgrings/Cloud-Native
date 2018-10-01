@@ -1,13 +1,13 @@
 package com.github.vinifkroth.cloudnative.tema2.model;
 
 public class Pet {
-	private String id;
+	private Integer id;
 	private String name;
 	private String race;
 	private Integer age;
 	private Double totalRevenue;
 
-	public Pet(String id, String name, String race, Integer age) {
+	public Pet(Integer id, String name, String race, Integer age) {
 		this.id = id;
 		this.name = name;
 		this.race = race;
@@ -15,11 +15,11 @@ public class Pet {
 		totalRevenue = 0.0;
 	}
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
