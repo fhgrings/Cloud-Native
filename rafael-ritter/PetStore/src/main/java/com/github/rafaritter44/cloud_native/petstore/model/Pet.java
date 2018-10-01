@@ -36,18 +36,19 @@ public class Pet {
         int dryWithoutCount = 0, dryWithCount = 0, longHairCount = 0,
                 shortHairCount = 0, waterWithoutCount = 0, waterWithCount = 0;
         for(PetService petService: petServices) {
-            if(petService instanceof DryBathWithoutPerfume)
-                dryWithoutCount++;
-            else if(petService instanceof DryBathWithPerfume)
-                dryWithCount++;
-            else if(petService instanceof LongHaircut)
-                longHairCount++;
-            else if(petService instanceof ShortHaircut)
-                shortHairCount++;
-            else if(petService instanceof WaterBathWithoutPerfume)
-                waterWithoutCount++;
-            else if(petService instanceof WaterBathWithPerfume)
-                waterWithCount++;
+            switch(petService.getClass().getSimpleName()) {
+                case "DryBathWithoutPerfume": dryWithoutCount++;
+                    break;
+                case "DryBathWithPerfume": dryWithCount++;
+                    break;
+                case "LongHaircut": longHairCount++;
+                    break;
+                case "ShortHaircut": shortHairCount++;
+                    break;
+                case "WaterBathWithoutPerfume": waterWithoutCount++;
+                    break;
+                case "WaterBathWithPerfume": waterWithCount++;
+            }
         }
         return builder.append("Dry baths without perfume: ").append(dryWithoutCount).append("\n")
                 .append("Dry baths with perfume: ").append(dryWithCount).append("\n")

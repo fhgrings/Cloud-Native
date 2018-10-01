@@ -49,32 +49,32 @@ public class PetStore {
                 .collect(toList());
     }
 
-    void doDryBathWithPerfume(int id, PetService petService) {
+    protected void doDryBathWithPerfume(int id, PetService petService) {
         pets.get(id).add(petService);
         bathNotification(id, "dry", "with perfume");
     }
 
-    void doDryBathWithoutPerfume(int id, PetService petService) {
+    protected void doDryBathWithoutPerfume(int id, PetService petService) {
         pets.get(id).add(petService);
         bathNotification(id, "dry", "without perfume");
     }
 
-    void doWaterBathWithPerfume(int id, PetService petService) {
+    protected void doWaterBathWithPerfume(int id, PetService petService) {
         pets.get(id).add(petService);
         bathNotification(id, "water", "with perfume");
     }
 
-    void doWaterBathWithoutPerfume(int id, PetService petService) {
+    protected void doWaterBathWithoutPerfume(int id, PetService petService) {
         pets.get(id).add(petService);
         bathNotification(id, "water", "without perfume");
     }
 
-    void doShortHaircut(int id, PetService petService) {
+    protected void doShortHaircut(int id, PetService petService) {
         pets.get(id).add(petService);
         haircutNotification(id, "short");
     }
 
-    void doLongHaircut(int id, PetService petService) {
+    protected void doLongHaircut(int id, PetService petService) {
         pets.get(id).add(petService);
         haircutNotification(id, "long");
     }
