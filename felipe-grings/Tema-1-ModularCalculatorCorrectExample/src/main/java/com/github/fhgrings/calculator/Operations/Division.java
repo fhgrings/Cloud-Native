@@ -1,6 +1,9 @@
 package com.github.fhgrings.calculator.Operations;
 
-public class Division extends Operations {
+public class Division implements Operations {
+    double value1;
+    double value2;
+    double result;
 
     public Division(double value1, double value2 ) {
         this.value1 = value1;
@@ -17,8 +20,13 @@ public class Division extends Operations {
         }
 
     @Override
-    void printResult() {
+    public void printResult() {
         System.out.println(value1 + " / " + value2 + " = " + result);
+    }
+
+    @Override
+    public double getResult(){
+        return result;
     }
 }
 

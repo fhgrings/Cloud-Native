@@ -23,17 +23,17 @@ public class Calculator {
         listHistoryCalculator = new ArrayList<>();
     }
 
-    public String finishCalculation(double value1, double value2, String operator) {
+    public double finishCalculation(double value1, double value2, String operator) throws Exception {
         if ("+-*/".contains(operator)){
             try {
                 Operations calculatorResult =(Operations)mapOperations.get(operator).getConstructor(double.class, double.class).newInstance(value1,value2);
                 listHistoryCalculator.add(calculatorResult);
-                return String.valueOf(calculatorResult.getResult());
+                return calculatorResult.getResult();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-        return "ERROR: Operator doesn't exists;";
+        throw new Exception("ERROR: Operator doesn't exists");
     }
 
     public String getMapHistory() {

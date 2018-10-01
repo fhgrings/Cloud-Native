@@ -1,23 +1,11 @@
 package com.github.fhgrings.calculator.Operations;
 
-public abstract class Operations {
+public  interface Operations {
 
-    double value1;
-    double value2;
-    double result;
+    double calculate();
 
-    public abstract double calculate();
+    double getResult();
 
-    double resultTo4Decimals (double result){
-//        return result;
-        return Math.round(result*1000.0)/1000.0;
-
-    }
-
-    double getResult() {
-        return result;
-    }
-
-    abstract void printResult();
+    void printResult();
 
 }

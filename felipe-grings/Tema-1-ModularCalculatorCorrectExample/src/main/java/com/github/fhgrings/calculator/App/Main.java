@@ -8,7 +8,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class Main {
 
-    public static void main (String[] args) {
+    public static void main (String[] args) throws Exception {
 
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         Calculator calculator = (Calculator) applicationContext.getBean("calculator");

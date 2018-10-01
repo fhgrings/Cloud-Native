@@ -1,24 +1,33 @@
 package com.github.fhgrings.calculator.Operations;
 
-public class Pow extends Operations {
+public class Pow implements Operations {
+    double value1;
+    double value2;
+    double result;
+    ResultTo4Decimals roundResult;
+
 
     public Pow(double value1, double value2 ) {
         this.value1 = value1;
         this.value2 = value2;
-
+        roundResult = new ResultTo4Decimals();
         calculate();
     }
 
     @Override
     public double calculate() {
-        result = resultTo4Decimals(Math.pow(value1,value2));
+        result = roundResult.execute(Math.pow(value1,value2));
         printResult();
         return result ;
     }
 
     @Override
-    void printResult() {
+    public void printResult() {
         System.out.println(value1 + " ^ " + value2 + " = " + result);
+    }
 
+    @Override
+    public double getResult(){
+        return result;
     }
 }
