@@ -9,7 +9,9 @@ public abstract class Operations {
     public abstract double calculate();
 
     double resultTo4Decimals (double result){
+//        return result;
         return Math.round(result*1000.0)/1000.0;
+
     }
 
     double getResult() {
