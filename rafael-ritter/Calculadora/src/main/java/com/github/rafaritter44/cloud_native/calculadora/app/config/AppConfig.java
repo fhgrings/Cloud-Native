@@ -11,8 +11,7 @@ public class AppConfig {
 
     @Bean
     public Calculadora calculadora() {
-        Calculadora calculadora = new Calculadora();
-        return calculadora;
+        return new Calculadora();
     }
 
 }

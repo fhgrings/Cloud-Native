@@ -1,23 +1,21 @@
 package com.github.rafaritter44.cloud_native.calculadora.app;
 
-import com.github.rafaritter44.cloud_native.calculadora.app.config.AppConfig;
 import com.github.rafaritter44.cloud_native.calculadora.app.operacoes.Operacao;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
 import static org.junit.Assert.*;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {AppConfig.class})
 public class CalculadoraTest {
 
-    @Autowired
     private Calculadora calculadora;
+
+    @Before
+    public void setUp() {
+        calculadora = new Calculadora();
+    }
 
     @Test
     public void adicao() throws ReflectiveOperationException {
@@ -48,7 +46,6 @@ public class CalculadoraTest {
 
     @Test
     public void getHistorico() throws ReflectiveOperationException {
-        calculadora.limparHistorico();
         calculadora.calcular(1D,'+', 2D);
         calculadora.calcular(5D,'-', 8D);
         calculadora.calcular(10D,'*', 5D);

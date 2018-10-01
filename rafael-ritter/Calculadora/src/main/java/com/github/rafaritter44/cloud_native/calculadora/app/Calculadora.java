@@ -34,6 +34,4 @@ public class Calculadora {
         return new ArrayList<>(operacoes);
     }
 
-    public void limparHistorico() { operacoes = new ArrayList<>(); }
-
 }
