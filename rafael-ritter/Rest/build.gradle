@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    def jerseyVersion = '1.19.4'
+    compile([
+            'com.sun.jersey:jersey-server:' + jerseyVersion,
+            'com.sun.jersey:jersey-core:' + jerseyVersion,
+            'com.sun.jersey:jersey-servlet:' + jerseyVersion
+    ])
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
