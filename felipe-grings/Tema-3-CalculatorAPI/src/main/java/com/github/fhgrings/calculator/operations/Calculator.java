@@ -1,48 +1,53 @@
+
 package com.github.fhgrings.calculator.operations;
 
-import com.github.fhgrings.calculator.map.ListHistoryCalculator;
-import com.github.fhgrings.calculator.map.MapOperations;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Calculator {
+    public Map<String, Class> mapOperations;
+    private List<Operations> listHistoryCalculator;
 
-    private MapOperations mapOperations;
-    private ListHistoryCalculator listHistoryCalculator;
+    public Calculator (){
+        mapOperations = new HashMap<>();
+        mapOperations.put("sum", Sum.class );
+        mapOperations.put("sub", Subtraction.class);
+        mapOperations.put("mult", Multiply.class);
+        mapOperations.put("div", Division.class);
+        mapOperations.put("pow", Pow.class);
 
-    @Autowired
-    public Calculator (MapOperations mapOperations, ListHistoryCalculator listHistoryCalculator){
-        this.mapOperations = mapOperations;
-        this.listHistoryCalculator = listHistoryCalculator;
+        listHistoryCalculator = new ArrayList<>();
     }
 
-    public String finishCalculation(double value1, double value2, String operator) {
-        if ("sum sub pow mult div".contains(operator) || value2 == 0){
-            try {
-//                double result =  mapOperations.getMapOperation().get(operator).getConstructor(double.class, double.class).newInstance(value1, value2);
-                return listHistoryCalculator.addCalculatorHistoric((Operations) mapOperations.getMapOperation().get(operator).getConstructor(double.class, double.class).newInstance(value1, value2)).getResult();
-            } catch (InstantiationException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            } catch (InvocationTargetException e) {
-                e.printStackTrace();
-            } catch (NoSuchMethodException e) {
-                e.printStackTrace();
-            }
-        }
+    public Double finishCalculation(double value1, double value2, String operator) throws Exception {
 
-        return "ERROR: Operator doesn't exists;";
+
+        try {
+            if(mapOperations.get(operator) != null) {
+                Operations calculatorResult = (Operations) mapOperations.get(operator).getConstructor(double.class, double.class).newInstance(value1, value2);
+                listHistoryCalculator.add(calculatorResult);
+                return calculatorResult.getResult();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public String getMapHistory() {
-        return listHistoryCalculator.listCalculatorHistoric();
+        StringBuffer stringBuffer = new StringBuffer();
+        for (Operations historic : listHistoryCalculator){
+            stringBuffer.append(historic.calculate() + "\n");
+        }
+        return stringBuffer.toString();
     }
 
     public void printMapHistory() {
-        listHistoryCalculator.listCalculatorHistoric();
+        StringBuffer stringBuffer = new StringBuffer();
+        for (Operations historic : listHistoryCalculator){
+            stringBuffer.append(historic.calculate() + "\n");
+        }
     }
-
 }
-
