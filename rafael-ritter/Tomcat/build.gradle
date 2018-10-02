@@ -16,7 +16,6 @@ repositories {
 
 dependencies {
     def springVersion = '4.3.8.RELEASE'
-    def cxfVersion = '3.2.6'
     compile([
             'org.springframework:spring-core:' + springVersion,
             'org.springframework:spring-context:' + springVersion,
