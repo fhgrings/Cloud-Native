@@ -93,8 +93,7 @@ public class PetStore {
         for(Pet pet: pets.values()) {
             builder.append(pet)
                     .append("\n")
-                    .append(pet.displayPetServices())
-                    .append("\n");
+                    .append(pet.displayPetServices());
         }
         return builder.toString();
     }

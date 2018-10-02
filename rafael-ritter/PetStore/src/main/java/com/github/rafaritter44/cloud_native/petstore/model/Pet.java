@@ -2,7 +2,9 @@ package com.github.rafaritter44.cloud_native.petstore.model;
 
 import com.github.rafaritter44.cloud_native.petstore.petservices.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Pet {
 
@@ -31,31 +33,19 @@ public class Pet {
     }
 
     public String displayPetServices() {
+        Map<String, Integer> petServicesCount = new HashMap();
         StringBuilder builder = new StringBuilder()
                 .append("Pet Services:\n");
-        int dryWithoutCount = 0, dryWithCount = 0, longHairCount = 0,
-                shortHairCount = 0, waterWithoutCount = 0, waterWithCount = 0;
         for(PetService petService: petServices) {
-            switch(petService.getClass().getSimpleName()) {
-                case "DryBathWithoutPerfume": dryWithoutCount++;
-                    break;
-                case "DryBathWithPerfume": dryWithCount++;
-                    break;
-                case "LongHaircut": longHairCount++;
-                    break;
-                case "ShortHaircut": shortHairCount++;
-                    break;
-                case "WaterBathWithoutPerfume": waterWithoutCount++;
-                    break;
-                case "WaterBathWithPerfume": waterWithCount++;
-            }
+            String petServiceName = petService.getClass().getSimpleName();
+            Integer count = petServicesCount.get(petServiceName);
+            petServicesCount.put(petServiceName, count == null ? 1 : ++count);
         }
-        return builder.append("Dry baths without perfume: ").append(dryWithoutCount).append("\n")
-                .append("Dry baths with perfume: ").append(dryWithCount).append("\n")
-                .append("Water baths without perfume: ").append(waterWithoutCount).append("\n")
-                .append("Water baths with perfume: ").append(waterWithCount).append("\n")
-                .append("Short haircuts: ").append(shortHairCount).append("\n")
-                .append("Long haircuts: ").append(longHairCount).toString();
+        for(String petServiceName: petServicesCount.keySet()) {
+            builder.append(petServiceName).append(": ")
+                    .append(petServicesCount.get(petServiceName)).append("\n");
+        }
+        return builder.toString();
     }
 
     @Override
