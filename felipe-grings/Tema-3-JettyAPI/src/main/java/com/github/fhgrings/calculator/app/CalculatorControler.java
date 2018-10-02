@@ -17,13 +17,6 @@ public class CalculatorControler {
     Calculator calculator = (Calculator) applicationContext.getBean("calculator");
 
     @GET
-    @Path("/ping")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String ping(){
-        return "Pong1v0";
-    }
-
-    @GET
     @Path("/calculate")
     @Produces(MediaType.TEXT_PLAIN)
     public String calculate(@QueryParam("value1") double value1, @QueryParam("value2") double value2, @QueryParam("operator") String operator) throws Exception {
