@@ -1,18 +1,14 @@
 package com.github.fhgrings.calculator.Operations;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
 
 public class Calculator {
     public Map<String, Class> mapOperations;
     private List<Operations> listHistoryCalculator;
 
-    @Autowired
     public Calculator (){
         mapOperations = new HashMap<>();
         mapOperations.put("+", Sum.class );
@@ -24,17 +20,21 @@ public class Calculator {
         listHistoryCalculator = new ArrayList<>();
     }
 
-    public double finishCalculation(double value1, double value2, String operator) throws Exception {
+    public Double finishCalculation(double value1, double value2, String operator) throws Exception {
 
-        if(mapOperations.get(operator) != null) {
+
             try {
-                Operations calculatorResult = (Operations) mapOperations.get(operator).getConstructor(double.class, double.class).newInstance(value1, value2);
-                listHistoryCalculator.add(calculatorResult);
-                return calculatorResult.getResult();
+                if(mapOperations.get(operator) != null) {
+                    Operations calculatorResult = (Operations) mapOperations.get(operator).getConstructor(double.class, double.class).newInstance(value1, value2);
+                    listHistoryCalculator.add(calculatorResult);
+                    return calculatorResult.getResult();
+                }
+                throw new Exception("Error");
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        } return 
+            return null;
     }
 
     public String getMapHistory() {
