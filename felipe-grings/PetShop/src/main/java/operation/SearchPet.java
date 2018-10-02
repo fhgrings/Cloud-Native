@@ -1,6 +1,6 @@
-package Operation;
+package operation;
 
-import Model.Pet;
+import model.Pet;
 
 import java.util.List;
 

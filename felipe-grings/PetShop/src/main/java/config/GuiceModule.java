@@ -1,11 +1,11 @@
-package Config;
+package config;
 
-import Services.DryBath;
-import Services.HairCut;
-import Services.WaterBath;
-import Operation.AddPet;
-import Operation.RemovePet;
-import Operation.SearchPet;
+import service.DryBath;
+import service.HairCut;
+import service.WaterBath;
+import operation.AddPet;
+import operation.RemovePet;
+import operation.SearchPet;
 import com.google.inject.AbstractModule;
 
 public class GuiceModule extends AbstractModule {

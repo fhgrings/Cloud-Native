@@ -1,6 +1,6 @@
-package Services;
+package service;
 
-import Model.Pet;
+import model.Pet;
 
 public interface Service {
     String execute(boolean option, Pet pet);

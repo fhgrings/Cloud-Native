@@ -1,7 +1,7 @@
-package App;
+package app;
 
-import Config.GuiceModule;
-import Model.EnumOperations;
+import config.GuiceModule;
+import model.EnumOperations;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
@@ -33,7 +33,7 @@ public class App {
         petShop.systemOptions(EnumOperations.REMOVE_PET,2);
         petShop.systemOptions(EnumOperations.SEARCH_PET,2);
 
-        System.out.println("\n\n ===Services====");
+        System.out.println("\n\n ===service====");
 
         petShop.service(EnumOperations.DRY_BATH,true,1);
         petShop.service(EnumOperations.DRY_BATH,true,1);

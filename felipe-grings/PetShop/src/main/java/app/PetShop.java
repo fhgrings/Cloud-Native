@@ -1,19 +1,19 @@
-package App;
+package app;
 
-import Model.EnumOperations;
-import Model.Pet;
-import Operation.AddPet;
-import Operation.Operation;
-import Services.DryBath;
-import Services.HairCut;
-import Services.Service;
-import Services.WaterBath;
+import model.EnumOperations;
+import model.Pet;
+import operation.AddPet;
+import operation.Operation;
+import service.DryBath;
+import service.HairCut;
+import service.Service;
+import service.WaterBath;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
 import java.util.*;
 
-import Operation.*;
+import operation.*;
 
 @Singleton
 public class PetShop {

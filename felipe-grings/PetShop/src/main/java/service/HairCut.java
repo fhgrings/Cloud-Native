@@ -1,6 +1,6 @@
-package Services;
+package service;
 
-import Model.Pet;
+import model.Pet;
 
 public class HairCut implements Service {
     private static final double HAIR_CUT_COST = 5;

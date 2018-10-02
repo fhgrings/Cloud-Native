@@ -1,6 +1,6 @@
-package Services;
+package service;
 
-import Model.Pet;
+import model.Pet;
 
 public class WaterBath implements Service {
     private static final double WATER_BATH_PERFUME_COST = 15;
