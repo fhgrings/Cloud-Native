@@ -1,0 +1,18 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'war'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	def jerseyVersion = '1.19'
+   compile([
+            'javax.ws.rs:jsr311-api:1.1.1',
+	        'com.sun.jersey:jersey-server:'+ jerseyVersion,
+			'com.sun.jersey:jersey-servlet:' + jerseyVersion,
+			'com.sun.jersey:jersey-json:' + jerseyVersion
+			
+   ])
+}
