@@ -1,7 +1,5 @@
 package com.github.rafaritter44.cloud_native.tomcat.app.operacoes;
 
-import java.util.Optional;
-
 public class Divisao implements Operacao {
 
     private double primeiroOperando;
@@ -12,12 +10,10 @@ public class Divisao implements Operacao {
         this.segundoOperando = segundoOperando;
     }
 
-    public Optional<Double> calcular() {
-        if(segundoOperando == 0D) {
-            System.out.println("Não é possível dividir por zero");
-            return Optional.empty();
-        }
-        return Optional.ofNullable(primeiroOperando / segundoOperando);
+    public double calcular() {
+        if(segundoOperando == 0D)
+            throw new ArithmeticException("Não é possível dividir por zero");
+        return primeiroOperando / segundoOperando;
     }
 
 }

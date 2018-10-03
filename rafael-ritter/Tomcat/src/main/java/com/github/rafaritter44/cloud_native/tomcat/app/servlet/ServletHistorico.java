@@ -1,7 +1,7 @@
 package com.github.rafaritter44.cloud_native.tomcat.app.servlet;
 
 import com.github.rafaritter44.cloud_native.tomcat.app.Calculadora;
-import com.github.rafaritter44.cloud_native.tomcat.app.CalculadoraSingleton;
+import com.github.rafaritter44.cloud_native.tomcat.app.AppContextSingleton;
 import com.github.rafaritter44.cloud_native.tomcat.app.operacoes.Operacao;
 
 import javax.servlet.annotation.WebServlet;
@@ -17,12 +17,14 @@ public class ServletHistorico extends HttpServlet {
 
     protected void service(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
-        Calculadora calculadora = CalculadoraSingleton.getInstance();
+        Calculadora calculadora = AppContextSingleton.getInstance().getBean(Calculadora.class);
         PrintWriter saida = response.getWriter();
         for(Operacao operacao: calculadora.getHistorico()) {
-            Optional<Double> resultado = operacao.calcular();
-            saida.println(resultado.isPresent()? resultado.get(): "Usuário tentou dividir por zero");
+            try {
+                saida.println(operacao.calcular());
+            } catch(ArithmeticException excecao) {
+                saida.println(excecao.getMessage());
+            }
         }
     }
-
 }

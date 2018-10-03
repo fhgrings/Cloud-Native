@@ -24,8 +24,8 @@ public class Calculadora {
         }
     }
 
-    public Optional<Double> calcular(double primeiroOperando, char operador, double segundoOperando)
-            throws ReflectiveOperationException {
+    public double calcular(double primeiroOperando, char operador, double segundoOperando)
+            throws ReflectiveOperationException, ArithmeticException {
         Operacao operacao = (Operacao) construtores.get(operador).newInstance(primeiroOperando, segundoOperando);
         operacoes.add(operacao);
         return operacao.calcular();
