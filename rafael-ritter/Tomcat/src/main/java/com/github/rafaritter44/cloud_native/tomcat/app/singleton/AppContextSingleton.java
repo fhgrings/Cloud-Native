@@ -1,4 +1,4 @@
-package com.github.rafaritter44.cloud_native.tomcat.app;
+package com.github.rafaritter44.cloud_native.tomcat.app.singleton;
 
 import com.github.rafaritter44.cloud_native.tomcat.app.config.AppConfig;
 import org.springframework.context.ApplicationContext;

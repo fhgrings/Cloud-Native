@@ -1,7 +1,7 @@
 package com.github.rafaritter44.cloud_native.tomcat.app.servlet;
 
 import com.github.rafaritter44.cloud_native.tomcat.app.Calculadora;
-import com.github.rafaritter44.cloud_native.tomcat.app.AppContextSingleton;
+import com.github.rafaritter44.cloud_native.tomcat.app.singleton.AppContextSingleton;
 import com.github.rafaritter44.cloud_native.tomcat.app.operacoes.Operacao;
 
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Optional;
 
 @WebServlet(value="/historico", name ="ServletHistorico")
 public class ServletHistorico extends HttpServlet {
