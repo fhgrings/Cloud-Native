@@ -20,7 +20,7 @@ public class Calculator {
         listHistoryCalculator = new ArrayList<>();
     }
 
-    public Double finishCalculation(double value1, double value2, String operator) throws Exception {
+    public Double calculate(double value1, double value2, String operator){
 
 
             try {
@@ -29,8 +29,6 @@ public class Calculator {
                     listHistoryCalculator.add(calculatorResult);
                     return calculatorResult.getResult();
                 }
-                throw new Exception("Error");
-
             } catch (Exception e) {
                 e.printStackTrace();
             }

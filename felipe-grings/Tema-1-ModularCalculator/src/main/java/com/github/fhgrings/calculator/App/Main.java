@@ -8,17 +8,17 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class Main {
 
-    public static void main (String[] args) throws Exception {
+    public static void main (String[] args){
 
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         Calculator calculator = (Calculator) applicationContext.getBean("calculator");
 
-        calculator.finishCalculation(1,2,"+");
-        calculator.finishCalculation(3,2.,"/");
-        calculator.finishCalculation(2.5,2.2,"-");
-        calculator.finishCalculation(1,2,"*");
-        calculator.finishCalculation(1,2,"kk");
-        calculator.finishCalculation(10,0,"/");
+        calculator.calculate(1,2,"+");
+        calculator.calculate(3,2.,"/");
+        calculator.calculate(2.5,2.2,"-");
+        calculator.calculate(1,2,"*");
+        calculator.calculate(1,2,"kk");
+        calculator.calculate(10,0,"/");
 
         System.out.println("\n====================== Memory Data =====================\n");
         calculator.printMapHistory();
