@@ -5,7 +5,7 @@ and already have docker properly installed on it, if you haven'tm here's a link 
 
 Link: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
 
-0. All the commands performed here, should happen inside de TollAPI/ directory, so, first things first, get yourself placed there.
+0.All the commands performed here, should happen inside de TollAPI/ directory, so, first things first, get yourself placed there.
 
 1.After clonning the project the first thing you must do is to build the project using gradle:
 Run the following command "./gradlew clean war", that being sucessfull,
