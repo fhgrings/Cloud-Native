@@ -11,11 +11,11 @@ public class Calculator {
 
     public Calculator (){
         mapOperations = new HashMap<>();
-        mapOperations.put("+", Sum.class );
-        mapOperations.put("-", Subtraction.class);
-        mapOperations.put("*", Multiply.class);
-        mapOperations.put("/", Division.class);
-        mapOperations.put("^", Pow.class);
+        mapOperations.put("sum", Sum.class );
+        mapOperations.put("sub", Subtraction.class);
+        mapOperations.put("mult", Multiply.class);
+        mapOperations.put("div", Division.class);
+        mapOperations.put("pow", Pow.class);
 
         listHistoryCalculator = new ArrayList<>();
     }
