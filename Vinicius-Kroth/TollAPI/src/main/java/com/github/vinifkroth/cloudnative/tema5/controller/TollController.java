@@ -7,13 +7,10 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
-import org.springframework.stereotype.Controller;
-
 import com.github.vinifkroth.cloudnative.tema5.exception.InvalidVehicleException;
 import com.github.vinifkroth.cloudnative.tema5.exception.NotEnoughMoneyException;
 import com.github.vinifkroth.cloudnative.tema5.service.TollService;
 
-@Controller
 @Path("")
 public class TollController {
 
@@ -21,7 +18,7 @@ public class TollController {
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String ping() {
-		return "pong1.4";
+		return "pong1.5";
 	}
 
 	@Path("")
