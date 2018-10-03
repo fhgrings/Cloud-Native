@@ -10,22 +10,25 @@ import javax.ws.rs.core.MediaType;
 import com.github.vinifkroth.cloudnative.tema5.exception.InvalidVehicleException;
 import com.github.vinifkroth.cloudnative.tema5.exception.NotEnoughMoneyException;
 import com.github.vinifkroth.cloudnative.tema5.service.TollService;
+import com.github.vinifkroth.cloudnative.tema5.singleton.AppContextSingleton;
 
 @Path("")
 public class TollController {
+
+	private TollService tollService = (TollService) AppContextSingleton.getInstance().getBean("tollService");
 
 	@Path("/ping")
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String ping() {
-		return "pong1.5";
+		return "pong1.6";
 	}
 
 	@Path("")
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String getPrices() {
-		return TollService.getPrices();
+		return tollService.getPrices();
 	}
 
 	@Path("/charge")
@@ -34,7 +37,7 @@ public class TollController {
 	public String chargeFee(@DefaultValue("0") @QueryParam("vehicle") Integer vehicle,
 			@DefaultValue("0") @QueryParam("value") double money, @DefaultValue("0") @QueryParam("axis") int axis) {
 		try {
-			return "Fee paid, you may go along, and the change is $:" + TollService.chargeFee(vehicle, money, axis);
+			return "Fee paid, you may go along, and the change is $:" + tollService.chargeFee(vehicle, money, axis);
 		} catch (NotEnoughMoneyException | InvalidVehicleException e) {
 			return e.getMessage();
 		}
