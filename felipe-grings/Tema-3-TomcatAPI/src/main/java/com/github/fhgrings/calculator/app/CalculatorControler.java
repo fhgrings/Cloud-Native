@@ -19,8 +19,8 @@ public class CalculatorControler {
     @GET
     @Path("/calculate")
     @Produces(MediaType.TEXT_PLAIN)
-    public String calculate(@QueryParam("value1") double value1, @QueryParam("value2") double value2, @QueryParam("operator") String operator) throws Exception {
-        return String.valueOf(calculator.finishCalculation(value1,value2,operator));
+    public String calculate(@QueryParam("value1") double value1, @QueryParam("value2") double value2, @QueryParam("operator") String operator){
+        return String.valueOf(calculator.calculate(value1,value2,operator));
     }
 
     @GET
