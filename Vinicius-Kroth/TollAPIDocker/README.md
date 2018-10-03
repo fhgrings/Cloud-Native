@@ -1,7 +1,7 @@
 <h1><strong>Running Docker</strong></h1>
 
 <b>First of all it's important to mention that this tutorial consider that the reader uses and UNIX based version of OS,
-and already have docker properly installed on it, if you haven'tm here's a link that may clarify things</b>
+and already have docker properly installed on it. In case docker i'snt properly installed, you can follow the link below as a  guidance for a correc installation.</b>
 
 Link: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
 
@@ -17,6 +17,6 @@ you will have the TollAPI.war file inside your /build/libs/ directory.
 "sudo docker build -t dockerfile .", and wait until the operation is finished and write down the given image id, you will
 use it in the following step
 
-4. Finally, if everything have occured properly, you must now be able to run the container, to do so, run this command:
+4.Finally, if everything have occured properly, you must now be able to run the container, to do so, run this command:
 "sudo docker run --name="[desired-container-name] -it -p [desired-port]:8080 [image-id]", with that, the tollAPI app,
 should be running in the chosen port.
