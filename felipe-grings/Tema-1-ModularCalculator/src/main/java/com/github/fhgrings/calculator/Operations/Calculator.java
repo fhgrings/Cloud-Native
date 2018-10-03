@@ -21,17 +21,15 @@ public class Calculator {
     }
 
     public Double calculate(double value1, double value2, String operator){
-
-
+        if(mapOperations.get(operator) != null) {
             try {
-                if(mapOperations.get(operator) != null) {
-                    Operations calculatorResult = (Operations) mapOperations.get(operator).getConstructor(double.class, double.class).newInstance(value1, value2);
-                    listHistoryCalculator.add(calculatorResult);
-                    return calculatorResult.getResult();
-                }
+                Operations calculatorResult = (Operations) mapOperations.get(operator).getConstructor(double.class, double.class).newInstance(value1, value2);
+                listHistoryCalculator.add(calculatorResult);
+                return calculatorResult.getResult();
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        }
             return null;
     }
 
