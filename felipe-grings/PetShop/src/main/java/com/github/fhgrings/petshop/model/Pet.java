@@ -11,9 +11,6 @@ public class Pet implements Comparable<Pet> {
     private String name;
     private double revenue;
 
-    public Pet() {
-    }
-
     public Pet(int id, int age, String race, String name) {
         this.id = id;
         this.age = age;
