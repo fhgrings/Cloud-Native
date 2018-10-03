@@ -1,4 +1,3 @@
-
 package com.github.fhgrings.calculator.operations;
 
 import java.util.ArrayList;
@@ -21,17 +20,15 @@ public class Calculator {
         listHistoryCalculator = new ArrayList<>();
     }
 
-    public Double finishCalculation(double value1, double value2, String operator) throws Exception {
-
-
-        try {
-            if(mapOperations.get(operator) != null) {
+    public Double calculate(double value1, double value2, String operator){
+        if(mapOperations.get(operator) != null) {
+            try {
                 Operations calculatorResult = (Operations) mapOperations.get(operator).getConstructor(double.class, double.class).newInstance(value1, value2);
                 listHistoryCalculator.add(calculatorResult);
                 return calculatorResult.getResult();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
         return null;
     }
@@ -51,3 +48,4 @@ public class Calculator {
         }
     }
 }
+
