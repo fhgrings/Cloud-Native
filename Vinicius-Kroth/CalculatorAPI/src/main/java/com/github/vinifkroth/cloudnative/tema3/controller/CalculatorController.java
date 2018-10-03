@@ -16,8 +16,8 @@ import com.github.vinifkroth.cloudnative.tema3.singleton.AppContextSingleton;
 
 @Path("calculator")
 public class CalculatorController {
-	ApplicationContext appContext = AppContextSingleton.getInstance();
-	Calculator calculator = (Calculator) appContext.getBean("calculator");
+	private ApplicationContext appContext = AppContextSingleton.getInstance();
+	private Calculator calculator = (Calculator) appContext.getBean("calculator");
 
 	@Path("/record")
 	@GET
