@@ -19,6 +19,10 @@ public class Pet implements Comparable<Pet> {
         petService = new ArrayList<>();
     }
 
+    public Pet() {
+
+    }
+
     public void setPetService(List<String> petService) {
         this.petService = petService;
     }

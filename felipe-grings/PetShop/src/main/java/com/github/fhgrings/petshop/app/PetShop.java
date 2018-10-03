@@ -15,7 +15,7 @@ public class PetShop {
     private Map<Enum, Service> mapService;
     private AddPet addPet;
     private List<Pet> petList;
-    public Map<Enum, Operation> mapSystemOption;
+    private Map<Enum, Operation> mapSystemOption;
 
 
     @Inject
