@@ -1,6 +1,7 @@
 package com.github.rafaritter44.cloud_native.rest.messages;
 
 import com.github.rafaritter44.cloud_native.rest.service.SistemaDePedagios;
+import com.github.rafaritter44.cloud_native.rest.singleton.AppContextSingleton;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,7 +20,7 @@ public class Mensagens {
         StringBuilder builder = new StringBuilder().append("TABELA DE PEDÁGIOS:\n");
         builder.append(precos.stream().collect(joining("\n")));
         return builder.append("\nValor adicional por eixo: ")
-                .append(SistemaDePedagios.TAXA_POR_EIXO)
+                .append(AppContextSingleton.getInstance().getBean(SistemaDePedagios.class).getTaxaPorEixo())
                 .toString();
     }
 
