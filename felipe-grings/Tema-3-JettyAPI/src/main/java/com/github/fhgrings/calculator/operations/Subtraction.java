@@ -1,10 +1,10 @@
 package com.github.fhgrings.calculator.operations;
 
 public class Subtraction implements Operations {
-    double value1;
-    double value2;
-    double result;
-    ResultTo4Decimals roundResult;
+    private double value1;
+    private double value2;
+    private double result;
+    private ResultTo4Decimals roundResult;
 
     public double getValue1() {
         return value1;
