@@ -1,6 +1,6 @@
-package service;
+package com.github.fhgrings.petshop.service;
 
-import model.Pet;
+import com.github.fhgrings.petshop.model.Pet;
 
 public class DryBath implements Service {
     private static final double DRY_BATH_PERFUME_COST = 5;
@@ -10,11 +10,9 @@ public class DryBath implements Service {
     public String execute(boolean perfume, Pet pet) {
         if(perfume) {
             pet.addRevenue(DRY_BATH_PERFUME_COST);
-            System.out.println("Dry bath with perfume");
             return "Dry bath with perfume";
         }
         else
-            System.out.println("Dry bath with no perfume");
             pet.addRevenue(DRY_BATH_NO_PERFUME_COST);
         return "Dry bath with no perfume";
     }

@@ -1,19 +1,14 @@
-package app;
+package com.github.fhgrings.petshop.app;
 
-import model.EnumOperations;
-import model.Pet;
-import operation.AddPet;
-import operation.Operation;
-import service.DryBath;
-import service.HairCut;
-import service.Service;
-import service.WaterBath;
+import com.github.fhgrings.petshop.model.*;
+import com.github.fhgrings.petshop.operation.*;
+import com.github.fhgrings.petshop.service.*;
+import com.github.fhgrings.petshop.operation.RemovePet;
+import com.github.fhgrings.petshop.operation.SearchPet;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
 import java.util.*;
-
-import operation.*;
 
 @Singleton
 public class PetShop {
@@ -28,48 +23,34 @@ public class PetShop {
         addPet = new AddPet();
         petList = new ArrayList<>();
 
-        mapSystemOption = new HashMap<Enum, Operation>();
+        mapSystemOption = new HashMap<>();
         mapSystemOption.put(EnumOperations.REMOVE_PET,new RemovePet());
         mapSystemOption.put(EnumOperations.SEARCH_PET,new SearchPet());
 
-        mapService = new HashMap<Enum, Service>();
+        mapService = new HashMap<>();
         mapService.put(EnumOperations.DRY_BATH, new DryBath());
         mapService.put(EnumOperations.WATER_BATH, new WaterBath());
         mapService.put(EnumOperations.HAIR_CUT, new HairCut());
     }
 
-    public String systemOptions(Enum option, int idPet) {
+    public Pet operation(Enum option, int idPet) throws Exception {
         if(option == EnumOperations.REMOVE_PET || option == EnumOperations.SEARCH_PET) {
-            try {
-                String result = mapSystemOption.get(option).execute(petList,idPet).toString();
-                System.out.println(result);
-                return result;
-            } catch (Exception e) {
-                System.out.println("Pet ID not found");
-                return "Pet ID not found";
-            }
+            Pet result = mapSystemOption.get(option).execute(petList, idPet);
+            return result;
         } else
-            System.out.println("Option not found");
-        return "Option not found";
+            throw new Exception("ERROR: Option not found");
     }
 
-    public boolean addPet(int age, String name, String race) {
-        addPet.execute(petList,age,name,race);
-        return true;
+    public Pet addPet(int age, String name, String race) {
+        return addPet.execute(petList,age,name,race);
     }
 
-    public boolean service(EnumOperations option, boolean longCut, int idPet) {
+    public String service(EnumOperations option, boolean longCut, int idPet) throws Exception {
         if(option == EnumOperations.WATER_BATH || option == EnumOperations.DRY_BATH || option == EnumOperations.HAIR_CUT) {
-            try {
-                Pet pet = mapSystemOption.get(EnumOperations.SEARCH_PET).execute(petList,idPet);
-                pet.setPetService(mapService.get(option).execute(longCut, pet));
-                return true;
-            } catch (Exception e) {
-                System.out.println("Pet ID not found");
-            }
+            Pet pet = mapSystemOption.get(EnumOperations.SEARCH_PET).execute(petList,idPet);
+            return pet.setPetService(mapService.get(option).execute(longCut, pet));
         } else
-            System.out.println("Option not found");
-        return false;
+            throw new Exception("ERROR: Option not found");
     }
 
     public String listHistoric() {
@@ -78,7 +59,6 @@ public class PetShop {
             for(String historic : pet.getPetService())
                 stringBuffer.append("Name: " + pet.getName() + "-  " + historic + "\n");
         }
-        System.out.println(stringBuffer);
         return stringBuffer.toString();
     }
 
@@ -92,7 +72,6 @@ public class PetShop {
                 counter++;
             }
         }
-        System.out.println(stringBuffer);
         return stringBuffer.toString();
     }
 

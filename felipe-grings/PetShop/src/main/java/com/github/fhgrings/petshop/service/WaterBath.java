@@ -1,6 +1,6 @@
-package service;
+package com.github.fhgrings.petshop.service;
 
-import model.Pet;
+import com.github.fhgrings.petshop.model.Pet;
 
 public class WaterBath implements Service {
     private static final double WATER_BATH_PERFUME_COST = 15;
@@ -10,12 +10,10 @@ public class WaterBath implements Service {
     public String execute(boolean perfume, Pet pet) {
         if(perfume) {
             pet.addRevenue(WATER_BATH_PERFUME_COST);
-            System.out.println("Water bath with perfume");
             return "Water bath with perfume";
         }
         else {
             pet.addRevenue(WATER_BATH_NO_PERFUME_COST);
-            System.out.println("Water bath with no perfume");
             return "Water bath with no perfume";
         }
     }

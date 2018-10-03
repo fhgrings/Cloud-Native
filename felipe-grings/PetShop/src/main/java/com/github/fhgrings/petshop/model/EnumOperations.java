@@ -1,4 +1,4 @@
-package model;
+package com.github.fhgrings.petshop.model;
 
 public enum EnumOperations {
     SEARCH_PET,

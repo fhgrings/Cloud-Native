@@ -1,6 +1,6 @@
-package operation;
+package com.github.fhgrings.petshop.operation;
 
-import model.Pet;
+import com.github.fhgrings.petshop.model.Pet;
 
 import java.util.List;
 
@@ -15,15 +15,10 @@ public class AddPet{
         this.idPetCounter = idPetCounter;
     }
 
-    public AddPet() {
-        idPetCounter =0;
-    }
-
     public Pet execute(List<Pet> petList,int age, String name, String race) {
         idPetCounter++;
         Pet pet = new Pet(idPetCounter,age,race,name);
-        if(petList.add(pet))
-            System.out.println(pet + " Added");
+        petList.add(pet);
         return pet;
     }
 }

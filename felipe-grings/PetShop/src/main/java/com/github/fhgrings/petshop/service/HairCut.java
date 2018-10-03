@@ -1,6 +1,6 @@
-package service;
+package com.github.fhgrings.petshop.service;
 
-import model.Pet;
+import com.github.fhgrings.petshop.model.Pet;
 
 public class HairCut implements Service {
     private static final double HAIR_CUT_COST = 5;

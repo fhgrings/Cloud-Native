@@ -1,6 +1,6 @@
-package operation;
+package com.github.fhgrings.petshop.operation;
 
-import model.Pet;
+import com.github.fhgrings.petshop.model.Pet;
 
 import java.util.List;
 
@@ -12,7 +12,6 @@ public class RemovePet implements Operation {
         for(Pet findPet : petList) {
             if(findPet.getId() == idPet) {
                 pet = findPet;
-                System.out.print("Pet removed ");
                 break;
             }
         }

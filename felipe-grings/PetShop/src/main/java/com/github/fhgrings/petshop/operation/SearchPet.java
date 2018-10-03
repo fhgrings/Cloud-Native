@@ -1,6 +1,6 @@
-package operation;
+package com.github.fhgrings.petshop.operation;
 
-import model.Pet;
+import com.github.fhgrings.petshop.model.Pet;
 
 import java.util.List;
 

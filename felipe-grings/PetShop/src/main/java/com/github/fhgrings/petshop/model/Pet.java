@@ -1,4 +1,4 @@
-package model;
+package com.github.fhgrings.petshop.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +8,7 @@ public class Pet implements Comparable<Pet> {
     private int age;
     private String race;
     private List<String> petService;
-
-
-
+    private String name;
     private double revenue;
 
     public Pet() {
@@ -24,7 +22,13 @@ public class Pet implements Comparable<Pet> {
         petService = new ArrayList<>();
     }
 
-    private String name;
+    public void setPetService(List<String> petService) {
+        this.petService = petService;
+    }
+
+    public void setRevenue(double revenue) {
+        this.revenue = revenue;
+    }
 
     public int getId() {
         return id;
@@ -62,8 +66,9 @@ public class Pet implements Comparable<Pet> {
         return petService;
     }
 
-    public void setPetService(String petServiceDone) {
+    public String setPetService(String petServiceDone) {
         petService.add(petServiceDone);
+        return petServiceDone;
     }
 
     public double getRevenue() {
