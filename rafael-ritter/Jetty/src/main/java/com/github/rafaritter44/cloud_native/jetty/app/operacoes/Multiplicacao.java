@@ -1,7 +1,5 @@
 package com.github.rafaritter44.cloud_native.jetty.app.operacoes;
 
-import java.util.Optional;
-
 public class Multiplicacao implements Operacao {
 
     private double primeiroOperando;
@@ -12,8 +10,8 @@ public class Multiplicacao implements Operacao {
         this.segundoOperando = segundoOperando;
     }
 
-    public Optional<Double> calcular() {
-        return Optional.ofNullable(primeiroOperando * segundoOperando);
+    public double calcular() {
+        return primeiroOperando * segundoOperando;
     }
 
 }
