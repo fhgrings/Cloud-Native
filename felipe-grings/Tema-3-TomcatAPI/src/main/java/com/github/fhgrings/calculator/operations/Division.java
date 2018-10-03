@@ -1,9 +1,9 @@
 package com.github.fhgrings.calculator.operations;
 
 public class Division implements Operations {
-    double value1;
-    double value2;
-    double result;
+    private double value1;
+    private double value2;
+    private double result;
 
     public double getValue1() {
         return value1;

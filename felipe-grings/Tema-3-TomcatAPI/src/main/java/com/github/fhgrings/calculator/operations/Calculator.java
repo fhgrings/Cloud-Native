@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Calculator {
-    public Map<String, Class> mapOperations;
+    private Map<String, Class> mapOperations;
     private List<Operations> listHistoryCalculator;
 
     public Calculator (){
