@@ -58,5 +58,3 @@ public class Subtraction implements Operations {
         System.out.println(value1 + " - " + value2 + " = " + result);
     }
 }
-
-

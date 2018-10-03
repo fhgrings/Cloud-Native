@@ -37,7 +37,7 @@ public class Division implements Operations {
         result = value1/value2;
         printResult();
         return result;
-        }
+    }
 
     @Override
     public void printResult() {

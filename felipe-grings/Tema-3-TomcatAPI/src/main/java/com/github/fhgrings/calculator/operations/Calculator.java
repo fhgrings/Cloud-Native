@@ -30,7 +30,7 @@ public class Calculator {
                 e.printStackTrace();
             }
         }
-            return null;
+        return null;
     }
 
     public String getMapHistory() {
