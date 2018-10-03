@@ -12,7 +12,7 @@ public class Toll {
     @Autowired
     public PriceList priceList;
 
-    public double calculate(String vehicleType, int extraAxis, double payment) throws Exception {
+    public double calculateChange(String vehicleType, int extraAxis, double payment) throws Exception {
         return calculateChange.calculate(vehicleType,extraAxis,payment);
     }
 
