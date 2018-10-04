@@ -13,23 +13,23 @@ import com.google.inject.Singleton;
 @Singleton
 public class PetStore {
 	@Inject
-	DryBathWithPerfume dryBathWithPerfume;
+	private DryBathWithPerfume dryBathWithPerfume;
 	@Inject
-	DryBathWithoutPerfume dryBathWithoutPerfume;
+	private DryBathWithoutPerfume dryBathWithoutPerfume;
 	@Inject
-	WaterBathWithoutPerfume waterBathWithoutPerfume;
+	private WaterBathWithoutPerfume waterBathWithoutPerfume;
 	@Inject
-	WaterBathWithPerfume waterBathWithPerfume;
+	private WaterBathWithPerfume waterBathWithPerfume;
 	@Inject
-	LongTrim longTrim;
+	private LongTrim longTrim;
 	@Inject
-	ShortTrim shortTrim;
+	private ShortTrim shortTrim;
 	@Inject
-	AddPet addPet;
+	private AddPet addPet;
 	@Inject
-	RemovePet removePet;
+	private RemovePet removePet;
 	@Inject
-	IdGenerator idGenerator;
+	private IdGenerator idGenerator;
 	private List<Pet> petList;
 	private List<String> servicesHistory;
 
