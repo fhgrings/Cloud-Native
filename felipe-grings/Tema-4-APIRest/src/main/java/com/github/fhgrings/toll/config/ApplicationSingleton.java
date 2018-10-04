@@ -1,6 +1,5 @@
 package com.github.fhgrings.toll.config;
 
-import com.github.fhgrings.toll.app.Toll;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
