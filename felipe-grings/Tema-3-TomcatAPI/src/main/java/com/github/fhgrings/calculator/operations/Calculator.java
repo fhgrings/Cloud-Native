@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Calculator {
-    private Map<String, Class> mapOperations;
+    public Map<String, Class> mapOperations;
     private List<Operations> listHistoryCalculator;
 
     public Calculator (){
@@ -25,7 +25,7 @@ public class Calculator {
             try {
                 Operations calculatorResult = (Operations) mapOperations.get(operator).getConstructor(double.class, double.class).newInstance(value1, value2);
                 listHistoryCalculator.add(calculatorResult);
-                return calculatorResult.getResult();
+                return calculatorResult.calculate();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -39,13 +39,6 @@ public class Calculator {
             stringBuffer.append(historic.calculate() + "\n");
         }
         return stringBuffer.toString();
-    }
-
-    public void printMapHistory() {
-        StringBuffer stringBuffer = new StringBuffer();
-        for (Operations historic : listHistoryCalculator){
-            stringBuffer.append(historic.calculate() + "\n");
-        }
     }
 }
 
