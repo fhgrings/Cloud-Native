@@ -13,14 +13,14 @@ public class Main {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         Calculator calculator = (Calculator) applicationContext.getBean("calculator");
 
-        calculator.calculate(1,2,"sum");
-        calculator.calculate(3,2.,"div");
-        calculator.calculate(2.5,2.2,"sub");
-        calculator.calculate(1,2,"mult");
-        calculator.calculate(1,2,"kk");
-        calculator.calculate(10,0,"div");
+        System.out.println(calculator.calculate(1,2,"sum"));
+        System.out.println(calculator.calculate(3,2.,"div"));
+        System.out.println(calculator.calculate(2.5,2.2,"sub"));
+        System.out.println(calculator.calculate(1,2,"mult"));
+        System.out.println(calculator.calculate(1,2,"kk"));
+        System.out.println(calculator.calculate(10,0,"div"));
 
         System.out.println("\n====================== Memory Data =====================\n");
-        calculator.printMapHistory();
+        System.out.println(calculator.printMapHistory());
     }
 }

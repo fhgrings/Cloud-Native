@@ -25,12 +25,12 @@ public class Calculator {
             try {
                 Operations calculatorResult = (Operations) mapOperations.get(operator).getConstructor(double.class, double.class).newInstance(value1, value2);
                 listHistoryCalculator.add(calculatorResult);
-                return calculatorResult.getResult();
+                return calculatorResult.calculate();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-            return null;
+        return null;
     }
 
     public String getMapHistory() {
@@ -41,11 +41,12 @@ public class Calculator {
         return stringBuffer.toString();
     }
 
-    public void printMapHistory() {
+    public String printMapHistory() {
         StringBuffer stringBuffer = new StringBuffer();
         for (Operations historic : listHistoryCalculator){
             stringBuffer.append(historic.calculate() + "\n");
         }
+        return stringBuffer.toString();
     }
 }
 

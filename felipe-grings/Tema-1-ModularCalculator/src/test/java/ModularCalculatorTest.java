@@ -22,7 +22,7 @@ public class ModularCalculatorTest {
     }
 
     @Test
-    public void shouldSaveOnMemory() throws Exception {
+    public void shouldSaveOnMemory(){
         calculator.calculate(3, 6, "sum");
         calculator.calculate(3, 0, "sum");
         calculator.calculate(3, 3, "sum");
@@ -31,32 +31,32 @@ public class ModularCalculatorTest {
     }
 
     @Test
-    public void shouldSum() throws Exception {
+    public void shouldSum(){
         Assert.assertEquals(4.2,calculator.calculate(1.2,3,"sum"), 0);
     }
 
     @Test
-    public void shouldSub() throws Exception {
+    public void shouldSub(){
         Assert.assertEquals(-0.2,calculator.calculate(2.2,2.4,"sub"),0);
     }
 
     @Test
-    public void shouldMultiply() throws Exception {
+    public void shouldMultiply(){
         Assert.assertEquals(6,calculator.calculate(2,3,"mult"),0);
     }
 
     @Test
-    public void shouldDiv() throws Exception {
+    public void shouldDiv(){
         Assert.assertEquals(1.0,calculator.calculate(3,3,"div"),0);
     }
 
     @Test
-    public void shouldDivBy0() throws Exception {
+    public void shouldDivBy0(){
         Assert.assertEquals(Infinity,calculator.calculate(3,0,"div"),0);
     }
 
     @Test
-    public void shouldSubBug() throws Exception {
+    public void shouldSubBug(){
         Assert.assertEquals(0.3,calculator.calculate(2.5,2.2,"sub"),0);
     }
 
