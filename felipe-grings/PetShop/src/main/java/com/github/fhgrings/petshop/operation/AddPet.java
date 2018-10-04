@@ -5,15 +5,7 @@ import com.github.fhgrings.petshop.model.Pet;
 import java.util.List;
 
 public class AddPet{
-    int idPetCounter;
-
-    public int getIdPetCounter() {
-        return idPetCounter;
-    }
-
-    public void setIdPetCounter(int idPetCounter) {
-        this.idPetCounter = idPetCounter;
-    }
+    private int idPetCounter;
 
     public Pet execute(List<Pet> petList,int age, String name, String race) {
         idPetCounter++;

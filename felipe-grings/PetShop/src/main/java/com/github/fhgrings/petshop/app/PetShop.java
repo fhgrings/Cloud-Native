@@ -1,5 +1,6 @@
 package com.github.fhgrings.petshop.app;
 
+import com.github.fhgrings.petshop.exception.OptionNotFoundException;
 import com.github.fhgrings.petshop.model.*;
 import com.github.fhgrings.petshop.operation.*;
 import com.github.fhgrings.petshop.service.*;
@@ -15,7 +16,7 @@ public class PetShop {
     private Map<Enum, Service> mapService;
     private AddPet addPet;
     private List<Pet> petList;
-    private Map<Enum, Operation> mapSystemOption;
+    private Map<Enum, Operation> mapOperation;
 
 
     @Inject
@@ -23,9 +24,9 @@ public class PetShop {
         addPet = new AddPet();
         petList = new ArrayList<>();
 
-        mapSystemOption = new HashMap<>();
-        mapSystemOption.put(EnumOperations.REMOVE_PET,new RemovePet());
-        mapSystemOption.put(EnumOperations.SEARCH_PET,new SearchPet());
+        mapOperation = new HashMap<>();
+        mapOperation.put(EnumOperations.REMOVE_PET,new RemovePet());
+        mapOperation.put(EnumOperations.SEARCH_PET,new SearchPet());
 
         mapService = new HashMap<>();
         mapService.put(EnumOperations.DRY_BATH, new DryBath());
@@ -33,24 +34,26 @@ public class PetShop {
         mapService.put(EnumOperations.HAIR_CUT, new HairCut());
     }
 
-    public Pet operation(Enum option, int idPet) throws Exception {
+    public Pet operation(Enum option, int idPet){
         if(option == EnumOperations.REMOVE_PET || option == EnumOperations.SEARCH_PET) {
-            Pet result = mapSystemOption.get(option).execute(petList, idPet);
-            return result;
-        } else
-            throw new Exception("ERROR: Option not found");
+            if(mapOperation.get(option) != null) {
+                Pet result = mapOperation.get(option).execute(petList, idPet);
+                return result;
+            }
+        }
+        throw new RuntimeException("ERROR: Option not found");
     }
 
     public Pet addPet(int age, String name, String race) {
         return addPet.execute(petList,age,name,race);
     }
 
-    public String service(EnumOperations option, boolean longCut, int idPet) throws Exception {
+    public String service(EnumOperations option, boolean longCut, int idPet){
         if(option == EnumOperations.WATER_BATH || option == EnumOperations.DRY_BATH || option == EnumOperations.HAIR_CUT) {
-            Pet pet = mapSystemOption.get(EnumOperations.SEARCH_PET).execute(petList,idPet);
+            Pet pet = mapOperation.get(EnumOperations.SEARCH_PET).execute(petList,idPet);
             return pet.setPetService(mapService.get(option).execute(longCut, pet));
         } else
-            throw new Exception("ERROR: Option not found");
+            throw new OptionNotFoundException("ERROR: Option not found");
     }
 
     public String listHistoric() {

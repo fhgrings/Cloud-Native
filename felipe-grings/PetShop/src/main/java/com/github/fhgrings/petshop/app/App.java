@@ -37,6 +37,7 @@ public class App {
         try {
             System.out.println(petShop.operation(EnumOperations.REMOVE_PET,2) + " Removed");
             System.out.println(petShop.operation(EnumOperations.SEARCH_PET,2));
+            System.out.println(petShop.operation(EnumOperations.WATER_BATH,2));
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -52,7 +53,7 @@ public class App {
             System.out.println(petShop.service(EnumOperations.WATER_BATH,false,4));
             System.out.println(petShop.service(EnumOperations.HAIR_CUT,true,3));
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
 
 
