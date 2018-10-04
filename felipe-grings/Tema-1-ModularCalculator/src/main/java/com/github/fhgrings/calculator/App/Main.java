@@ -21,6 +21,6 @@ public class Main {
         System.out.println(calculator.calculate(10,0,"div"));
 
         System.out.println("\n====================== Memory Data =====================\n");
-        System.out.println(calculator.printMapHistory());
+        System.out.println(calculator.getMapHistory());
     }
 }

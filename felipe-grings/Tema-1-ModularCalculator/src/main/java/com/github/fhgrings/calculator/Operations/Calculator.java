@@ -40,13 +40,5 @@ public class Calculator {
         }
         return stringBuffer.toString();
     }
-
-    public String printMapHistory() {
-        StringBuffer stringBuffer = new StringBuffer();
-        for (Operations historic : listHistoryCalculator){
-            stringBuffer.append(historic.calculate() + "\n");
-        }
-        return stringBuffer.toString();
-    }
 }
 
