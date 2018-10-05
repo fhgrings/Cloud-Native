@@ -5,9 +5,12 @@ public class PriceList {
     public String priceList() {
         StringBuffer stringBuffer = new StringBuffer();
         for (String type : PriceMap.getMapValues().keySet()){
-            stringBuffer.append(" | " + type + " | $" + PriceMap.getMapValues().get(type) + " | \n");
+            stringBuffer.append(" | ")
+                    .append(type)
+                    .append(" | $")
+                    .append(PriceMap.getMapValues().get(type))
+                    .append(" | \n");
         }
-        stringBuffer.append("  Extra axis   " + PriceMap.getMapValues().get("axis"));
         return stringBuffer.toString();
     }
 }
