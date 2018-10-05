@@ -10,7 +10,6 @@ public class Sum implements Operations {
         this.value1 = value1;
         this.value2 = value2;
         roundResult = new ResultTo4Decimals();
-        calculate();
     }
 
 
