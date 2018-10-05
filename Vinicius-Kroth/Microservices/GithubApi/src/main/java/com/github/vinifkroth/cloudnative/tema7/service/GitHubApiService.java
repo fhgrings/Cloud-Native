@@ -15,7 +15,6 @@ public class GitHubApiService {
 	public TotalRepositoriesDto getAllRepos(String username) throws InvalidUsernameException {
 		RestTemplate restTemplate = new RestTemplate();
 		Gson gson = new Gson();
-		String retorno;
 		try {
 			return gson.fromJson(restTemplate.getForObject(URL+username, String.class), TotalRepositoriesDto.class);
 		} catch (RestClientException e) {
