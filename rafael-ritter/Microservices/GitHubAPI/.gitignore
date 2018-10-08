@@ -15,3 +15,9 @@
 *.iml
 *.ipr
 /out/
+
+.metadata
+bin/
+
+*.class
+.loadpath
