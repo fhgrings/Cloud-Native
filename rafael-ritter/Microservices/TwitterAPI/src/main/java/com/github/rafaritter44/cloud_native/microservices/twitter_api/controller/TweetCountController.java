@@ -21,10 +21,10 @@ public class TweetCountController {
 	@Autowired
 	private TweetCountService tweetCountService;
 	
-	@RequestMapping("/{user}")
+	@RequestMapping("/{username}")
 	@ResponseBody
-	public int getTweetCount(@PathVariable(value="user") String user) throws TwitterException {
-		return tweetCountService.getTweetCount(user);
+	public int getTweetCount(@PathVariable(value="username") String username) throws TwitterException {
+		return tweetCountService.getTweetCount(username);
 	}
 	
 	@ExceptionHandler(TwitterException.class)

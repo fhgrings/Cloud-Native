@@ -8,8 +8,8 @@ import twitter4j.TwitterFactory;
 @Service
 public class TweetCountService {
 	
-	public int getTweetCount(String user) throws TwitterException {
-		return TwitterFactory.getSingleton().showUser(user).getStatusesCount();
+	public int getTweetCount(String username) throws TwitterException {
+		return TwitterFactory.getSingleton().showUser(username).getStatusesCount();
 	}
 	
 }
