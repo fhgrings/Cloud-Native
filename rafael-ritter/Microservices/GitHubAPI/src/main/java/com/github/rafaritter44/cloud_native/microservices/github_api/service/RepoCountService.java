@@ -1,15 +1,24 @@
 package com.github.rafaritter44.cloud_native.microservices.github_api.service;
 
-import com.github.rafaritter44.cloud_native.microservices.github_api.dto.GitHubUserDTO;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
+
+import com.github.rafaritter44.cloud_native.microservices.github_api.dto.GitHubUserDTO;
+import com.github.rafaritter44.cloud_native.microservices.github_api.exception.UserNotFoundException;
 
 @Service
 public class RepoCountService {
 
-    public int getRepoCount(String user) {
+    public int getRepoCount(String username) throws UserNotFoundException {
         RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.getForObject("https://api.github.com/users/" + user, GitHubUserDTO.class).getRepoCount();
+        try {
+        	return restTemplate
+        			.getForObject("https://api.github.com/users/" + username, GitHubUserDTO.class)
+        			.getRepoCount();
+        } catch(RestClientException exception) {
+        	throw new UserNotFoundException("ERROR: user not found");
+        }
     }
 
 }
