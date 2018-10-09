@@ -7,7 +7,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @Path("toll")
-public class TollControler {
+public class TollController {
     private Toll toll = ApplicationSingleton.getApplicationSingleton().getBean(Toll.class);
 
     @GET
