@@ -12,10 +12,10 @@ public class GitHubService {
 	public int getRepoCount(String username) throws UserNotFoundException, RestClientException {
 		RestTemplate restTemplate = new RestTemplate();
 		try {
-			return restTemplate.getForObject("http://localhost:8080/" + username, Integer.class);
+			return restTemplate.getForObject("http://172.17.0.3:8080/" + username, Integer.class);
 		} catch(RestClientException exception) {
 			throw new UserNotFoundException(restTemplate.getForObject(
-					"http://localhost:8080/" + username, String.class));
+					"http://172.17.0.3:8080/" + username, String.class));
 		}
 	}
 	

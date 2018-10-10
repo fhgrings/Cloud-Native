@@ -21,3 +21,5 @@ bin/
 
 *.class
 .loadpath
+
+*.jar

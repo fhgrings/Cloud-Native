@@ -12,10 +12,10 @@ public class TwitterService {
 	public int getTweetCount(String username) throws UserNotFoundException, RestClientException {
 		RestTemplate restTemplate = new RestTemplate();
 		try {
-			return restTemplate.getForObject("http://localhost:8081/" + username, Integer.class);
+			return restTemplate.getForObject("http://172.17.0.2:8081/" + username, Integer.class);
 		} catch(RestClientException exception) {
 			throw new UserNotFoundException(restTemplate.getForObject(
-					"http://localhost:8081/" + username, String.class));
+					"http://172.17.0.2:8081/" + username, String.class));
 		}
 	}
 	
