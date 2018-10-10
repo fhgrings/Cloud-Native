@@ -10,16 +10,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.HttpClientErrorException;
 
-import com.github.vinifkroth.cloudnative.tema7.dto.TotalRepositoriesDto;
-import com.github.vinifkroth.cloudnative.tema7.exception.InvalidUsernameException;
-import com.github.vinifkroth.cloudnative.tema7.service.GitHubApiService;
+import com.github.vinifkroth.cloudnative.tema7.service.TwitterApiService;
+
+import twitter4j.TwitterException;
 
 @RequestMapping("/api")
 @RestController
-public class GitHubController {
+public class TwitterApiController {
 
 	@Autowired
-	private GitHubApiService apiService;
+	private TwitterApiService apiService;
 
 	@GetMapping("/ping")
 	@ResponseBody
@@ -30,9 +30,9 @@ public class GitHubController {
 	@ResponseBody
 	public ResponseEntity<String> getUserRepoTotal(@PathVariable(value = "username") String username) {
 		try {
-			return new ResponseEntity<>(apiService.getAllRepos(username).toString(), HttpStatus.OK);
-		} catch (InvalidUsernameException e) {
-			throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, e.toString());
+			return new ResponseEntity<>(Integer.toString(apiService.getTweetsTotalCount(username)), HttpStatus.OK);
+		} catch (TwitterException e) {
+			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}
 }

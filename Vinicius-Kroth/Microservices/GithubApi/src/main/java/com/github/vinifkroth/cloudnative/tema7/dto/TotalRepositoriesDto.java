@@ -11,5 +11,10 @@ public class TotalRepositoriesDto {
 	public void setTotal_count(int total_count) {
 		this.total_count = total_count;
 	}
+	
+	@Override
+	public String toString() {
+		return Integer.toString(total_count);
+	}
 
 }
