@@ -14,9 +14,10 @@ public class Calculator {
     	operations = new ArrayList<>();
     }
 
-    public double calcular(String operationName, double operand1, double operand2)
+    public double calculate(String operationName, double operand1, double operand2)
             throws ReflectiveOperationException, ArithmeticException {
-    	Operation operation = (Operation) Class.forName(operationName)
+    	Operation operation =
+    			(Operation) Class.forName(this.getClass().getPackage().getName() + "." + operationName)
     			.getConstructor(double.class, double.class)
     			.newInstance(operand1, operand2);
         operations.add(operation);

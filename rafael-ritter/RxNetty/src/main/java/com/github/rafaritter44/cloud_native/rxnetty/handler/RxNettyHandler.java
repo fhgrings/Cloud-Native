@@ -1,5 +1,17 @@
 package com.github.rafaritter44.cloud_native.rxnetty.handler;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
+
+import org.apache.commons.lang.StringUtils;
+
+import com.github.rafaritter44.cloud_native.rxnetty.calculator.Calculator;
+import com.github.rafaritter44.cloud_native.rxnetty.calculator.Operation;
+import com.google.gson.Gson;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+
 import io.netty.buffer.ByteBuf;
 import io.netty.handler.codec.http.HttpResponseStatus;
 import io.reactivex.netty.protocol.http.server.HttpServerRequest;
@@ -12,29 +24,48 @@ public class RxNettyHandler implements RequestHandler<ByteBuf, ByteBuf> {
 
     private final String healthCheckUri;
     private final HealthCheckEndpoint healthCheckEndpoint;
+    private final Injector injector;
+    private final Calculator calculator;
 
     public RxNettyHandler(String healthCheckUri, HealthCheckEndpoint healthCheckEndpoint) {
         this.healthCheckUri = healthCheckUri;
         this.healthCheckEndpoint = healthCheckEndpoint;
+        injector = Guice.createInjector();
+        calculator = injector.getInstance(Calculator.class);
     }
 
     @Override
     public Observable<Void> handle(HttpServerRequest<ByteBuf> request, HttpServerResponse<ByteBuf> response) {
-        if (request.getUri().startsWith(healthCheckUri)) {
+    	String uri = request.getUri();
+        if (uri.startsWith(healthCheckUri)) {
             return healthCheckEndpoint.handle(request, response);
-        } else if (request.getUri().startsWith("/hello/to/")) {
-            int prefixLength = "/hello/to".length();
-            String userName = request.getPath().substring(prefixLength);
-            if (userName.isEmpty() || userName.length() == 1 /*The uri is /hello/to/ but no name */) {
-                response.setStatus(HttpResponseStatus.BAD_REQUEST);
-                return response.writeStringAndFlush(
-                        "{\"Error\":\"Please provide a username to say hello. The URI should be /hello/to/{username}\"}");
-            } else {
-                String msg = "Hello " + userName.substring(1) /*Remove the / prefix*/ + " from Netflix OSS";
-                return response.writeStringAndFlush("{\"Message\":\"" + msg + "\"}");
-            }
-        } else if (request.getUri().startsWith("/hello")) {
-            return response.writeStringAndFlush("{\"Message\":\"Hello newbee from Netflix OSS\"}");
+        } else if(uri.startsWith("/History")) {
+        	List<Object> history = new ArrayList<>();
+        	for(Operation operation: calculator.getHistory()) {
+        		try {
+        			history.add(operation.calculate());
+        		} catch(ArithmeticException exception) {
+        			history.add(exception.getMessage());
+        		}
+        	}
+        	return response.writeStringAndFlush(new Gson().toJson(history));
+        } else if (Stream.of("/Addition/", "/Subtraction/", "/Multiplication/", "/Division/", "/Exponentiation/")
+        		.anyMatch(uri::startsWith)) {
+        	int prefixLength = uri.indexOf("/", 1);
+        	String[] operands = uri.substring(prefixLength + 1).split("/");
+        	if (operands.length != 2 || !(Stream.of(operands).allMatch(StringUtils::isNumeric))) {
+        		response.setStatus(HttpResponseStatus.BAD_REQUEST);
+        		return response.writeStringAndFlush(
+        				"{\"Error\":\"Please provide operands. The URI should be /{operation}/{operand1}/{operand2}\"}");
+        	} else {
+        		String operationName = uri.substring(1, prefixLength);
+        		try {
+					return response.writeStringAndFlush("{\"Result\":" + calculator.calculate(
+							operationName, Double.parseDouble(operands[0]), Double.parseDouble(operands[1])) + "}");
+				} catch (ArithmeticException | ReflectiveOperationException exception) {
+	        		return response.writeStringAndFlush("{\"Error\":\"" + exception.getMessage() + "\"}");
+				}
+        	}
         } else {
             response.setStatus(HttpResponseStatus.NOT_FOUND);
             return response.close();
