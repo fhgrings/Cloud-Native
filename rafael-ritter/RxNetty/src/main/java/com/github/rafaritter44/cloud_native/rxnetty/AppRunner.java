@@ -8,8 +8,8 @@ import netflix.karyon.archaius.ArchaiusBootstrapModule;
 import netflix.karyon.health.HealthCheckHandler;
 import netflix.karyon.servo.KaryonServoModule;
 import netflix.karyon.transport.http.health.HealthCheckEndpoint;
-import src.main.java.com.github.rafaritter44.cloud_native.rxnetty.handler.RxNettyHandler;
-import src.main.java.com.github.rafaritter44.cloud_native.rxnetty.health.HealthCheckResource;
+import com.github.rafaritter44.cloud_native.rxnetty.handler.RxNettyHandler;
+import com.github.rafaritter44.cloud_native.rxnetty.health.HealthCheckResource;
 
 public class AppRunner {
 	public static void main(String[] args) {
