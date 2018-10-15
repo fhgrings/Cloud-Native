@@ -7,10 +7,8 @@ public class PublicRepos {
     @JsonProperty("public_repos")
     private Integer publicRepos;
 
-
     public Integer getPublicRepos() {
         return publicRepos;
     }
-
 
 }

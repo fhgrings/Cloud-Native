@@ -10,22 +10,35 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class IntegratorController {
-    TotalRepos totalRepos = new TotalRepos();
-    TotalTweets totalTweets = new TotalTweets();
-
-    @RequestMapping("/ping")
-    public String ping() {
-        return "pong1.2";
-    }
+    private TotalRepos totalRepos = new TotalRepos();
+    private TotalTweets totalTweets = new TotalTweets();
 
     @RequestMapping(value = "/search", params = {"user"})
     @ResponseBody
-    public String totalRepos(@RequestParam(value = "user") String user) throws Exception {
+    public String userSearch(@RequestParam(value = "user") String user){
+
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("GitHub repos: ");
+
         try {
-            Integer userRepos = totalRepos.execute(user);
-            return "GitHub respos: " + totalRepos.execute(user) + "  - Twitter tweets: " + totalTweets.execute(user);
-        } catch (Exception e) {
-            throw e;
+            stringBuffer.append(totalRepos.execute(user))
+                    .append("\n");
+        } catch (Exception exception) {
+            stringBuffer.append(exception.getMessage())
+            .append("\n");
         }
+
+        stringBuffer.append("Twitter tweets: ");
+
+        try {
+            stringBuffer.append(totalTweets.execute(user))
+                    .append("\n");
+        } catch (Exception exception) {
+            stringBuffer.append(exception.getMessage())
+                    .append("\n");
+        }
+
+        return stringBuffer.toString();
+
     }
 }
