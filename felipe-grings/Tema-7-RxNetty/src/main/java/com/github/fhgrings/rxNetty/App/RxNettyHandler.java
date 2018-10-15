@@ -28,8 +28,8 @@ public class RxNettyHandler implements RequestHandler<ByteBuf, ByteBuf> {
             int prefixLength = "/calculate/".length();
 
             try{
-                String function = request.getPath().substring(prefixLength);
-                String[] parts = function.split("&");
+                String service = request.getPath().substring(prefixLength);
+                String[] parts = service.split("&");
                 String operator = parts[0];
                 String firstValue = parts[1];
                 String secondValue = parts[2];
@@ -45,7 +45,7 @@ public class RxNettyHandler implements RequestHandler<ByteBuf, ByteBuf> {
             }
 
         } else {
-            response.setStatus(HttpResponseStatus.BAD_REQUEST);
+            response.setStatus(HttpResponseStatus.NOT_FOUND);
             return response.close();
         }
     }
