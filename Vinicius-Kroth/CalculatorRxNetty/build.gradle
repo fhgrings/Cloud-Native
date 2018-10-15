@@ -1,0 +1,38 @@
+apply plugin: "java"
+apply plugin: "application"
+apply plugin: "eclipse"
+ sourceCompatibility = 1.8 
+targetCompatibility = 1.8 
+ sourceSets {
+    main.java.srcDirs = ["src/main/java"]
+}
+ mainClassName="com.github.vinifkroth.cloudnative.tema8.rxnetty.app.App"
+ 
+ task fatJar(type: Jar) {
+   manifest {
+       attributes(
+               'Main-Class': mainClassName
+       )
+   }
+   baseName = 'calculatorRxNetty'
+   from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+   with jar
+}
+ repositories {
+    mavenCentral()  
+}
+ dependencies {
+	def slf4jVersion = '1.7.0'
+	def karyonVersion = '2.8.2'
+	compile(['com.google.inject:guice:3.0',
+			 'org.slf4j:slf4j-api:' + slf4jVersion,
+			 'org.slf4j:slf4j-simple:' + slf4jVersion,
+			 'org.codehaus.jettison:jettison:1.2',
+			 'com.netflix.karyon:karyon2-core:' + karyonVersion,
+			 'com.netflix.karyon:karyon2-jersey-blocking:' + karyonVersion,
+			 'com.netflix.karyon:karyon2-archaius:' + karyonVersion,
+			 'com.netflix.karyon:karyon2-servo:' + karyonVersion,
+			 'com.netflix.karyon:karyon2-admin-web:' + karyonVersion,
+			 'com.netflix.karyon:karyon2-eureka:' + karyonVersion
+	 		 ])
+} 
