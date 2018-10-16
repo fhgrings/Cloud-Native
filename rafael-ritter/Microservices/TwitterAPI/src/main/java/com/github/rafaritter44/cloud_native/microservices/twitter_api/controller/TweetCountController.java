@@ -2,6 +2,7 @@ package com.github.rafaritter44.cloud_native.microservices.twitter_api.controlle
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,8 +29,9 @@ public class TweetCountController {
 	}
 	
 	@ExceptionHandler(TwitterException.class)
-    public String handleUserNotFoundException(TwitterException exception) {
-    	return exception.getMessage();
+    public ResponseEntity<String> handleUserNotFoundException(TwitterException exception) {
+    	return ResponseEntity.status(exception.getStatusCode())
+    			.body(exception.getMessage());
     }
 
 }

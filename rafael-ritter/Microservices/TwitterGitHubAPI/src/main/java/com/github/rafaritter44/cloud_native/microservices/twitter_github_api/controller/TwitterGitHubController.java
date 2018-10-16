@@ -7,11 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestClientException;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.rafaritter44.cloud_native.microservices.twitter_github_api.exception.UserNotFoundException;
 import com.github.rafaritter44.cloud_native.microservices.twitter_github_api.model.GitHubUser;
 import com.github.rafaritter44.cloud_native.microservices.twitter_github_api.model.TwitterUser;
 import com.github.rafaritter44.cloud_native.microservices.twitter_github_api.service.GitHubService;
@@ -35,14 +32,14 @@ public class TwitterGitHubController {
 		try {
 			builder.append(mapper.writeValueAsString(new TwitterUser(
 					twitterUsername, twitterService.getTweetCount(twitterUsername))));
-		} catch(UserNotFoundException | RestClientException | JsonProcessingException exception) {
+		} catch(Exception exception) {
 			builder.append("{\"error\":\"" + exception.getMessage() + "\"}");
 		}
 		builder.append(",\"github\":");
 		try {
 			builder.append(mapper.writeValueAsString(new GitHubUser(
 					gitHubUsername, gitHubService.getRepoCount(gitHubUsername))));
-		} catch(UserNotFoundException | RestClientException | JsonProcessingException exception) {
+		} catch(Exception exception) {
 			builder.append("{\"error\":\"" + exception.getMessage() + "\"}");
 		}
 		return builder.append("}").toString();
