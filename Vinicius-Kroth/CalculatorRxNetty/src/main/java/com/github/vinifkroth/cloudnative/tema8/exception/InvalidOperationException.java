@@ -7,12 +7,4 @@ public class InvalidOperationException extends Exception {
 	public InvalidOperationException(String erro) {
 		super(erro);
 	}
-
-	public InvalidOperationException(Exception e) {
-		super(e.getMessage());
-	}
-
-	public InvalidOperationException(String erro, Exception e) {
-		super(erro, e);
-	}
 }

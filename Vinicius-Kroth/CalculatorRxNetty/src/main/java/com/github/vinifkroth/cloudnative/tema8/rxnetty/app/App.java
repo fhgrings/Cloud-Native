@@ -13,11 +13,12 @@ import netflix.karyon.transport.http.health.HealthCheckEndpoint;
 import com.github.vinifkroth.cloudnative.tema8.rxnetty.handler.RxNettyHandler;
 import com.github.vinifkroth.cloudnative.tema8.rxnetty.health.HealthCheckResource;
  public class App {
+	 private static final int port = 8081;
 	public static void main(String[] args) {
 		System.setProperty("java.awt.headless","true");
 		
 		HealthCheckHandler healthCheckHandler = new HealthCheckResource();
-        Karyon.forRequestHandler(8081,
+        Karyon.forRequestHandler(port,
                 new RxNettyHandler("/healthcheck",
                 new HealthCheckEndpoint(healthCheckHandler)),
                 new KaryonBootstrapModule(healthCheckHandler),
