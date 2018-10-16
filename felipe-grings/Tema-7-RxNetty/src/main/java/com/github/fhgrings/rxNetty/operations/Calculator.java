@@ -3,8 +3,6 @@ package com.github.fhgrings.rxNetty.operations;
 import com.github.fhgrings.rxNetty.exception.ConstructorException;
 import com.github.fhgrings.rxNetty.exception.InvalidOperator;
 
-
-import java.lang.reflect.Constructor;
 import java.util.*;
 
 public class Calculator {
@@ -24,14 +22,7 @@ public class Calculator {
 
     public Double calculate(Double value1, Double value2, String operator)throws Exception{
 
-        Operation calculatorResult;
-
-        try {
-            calculatorResult = (Operation) calculatorConstructor(operator).newInstance(value1, value2);
-        } catch (InvalidOperator exception) {
-            throw exception;
-        }
-
+        Operation calculatorResult = calculatorConstructor(operator,value1,value2);
         listHistoryCalculator.add(calculatorResult);
 
         return calculatorResult.calculate();
@@ -48,14 +39,14 @@ public class Calculator {
 
 
 
-    public Constructor calculatorConstructor(String operator) {
+    public Operation calculatorConstructor(String operator,Double value1, Double value2) {
         Class operation = mapOperations.get(operator);
 
         if (operation == null)
             throw new InvalidOperator("ERROR: Invalid Operator");
 
         try {
-            return operation.getConstructor(double.class, double.class);
+            return (Operation) operation.getConstructor(double.class, double.class).newInstance(value1, value2);
         } catch (Exception exception) {
             throw new ConstructorException("ERROR: Object not constructed");
         }
