@@ -1,4 +1,4 @@
-package com.github.fhgrings.rxNetty.Operations;
+package com.github.fhgrings.rxNetty.operations;
 
 public class ResultTo4Decimals {
 

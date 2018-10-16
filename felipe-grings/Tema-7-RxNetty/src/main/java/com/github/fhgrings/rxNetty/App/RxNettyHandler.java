@@ -1,6 +1,6 @@
 package com.github.fhgrings.rxNetty.App;
 
-import com.github.fhgrings.rxNetty.Operations.Calculator;
+import com.github.fhgrings.rxNetty.operations.Calculator;
 import io.netty.buffer.ByteBuf;
 import io.netty.handler.codec.http.HttpResponseStatus;
 import io.reactivex.netty.protocol.http.server.HttpServerRequest;
@@ -22,31 +22,45 @@ public class RxNettyHandler implements RequestHandler<ByteBuf, ByteBuf> {
     public Observable<Void> handle(HttpServerRequest<ByteBuf> request, HttpServerResponse<ByteBuf> response) {
         if (request.getUri().startsWith(calculatorUri)) {
             response.setStatus(HttpResponseStatus.OK);
-            calculator.calculate(1, 2, "sum");
-            return response.writeStringAndFlush(calculator.getMapHistory());
+
+            return response.writeStringAndFlush(String.valueOf(calculator.getMapHistory()));
+
         } else if (request.getUri().startsWith("/calculate")){
             int prefixLength = "/calculate/".length();
 
             try{
                 String service = request.getPath().substring(prefixLength);
-                String[] parts = service.split("&");
-                String operator = parts[0];
-                String firstValue = parts[1];
-                String secondValue = parts[2];
 
                 return response.writeStringAndFlush(String.valueOf(
                         calculator.calculate(
-                                Double.parseDouble(firstValue),
-                                Double.parseDouble(secondValue),
-                                operator)));
+                                firstValueExtractor(service),
+                                secondValueExtractor(service),
+                                operatorExtractor(service))));
+
             } catch (Exception exception) {
                 response.setStatus(HttpResponseStatus.BAD_REQUEST);
-                return response.writeStringAndFlush("Error: Please provide all requirements");
+                return response.writeStringAndFlush(exception.getMessage());
             }
 
         } else {
             response.setStatus(HttpResponseStatus.NOT_FOUND);
             return response.close();
         }
+    }
+
+
+    public String operatorExtractor(String service) {
+            String[] parts = service.split("&");
+            return parts[0];
+    }
+
+    public double firstValueExtractor(String service) {
+        String[] parts = service.split("&");
+        return Double.parseDouble(parts[1]);
+    }
+
+    public double secondValueExtractor(String service) {
+        String[] parts = service.split("&");
+        return Double.parseDouble(parts[2]);
     }
 }

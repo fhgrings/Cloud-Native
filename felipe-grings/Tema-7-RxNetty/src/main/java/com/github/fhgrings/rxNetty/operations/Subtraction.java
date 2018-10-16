@@ -1,6 +1,6 @@
-package com.github.fhgrings.rxNetty.Operations;
+package com.github.fhgrings.rxNetty.operations;
 
-public class Subtraction implements Operations {
+public class Subtraction implements Operation {
     private double value1;
     private double value2;
     private ResultTo4Decimals roundResult;

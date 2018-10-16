@@ -1,6 +1,6 @@
-package com.github.fhgrings.rxNetty.Operations;
+package com.github.fhgrings.rxNetty.operations;
 
-public class Division implements Operations {
+public class Division implements Operation {
     private double value1;
     private double value2;
 

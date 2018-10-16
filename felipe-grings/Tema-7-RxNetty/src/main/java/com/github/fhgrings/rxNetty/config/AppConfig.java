@@ -1,10 +1,10 @@
-package com.github.fhgrings.rxNetty.Config;
+package com.github.fhgrings.rxNetty.config;
 
-import com.github.fhgrings.rxNetty.Operations.Calculator;
+import com.github.fhgrings.rxNetty.operations.Calculator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan (basePackages = "Operations.Calculator")
+@ComponentScan (basePackages = "operations.Calculator")
 
 public class AppConfig {
 

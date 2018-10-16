@@ -1,7 +1,7 @@
 package com.github.fhgrings.rxNetty.App;
 
-import com.github.fhgrings.rxNetty.Config.AppConfig;
-import com.github.fhgrings.rxNetty.Operations.Calculator;
+import com.github.fhgrings.rxNetty.config.AppConfig;
+import com.github.fhgrings.rxNetty.operations.Calculator;
 import netflix.adminresources.resources.KaryonWebAdminModule;
 import netflix.karyon.Karyon;
 import netflix.karyon.ShutdownModule;
@@ -13,7 +13,11 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class Main {
 
+
+
     public static void main (String[] args){
+
+        int port = 8080;
 
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         Calculator calculator = (Calculator) applicationContext.getBean(Calculator.class);
@@ -22,14 +26,16 @@ public class Main {
         System.setProperty("java.awt.headless","true");
         System.setProperty("archaius.deployment.environment","dev");
 
-        Karyon.forRequestHandler(8080,
-                new RxNettyHandler("/calculator",
-                        calculator),
+
+        Karyon.forRequestHandler(port,
+                new RxNettyHandler("/calculator", calculator),
                 new ArchaiusBootstrapModule("rxnetty-calculator"),
                 Karyon.toBootstrapModule(KaryonWebAdminModule.class),
                 ShutdownModule.asBootstrapModule(),
                 KaryonServoModule.asBootstrapModule()
         ).startAndWaitTillShutdown();
+
+
 
     }
 }
