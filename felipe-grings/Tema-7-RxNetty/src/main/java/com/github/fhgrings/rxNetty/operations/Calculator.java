@@ -2,8 +2,7 @@ package com.github.fhgrings.rxNetty.operations;
 
 import com.github.fhgrings.rxNetty.exception.ConstructorException;
 import com.github.fhgrings.rxNetty.exception.InvalidOperator;
-import com.github.fhgrings.rxNetty.exception.InvalidValue;
-import org.antlr.stringtemplate.language.ArrayWrappedInList;
+
 
 import java.lang.reflect.Constructor;
 import java.util.*;
@@ -28,7 +27,7 @@ public class Calculator {
         Operation calculatorResult;
 
         try {
-            calculatorResult = (Operation) objectCreator(operator).newInstance(value1, value2);
+            calculatorResult = (Operation) calculatorConstructor(operator).newInstance(value1, value2);
         } catch (InvalidOperator exception) {
             throw exception;
         }
@@ -49,7 +48,7 @@ public class Calculator {
 
 
 
-    public Constructor objectCreator(String operator) {
+    public Constructor calculatorConstructor(String operator) {
         Class operation = mapOperations.get(operator);
 
         if (operation == null)
