@@ -11,7 +11,7 @@ import twitter4j.TwitterException;
 public class TwitterApiService {
 
 	public int getTweetsTotalCount(String username) throws TwitterException {
-		Twitter twitter = TwitterConfiguration.getTwitterInstace();
+		Twitter twitter = TwitterConfiguration.getTwitterInstance();
 		return twitter.showUser(username).getStatusesCount();
 	}
 }

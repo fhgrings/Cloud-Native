@@ -6,9 +6,9 @@ import twitter4j.TwitterFactory;
 import twitter4j.conf.ConfigurationBuilder;
 
 public class TwitterConfiguration {
-	private static Twitter twitter = null;
+	private static Twitter twitter;
 
-	public static synchronized Twitter getTwitterInstace() throws TwitterException {
+	public static synchronized Twitter getTwitterInstance() throws TwitterException {
 		if (twitter == null) {
 			ConfigurationBuilder cb = new ConfigurationBuilder();
 			cb.setOAuthConsumerKey(System.getenv("OAUTH_CONSUMER_KEY"))
