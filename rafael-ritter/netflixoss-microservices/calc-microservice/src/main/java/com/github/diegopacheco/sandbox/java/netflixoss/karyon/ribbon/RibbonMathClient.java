@@ -79,4 +79,8 @@ public class RibbonMathClient {
 		return Observable.just(new Double(callService("div-service", "/math/div/",a,b)));
 	}
 	
+	public Observable<Double> pow(Double a, Double b){
+		return Observable.just(new Double(callService("pow-service", "/math/pow/",a,b)));
+	}
+	
 }
