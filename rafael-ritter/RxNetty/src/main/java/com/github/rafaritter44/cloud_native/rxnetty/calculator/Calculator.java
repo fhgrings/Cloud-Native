@@ -16,12 +16,26 @@ public class Calculator {
 
     public double calculate(String operationName, double operand1, double operand2)
             throws ReflectiveOperationException, ArithmeticException {
-    	Operation operation =
-    			(Operation) Class.forName(this.getClass().getPackage().getName() + "." + operationName)
-    			.getConstructor(double.class, double.class)
-    			.newInstance(operand1, operand2);
+    	Operation operation = getOperation(operationName, operand1, operand2);
         operations.add(operation);
-        return operation.calculate();
+        try {
+        	return operation.calculate();
+        } catch(ArithmeticException exception) {
+        	exception.printStackTrace();
+        	throw exception;
+        }
+    }
+    
+    private Operation getOperation(String operationName, double operand1, double operand2)
+    		throws ReflectiveOperationException {
+    	try {
+    		return (Operation) Class.forName(this.getClass().getPackage().getName() + "." + operationName)
+    				.getConstructor(double.class, double.class)
+    				.newInstance(operand1, operand2);
+    	} catch(ReflectiveOperationException exception) {
+    		exception.printStackTrace();
+    		throw exception;
+    	}
     }
 
     public List<Operation> getHistory() {
