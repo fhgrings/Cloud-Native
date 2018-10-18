@@ -1,5 +1,6 @@
 package com.github.vinifkroth.cloudnative.tema8.service;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,19 +28,28 @@ public class Calculator {
 	}
 
 	public double calculate(double firstElement, double secondElement, String operator)
-			throws InvalidOperationException, ReflectiveOperationException {
-		
+			throws InvalidOperationException, ArithmeticException {
+
 		Class<Operation> operationClass = operations.get(operator);
 		if (operationClass == null) {
-			throw new InvalidOperationException("Invalid operation selected");
+			throw new InvalidOperationException("Unexisting operation selected");
 		}
-		Operation operation = operationClass.getConstructor(double.class, double.class).newInstance(firstElement,
-				secondElement);
+		Operation operation = buildOperation(operationClass, firstElement, secondElement);
 		resultsRecord.add(operation);
 		return operation.calculate();
 	}
 
 	public List<Operation> getResultsRecord() {
 		return resultsRecord;
+	}
+
+	private Operation buildOperation(Class<Operation> operationClass, double firstElement, double secondElement)
+			throws InvalidOperationException {
+		try {
+			return operationClass.getConstructor(double.class, double.class).newInstance(firstElement, secondElement);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new InvalidOperationException("Operation not handled");
+		}
 	}
 }
