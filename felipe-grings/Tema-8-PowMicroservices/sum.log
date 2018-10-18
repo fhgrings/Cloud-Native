@@ -1,0 +1,296 @@
+Starting a Gradle Daemon, 48 stopped Daemons could not be reused, use --status for details
+:sum-microservice:compileJava UP-TO-DATE
+:sum-microservice:processResources UP-TO-DATE
+:sum-microservice:classes UP-TO-DATE
+:sum-microservice:run
+11:33:05.306 [main] WARN  c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11:33:05.320 [main] INFO  c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+Using main class: com.github.diegopacheco.sandbox.java.netflixoss.karyon.KaryonJerseyServerApp
+11:33:07.304 [main] INFO  c.n.g.guice.LifecycleInjector - Found bootstrap annotation netflix.karyon.archaius.ArchaiusBootstrap
+11:33:07.312 [main] INFO  c.n.g.guice.LifecycleInjector - Adding BootstrapModule class netflix.karyon.archaius.ArchaiusBootstrapModule
+11:33:07.318 [main] INFO  c.n.g.guice.LifecycleInjector - Found bootstrap annotation netflix.karyon.KaryonBootstrap
+11:33:07.321 [main] INFO  c.n.g.guice.LifecycleInjector - Adding BootstrapModule class netflix.karyon.KaryonBootstrapModule
+11:33:07.327 [main] INFO  c.n.g.guice.LifecycleInjector - Found bootstrap annotation com.netflix.governator.annotations.Modules
+11:33:07.331 [main] INFO  c.n.g.guice.LifecycleInjector - Adding BootstrapModule class com.netflix.governator.guice.bootstrap.ModulesBootstrap
+11:33:07.471 [main] DEBUG c.n.g.lifecycle.ClasspathScanner - Starting classpath scanning...
+11:33:07.471 [main] WARN  c.n.g.lifecycle.ClasspathScanner - No base packages specified - no classpath scanning will be done
+11:33:07.471 [main] DEBUG c.n.g.lifecycle.ClasspathScanner - Classpath scanning done
+11:33:07.502 [main] INFO  c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@222545dc
+11:33:08.428 [main] INFO  n.k.archaius.DefaultPropertiesLoader - Loading application properties with app id: sum-microservice and environment: dev
+11:33:08.975 [main] INFO  c.n.config.util.ConfigurationUtils - Loaded properties file file:/home/ilegra0088/%c3%81rea%20de%20Trabalho/Cloud-Native/jts.cloud-native.2018.2/felipe-grings/Tema-8-PowMicroservices/sum-microservice/build/resources/main/sum-microservice.properties
+11:33:09.326 [main] INFO  org.hibernate.validator.util.Version - Hibernate Validator 4.1.0.Final
+11:33:09.331 [main] DEBUG o.h.v.e.r.DefaultTraversableResolver - Cannot find javax.persistence.PersistenceUtil on classpath. All properties will per default be traversable.
+11:33:09.752 [main] DEBUG o.h.v.xml.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only
+11:33:10.247 [main] INFO  c.n.g.guice.ModuleListBuilder - Getting instance of : com.github.diegopacheco.sandbox.java.netflixoss.karyon.ShutdownModule
+11:33:10.248 [main] INFO  c.n.g.guice.ModuleListBuilder - Adding module 'com.github.diegopacheco.sandbox.java.netflixoss.karyon.ShutdownModule
+11:33:10.248 [main] INFO  c.n.g.guice.ModuleListBuilder - Getting instance of : netflix.adminresources.resources.KaryonWebAdminModule
+11:33:10.248 [main] INFO  c.n.g.guice.ModuleListBuilder - Adding module 'netflix.adminresources.resources.KaryonWebAdminModule
+11:33:10.248 [main] INFO  c.n.g.guice.ModuleListBuilder - Getting instance of : netflix.karyon.servo.KaryonServoModule
+11:33:10.248 [main] INFO  c.n.g.guice.ModuleListBuilder - Adding module 'netflix.karyon.servo.KaryonServoModule
+11:33:10.249 [main] INFO  c.n.g.guice.ModuleListBuilder - Getting instance of : com.github.diegopacheco.sandbox.java.netflixoss.karyon.KaryonJerseyServerApp$KaryonJerseyModuleImpl
+11:33:10.269 [main] INFO  c.n.g.guice.ModuleListBuilder - Adding module 'com.github.diegopacheco.sandbox.java.netflixoss.karyon.KaryonJerseyServerApp$KaryonJerseyModuleImpl
+11:33:10.269 [main] INFO  c.n.g.guice.ModuleListBuilder - Getting instance of : netflix.karyon.eureka.KaryonEurekaModule
+11:33:10.270 [main] INFO  c.n.g.guice.ModuleListBuilder - Adding module 'netflix.karyon.eureka.KaryonEurekaModule
+11:33:10.872 [main] DEBUG i.n.u.i.l.InternalLoggerFactory - Using SLF4J as the default logging framework
+11:33:10.872 [main] DEBUG i.n.c.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 8
+11:33:10.992 [main] DEBUG i.n.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+11:33:10.993 [main] DEBUG i.n.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+11:33:10.993 [main] DEBUG i.n.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+11:33:10.993 [main] DEBUG i.n.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+11:33:11.008 [main] DEBUG i.n.util.internal.PlatformDependent - Java version: 8
+11:33:11.008 [main] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+11:33:11.008 [main] DEBUG i.n.util.internal.PlatformDependent - sun.misc.Unsafe: available
+11:33:11.008 [main] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+11:33:11.013 [main] DEBUG i.n.util.internal.PlatformDependent - Javassist: unavailable
+11:33:11.013 [main] DEBUG i.n.util.internal.PlatformDependent - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+11:33:11.014 [main] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+11:33:11.014 [main] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+11:33:11.014 [main] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+11:33:11.091 [main] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+11:33:11.091 [main] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+11:33:11.424 [main] DEBUG i.n.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numHeapArenas: 4
+11:33:11.424 [main] DEBUG i.n.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numDirectArenas: 4
+11:33:11.424 [main] DEBUG i.n.buffer.PooledByteBufAllocator - -Dio.netty.allocator.pageSize: 8192
+11:33:11.424 [main] DEBUG i.n.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxOrder: 11
+11:33:11.424 [main] DEBUG i.n.buffer.PooledByteBufAllocator - -Dio.netty.allocator.chunkSize: 16777216
+11:33:11.424 [main] DEBUG i.n.buffer.PooledByteBufAllocator - -Dio.netty.allocator.tinyCacheSize: 512
+11:33:11.424 [main] DEBUG i.n.buffer.PooledByteBufAllocator - -Dio.netty.allocator.smallCacheSize: 256
+11:33:11.424 [main] DEBUG i.n.buffer.PooledByteBufAllocator - -Dio.netty.allocator.normalCacheSize: 64
+11:33:11.424 [main] DEBUG i.n.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+11:33:11.424 [main] DEBUG i.n.buffer.PooledByteBufAllocator - -Dio.netty.allocator.cacheTrimInterval: 8192
+11:33:11.928 [main] DEBUG c.n.g.lifecycle.LifecycleManager - Starting netflix.karyon.jersey.blocking.JerseyBasedRouter
+11:33:11.934 [main] DEBUG c.n.g.lifecycle.LifecycleManager - 	start()
+11:33:12.227 [main] INFO  n.k.j.b.PropertiesBasedResourceConfig - Packages to scan by jersey [com.github.diegopacheco.sandbox.java.netflixoss.karyon.rest]
+11:33:14.184 [main] INFO  n.k.j.blocking.JerseyBasedRouter - Started Jersey based request router.
+11:33:14.888 [main] DEBUG i.n.util.internal.ThreadLocalRandom - -Dio.netty.initialSeedUniquifier: 0x7921ca40386144ef (took 93 ms)
+11:33:14.959 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+11:33:14.964 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 65536
+11:33:14.971 [main] DEBUG io.netty.util.NetUtil - Loopback interface: lo (lo, 127.0.0.1)
+11:33:14.990 [main] DEBUG io.netty.util.NetUtil - /proc/sys/net/core/somaxconn: 128
+11:33:15.350 [rxnetty-nio-eventloop-1-1] DEBUG i.n.util.internal.PlatformDependent - UID: 1000
+11:33:15.353 [main] INFO  i.r.netty.server.AbstractServer - Rx server started at port: 6004
+11:33:15.353 [main] INFO  n.k.t.http.HttpRxServerProvider - Starting server karyonJerseyModule on port 6004...
+11:33:15.354 [main] DEBUG c.n.g.lifecycle.LifecycleManager - Starting netflix.karyon.transport.http.HttpRxServerProvider
+11:33:15.393 [main] DEBUG c.n.g.lifecycle.LifecycleManager - Starting netflix.karyon.ShutdownModule$ShutdownServer
+11:33:15.393 [main] DEBUG c.n.g.lifecycle.LifecycleManager - 	start()
+11:33:15.415 [main] INFO  i.r.netty.server.AbstractServer - Rx server started at port: 7005
+11:33:15.417 [main] DEBUG c.n.g.lifecycle.LifecycleManager - Starting netflix.adminresources.AdminResourcesContainer
+11:33:15.417 [main] DEBUG c.n.g.lifecycle.LifecycleManager - 	init()
+11:33:15.418 [main] DEBUG c.n.g.lifecycle.ClasspathScanner - Starting classpath scanning...
+11:33:15.418 [main] INFO  c.n.g.lifecycle.ClasspathScanner - Scanning packages : [netflix] for annotations [interface netflix.adminresources.AdminPage]
+11:33:15.532 [main] DEBUG c.n.g.lifecycle.ClasspathScanner - Classpath scanning done
+11:33:15.630 [main] INFO  org.mortbay.log - Logging to Logger[org.mortbay.log] via org.mortbay.log.Slf4jLog
+11:33:15.630 [main] DEBUG org.mortbay.log - Container Server@381cad29 + SocketConnector@0.0.0.0:8090 as connector
+11:33:15.682 [main] DEBUG org.mortbay.log - filterNameMap={netflix.adminresources.RedirectFilter=netflix.adminresources.RedirectFilter}
+11:33:15.683 [main] DEBUG org.mortbay.log - pathFilters=[(F=netflix.adminresources.RedirectFilter,[/*],[],0)]
+11:33:15.683 [main] DEBUG org.mortbay.log - servletFilterMap=null
+11:33:15.683 [main] DEBUG org.mortbay.log - servletPathMap=null
+11:33:15.683 [main] DEBUG org.mortbay.log - servletNameMap=null
+11:33:15.736 [main] DEBUG org.mortbay.log - filterNameMap={netflix.adminresources.RedirectFilter=netflix.adminresources.RedirectFilter}
+11:33:15.736 [main] DEBUG org.mortbay.log - pathFilters=[(F=netflix.adminresources.RedirectFilter,[/*],[],0)]
+11:33:15.738 [main] DEBUG org.mortbay.log - servletFilterMap=null
+11:33:15.738 [main] DEBUG org.mortbay.log - servletPathMap={/*=org.mortbay.jetty.servlet.DefaultServlet-703627308}
+11:33:15.738 [main] DEBUG org.mortbay.log - servletNameMap={org.mortbay.jetty.servlet.DefaultServlet-703627308=org.mortbay.jetty.servlet.DefaultServlet-703627308}
+11:33:15.774 [main] DEBUG org.mortbay.log - filterNameMap={netflix.adminresources.LoggingFilter-698498109=netflix.adminresources.LoggingFilter-698498109}
+11:33:15.774 [main] DEBUG org.mortbay.log - pathFilters=[(F=netflix.adminresources.LoggingFilter-698498109,[/*],[],0)]
+11:33:15.774 [main] DEBUG org.mortbay.log - servletFilterMap=null
+11:33:15.774 [main] DEBUG org.mortbay.log - servletPathMap=null
+11:33:15.774 [main] DEBUG org.mortbay.log - servletNameMap=null
+11:33:15.774 [main] DEBUG org.mortbay.log - filterNameMap={netflix.adminresources.LoggingFilter-698498109=netflix.adminresources.LoggingFilter-698498109, netflix.adminresources.RedirectFilter=netflix.adminresources.RedirectFilter}
+11:33:15.774 [main] DEBUG org.mortbay.log - pathFilters=[(F=netflix.adminresources.LoggingFilter-698498109,[/*],[],0), (F=netflix.adminresources.RedirectFilter,[/*],[],0)]
+11:33:15.774 [main] DEBUG org.mortbay.log - servletFilterMap=null
+11:33:15.775 [main] DEBUG org.mortbay.log - servletPathMap=null
+11:33:15.775 [main] DEBUG org.mortbay.log - servletNameMap=null
+11:33:15.775 [main] DEBUG org.mortbay.log - filterNameMap={netflix.adminresources.LoggingFilter-698498109=netflix.adminresources.LoggingFilter-698498109, netflix.adminresources.AdminResourcesFilter=netflix.adminresources.AdminResourcesFilter, netflix.adminresources.RedirectFilter=netflix.adminresources.RedirectFilter}
+11:33:15.775 [main] DEBUG org.mortbay.log - pathFilters=[(F=netflix.adminresources.LoggingFilter-698498109,[/*],[],0), (F=netflix.adminresources.RedirectFilter,[/*],[],0), (F=netflix.adminresources.AdminResourcesFilter,[/*],[],0)]
+11:33:15.775 [main] DEBUG org.mortbay.log - servletFilterMap=null
+11:33:15.775 [main] DEBUG org.mortbay.log - servletPathMap=null
+11:33:15.775 [main] DEBUG org.mortbay.log - servletNameMap=null
+11:33:15.775 [main] DEBUG org.mortbay.log - filterNameMap={netflix.adminresources.LoggingFilter-698498109=netflix.adminresources.LoggingFilter-698498109, netflix.adminresources.AdminResourcesFilter=netflix.adminresources.AdminResourcesFilter, netflix.adminresources.RedirectFilter=netflix.adminresources.RedirectFilter}
+11:33:15.776 [main] DEBUG org.mortbay.log - pathFilters=[(F=netflix.adminresources.LoggingFilter-698498109,[/*],[],0), (F=netflix.adminresources.RedirectFilter,[/*],[],0), (F=netflix.adminresources.AdminResourcesFilter,[/*],[],0)]
+11:33:15.776 [main] DEBUG org.mortbay.log - servletFilterMap=null
+11:33:15.777 [main] DEBUG org.mortbay.log - servletPathMap={/*=org.mortbay.jetty.servlet.DefaultServlet-1265287441}
+11:33:15.782 [main] DEBUG org.mortbay.log - servletNameMap={org.mortbay.jetty.servlet.DefaultServlet-1265287441=org.mortbay.jetty.servlet.DefaultServlet-1265287441}
+11:33:15.783 [main] DEBUG org.mortbay.log - filterNameMap={netflix.adminresources.RedirectFilter=netflix.adminresources.RedirectFilter}
+11:33:15.783 [main] DEBUG org.mortbay.log - pathFilters=[(F=netflix.adminresources.RedirectFilter,[/*],[],0)]
+11:33:15.783 [main] DEBUG org.mortbay.log - servletFilterMap=null
+11:33:15.783 [main] DEBUG org.mortbay.log - servletPathMap=null
+11:33:15.783 [main] DEBUG org.mortbay.log - servletNameMap=null
+11:33:15.783 [main] DEBUG org.mortbay.log - filterNameMap={netflix.adminresources.AdminResourcesFilter=netflix.adminresources.AdminResourcesFilter, netflix.adminresources.RedirectFilter=netflix.adminresources.RedirectFilter}
+11:33:15.783 [main] DEBUG org.mortbay.log - pathFilters=[(F=netflix.adminresources.RedirectFilter,[/*],[],0), (F=netflix.adminresources.AdminResourcesFilter,[/*],[],0)]
+11:33:15.783 [main] DEBUG org.mortbay.log - servletFilterMap=null
+11:33:15.783 [main] DEBUG org.mortbay.log - servletPathMap=null
+11:33:15.783 [main] DEBUG org.mortbay.log - servletNameMap=null
+11:33:15.783 [main] DEBUG org.mortbay.log - filterNameMap={netflix.adminresources.AdminResourcesFilter=netflix.adminresources.AdminResourcesFilter, netflix.adminresources.RedirectFilter=netflix.adminresources.RedirectFilter}
+11:33:15.783 [main] DEBUG org.mortbay.log - pathFilters=[(F=netflix.adminresources.RedirectFilter,[/*],[],0), (F=netflix.adminresources.AdminResourcesFilter,[/*],[],0)]
+11:33:15.783 [main] DEBUG org.mortbay.log - servletFilterMap=null
+11:33:15.783 [main] DEBUG org.mortbay.log - servletPathMap={/*=org.mortbay.jetty.servlet.DefaultServlet-1877240674}
+11:33:15.783 [main] DEBUG org.mortbay.log - servletNameMap={org.mortbay.jetty.servlet.DefaultServlet-1877240674=org.mortbay.jetty.servlet.DefaultServlet-1877240674}
+11:33:15.797 [main] DEBUG org.mortbay.log - Container Server@381cad29 + org.mortbay.thread.QueuedThreadPool@17ca8b92 as threadpool
+11:33:15.798 [main] DEBUG org.mortbay.log - Container Server@381cad29 + HandlerCollection@1ec7d8b3 as handler
+11:33:15.798 [main] DEBUG org.mortbay.log - Container ServletHandler@3b0ca5e1 + netflix.adminresources.LoggingFilter-698498109 as filter
+11:33:15.798 [main] DEBUG org.mortbay.log - Container ServletHandler@3b0ca5e1 + netflix.adminresources.RedirectFilter as filter
+11:33:15.798 [main] DEBUG org.mortbay.log - Container ServletHandler@3b0ca5e1 + netflix.adminresources.AdminResourcesFilter as filter
+11:33:15.803 [main] DEBUG org.mortbay.log - Container ServletHandler@3b0ca5e1 + (F=netflix.adminresources.LoggingFilter-698498109,[/*],[],0) as filterMapping
+11:33:15.804 [main] DEBUG org.mortbay.log - Container ServletHandler@3b0ca5e1 + (F=netflix.adminresources.RedirectFilter,[/*],[],0) as filterMapping
+11:33:15.804 [main] DEBUG org.mortbay.log - Container ServletHandler@3b0ca5e1 + (F=netflix.adminresources.AdminResourcesFilter,[/*],[],0) as filterMapping
+11:33:15.804 [main] DEBUG org.mortbay.log - Container ServletHandler@3b0ca5e1 + org.mortbay.jetty.servlet.DefaultServlet-1265287441 as servlet
+11:33:15.804 [main] DEBUG org.mortbay.log - Container ServletHandler@3b0ca5e1 + (S=org.mortbay.jetty.servlet.DefaultServlet-1265287441,[/*]) as servletMapping
+11:33:15.805 [main] DEBUG org.mortbay.log - Container SessionHandler@5bb3131b + ServletHandler@3b0ca5e1 as handler
+11:33:15.805 [main] DEBUG org.mortbay.log - Container SessionHandler@5bb3131b + org.mortbay.jetty.servlet.HashSessionManager@54dcbb9f as sessionManager
+11:33:15.805 [main] DEBUG org.mortbay.log - Container org.mortbay.jetty.servlet.Context@74fef3f7{/admin,null} + SessionHandler@5bb3131b as handler
+11:33:15.805 [main] DEBUG org.mortbay.log - Container ServletHandler@2a037324 + netflix.adminresources.RedirectFilter as filter
+11:33:15.805 [main] DEBUG org.mortbay.log - Container ServletHandler@2a037324 + netflix.adminresources.AdminResourcesFilter as filter
+11:33:15.805 [main] DEBUG org.mortbay.log - Container ServletHandler@2a037324 + (F=netflix.adminresources.RedirectFilter,[/*],[],0) as filterMapping
+11:33:15.805 [main] DEBUG org.mortbay.log - Container ServletHandler@2a037324 + (F=netflix.adminresources.AdminResourcesFilter,[/*],[],0) as filterMapping
+11:33:15.805 [main] DEBUG org.mortbay.log - Container ServletHandler@2a037324 + org.mortbay.jetty.servlet.DefaultServlet-1877240674 as servlet
+11:33:15.805 [main] DEBUG org.mortbay.log - Container ServletHandler@2a037324 + (S=org.mortbay.jetty.servlet.DefaultServlet-1877240674,[/*]) as servletMapping
+11:33:15.805 [main] DEBUG org.mortbay.log - Container org.mortbay.jetty.servlet.Context@69eb86b4{/webadmin,null} + ServletHandler@2a037324 as handler
+11:33:15.805 [main] DEBUG org.mortbay.log - Container ServletHandler@585ac855 + netflix.adminresources.RedirectFilter as filter
+11:33:15.805 [main] DEBUG org.mortbay.log - Container ServletHandler@585ac855 + (F=netflix.adminresources.RedirectFilter,[/*],[],0) as filterMapping
+11:33:15.805 [main] DEBUG org.mortbay.log - Container ServletHandler@585ac855 + org.mortbay.jetty.servlet.DefaultServlet-703627308 as servlet
+11:33:15.805 [main] DEBUG org.mortbay.log - Container ServletHandler@585ac855 + (S=org.mortbay.jetty.servlet.DefaultServlet-703627308,[/*]) as servletMapping
+11:33:15.805 [main] DEBUG org.mortbay.log - Container org.mortbay.jetty.servlet.Context@5bb8f9e2{/,null} + ServletHandler@585ac855 as handler
+11:33:15.805 [main] DEBUG org.mortbay.log - Container HandlerCollection@1ec7d8b3 + org.mortbay.jetty.servlet.Context@74fef3f7{/admin,null} as handler
+11:33:15.805 [main] DEBUG org.mortbay.log - Container HandlerCollection@1ec7d8b3 + org.mortbay.jetty.servlet.Context@69eb86b4{/webadmin,null} as handler
+11:33:15.805 [main] DEBUG org.mortbay.log - Container HandlerCollection@1ec7d8b3 + org.mortbay.jetty.servlet.Context@5bb8f9e2{/,null} as handler
+11:33:15.805 [main] INFO  org.mortbay.log - jetty-6.1.26
+11:33:15.855 [main] DEBUG org.mortbay.log - started org.mortbay.thread.QueuedThreadPool@17ca8b92
+11:33:15.894 [main] DEBUG org.mortbay.log - Container org.mortbay.jetty.servlet.Context@74fef3f7{/admin,null} + ErrorHandler@201aa8c1 as errorHandler
+11:33:15.898 [main] DEBUG org.mortbay.log - Container Server@381cad29 + org.mortbay.jetty.servlet.HashSessionIdManager@3a095ec0 as sessionIdManager
+11:33:15.899 [main] DEBUG org.mortbay.log - Init SecureRandom.
+11:33:15.904 [main] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.HashSessionIdManager@3a095ec0
+11:33:15.918 [main] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.HashSessionManager@54dcbb9f
+11:33:15.919 [main] DEBUG org.mortbay.log - filterNameMap={netflix.adminresources.LoggingFilter-698498109=netflix.adminresources.LoggingFilter-698498109, netflix.adminresources.AdminResourcesFilter=netflix.adminresources.AdminResourcesFilter, netflix.adminresources.RedirectFilter=netflix.adminresources.RedirectFilter}
+11:33:15.919 [main] DEBUG org.mortbay.log - pathFilters=[(F=netflix.adminresources.LoggingFilter-698498109,[/*],[],0), (F=netflix.adminresources.RedirectFilter,[/*],[],0), (F=netflix.adminresources.AdminResourcesFilter,[/*],[],0)]
+11:33:15.919 [main] DEBUG org.mortbay.log - servletFilterMap=null
+11:33:15.919 [main] DEBUG org.mortbay.log - servletPathMap={/*=org.mortbay.jetty.servlet.DefaultServlet-1265287441}
+11:33:15.919 [main] DEBUG org.mortbay.log - servletNameMap={org.mortbay.jetty.servlet.DefaultServlet-1265287441=org.mortbay.jetty.servlet.DefaultServlet-1265287441}
+11:33:15.919 [main] DEBUG org.mortbay.log - starting ServletHandler@3b0ca5e1
+11:33:15.919 [main] DEBUG org.mortbay.log - started ServletHandler@3b0ca5e1
+11:33:15.919 [main] DEBUG org.mortbay.log - starting SessionHandler@5bb3131b
+11:33:15.919 [main] DEBUG org.mortbay.log - started SessionHandler@5bb3131b
+11:33:15.919 [main] DEBUG org.mortbay.log - starting org.mortbay.jetty.servlet.Context@74fef3f7{/admin,null}
+11:33:15.919 [main] DEBUG org.mortbay.log - starting ErrorHandler@201aa8c1
+11:33:15.919 [main] DEBUG org.mortbay.log - started ErrorHandler@201aa8c1
+11:33:15.920 [main] DEBUG org.mortbay.log - started netflix.adminresources.LoggingFilter-698498109
+11:33:15.920 [main] DEBUG org.mortbay.log - started netflix.adminresources.RedirectFilter
+11:33:16.290 [main] DEBUG c.n.g.lifecycle.LifecycleManager - Starting netflix.admin.AdminExplorerManager
+11:33:16.290 [main] DEBUG c.n.g.lifecycle.LifecycleManager - 	initialize()
+11:33:16.308 [main] INFO  c.n.explorers.AbstractExplorerModule - Initialize baseserver
+11:33:16.312 [main] INFO  c.n.explorers.AbstractExplorerModule - AbstractExplorerModule [name=baseserver, title=Admin Resources, description=Admin web resources, layoutName=bootstrap, isSecure=false, rootMenu=null, rolesAllowed=[]]
+11:33:16.418 [main] DEBUG c.n.g.lifecycle.LifecycleManager - Starting netflix.admin.AdminFreemarkerTemplateProvider
+11:33:16.418 [main] DEBUG c.n.g.lifecycle.LifecycleManager - 	commonConstruct()
+11:33:17.026 [main] DEBUG org.mortbay.log - started netflix.adminresources.AdminResourcesFilter
+11:33:17.037 [main] DEBUG org.mortbay.log - Checking Resource aliases
+11:33:17.041 [main] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.DefaultServlet$NIOResourceCache@681e144
+11:33:17.041 [main] DEBUG org.mortbay.log - resource base = null
+11:33:17.042 [main] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.DefaultServlet-1265287441
+11:33:17.042 [main] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.Context@74fef3f7{/admin,null}
+11:33:17.042 [main] DEBUG org.mortbay.log - Container org.mortbay.jetty.servlet.Context@69eb86b4{/webadmin,null} + ErrorHandler@2875b016 as errorHandler
+11:33:17.042 [main] DEBUG org.mortbay.log - filterNameMap={netflix.adminresources.AdminResourcesFilter=netflix.adminresources.AdminResourcesFilter, netflix.adminresources.RedirectFilter=netflix.adminresources.RedirectFilter}
+11:33:17.042 [main] DEBUG org.mortbay.log - pathFilters=[(F=netflix.adminresources.RedirectFilter,[/*],[],0), (F=netflix.adminresources.AdminResourcesFilter,[/*],[],0)]
+11:33:17.042 [main] DEBUG org.mortbay.log - servletFilterMap=null
+11:33:17.043 [main] DEBUG org.mortbay.log - servletPathMap={/*=org.mortbay.jetty.servlet.DefaultServlet-1877240674}
+11:33:17.045 [main] DEBUG org.mortbay.log - servletNameMap={org.mortbay.jetty.servlet.DefaultServlet-1877240674=org.mortbay.jetty.servlet.DefaultServlet-1877240674}
+11:33:17.058 [main] DEBUG org.mortbay.log - starting ServletHandler@2a037324
+11:33:17.059 [main] DEBUG org.mortbay.log - started ServletHandler@2a037324
+11:33:17.059 [main] DEBUG org.mortbay.log - starting org.mortbay.jetty.servlet.Context@69eb86b4{/webadmin,null}
+11:33:17.059 [main] DEBUG org.mortbay.log - starting ErrorHandler@2875b016
+11:33:17.059 [main] DEBUG org.mortbay.log - started ErrorHandler@2875b016
+11:33:17.059 [main] DEBUG org.mortbay.log - started netflix.adminresources.RedirectFilter
+11:33:17.411 [main] INFO  c.n.e.p.WebApplicationExceptionMapper - GenericExceptionMapper Created
+11:33:17.535 [main] DEBUG c.n.g.lifecycle.LifecycleManager - Starting netflix.admin.AdminFreemarkerTemplateProvider
+11:33:17.537 [main] DEBUG c.n.g.lifecycle.LifecycleManager - 	commonConstruct()
+11:33:17.937 [main] DEBUG org.mortbay.log - started netflix.adminresources.AdminResourcesFilter
+11:33:17.940 [main] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.DefaultServlet$NIOResourceCache@6aba5d30
+11:33:17.941 [main] DEBUG org.mortbay.log - resource base = null
+11:33:17.941 [main] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.DefaultServlet-1877240674
+11:33:17.941 [main] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.Context@69eb86b4{/webadmin,null}
+11:33:17.942 [main] DEBUG org.mortbay.log - Container org.mortbay.jetty.servlet.Context@5bb8f9e2{/,null} + ErrorHandler@61d34b4 as errorHandler
+11:33:17.942 [main] DEBUG org.mortbay.log - filterNameMap={netflix.adminresources.RedirectFilter=netflix.adminresources.RedirectFilter}
+11:33:17.942 [main] DEBUG org.mortbay.log - pathFilters=[(F=netflix.adminresources.RedirectFilter,[/*],[],0)]
+11:33:17.942 [main] DEBUG org.mortbay.log - servletFilterMap=null
+11:33:17.943 [main] DEBUG org.mortbay.log - servletPathMap={/*=org.mortbay.jetty.servlet.DefaultServlet-703627308}
+11:33:17.943 [main] DEBUG org.mortbay.log - servletNameMap={org.mortbay.jetty.servlet.DefaultServlet-703627308=org.mortbay.jetty.servlet.DefaultServlet-703627308}
+11:33:17.943 [main] DEBUG org.mortbay.log - starting ServletHandler@585ac855
+11:33:17.943 [main] DEBUG org.mortbay.log - started ServletHandler@585ac855
+11:33:17.946 [main] DEBUG org.mortbay.log - starting org.mortbay.jetty.servlet.Context@5bb8f9e2{/,null}
+11:33:17.948 [main] DEBUG org.mortbay.log - starting ErrorHandler@61d34b4
+11:33:17.949 [main] DEBUG org.mortbay.log - started ErrorHandler@61d34b4
+11:33:17.950 [main] DEBUG org.mortbay.log - started netflix.adminresources.RedirectFilter
+11:33:17.952 [main] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.DefaultServlet$NIOResourceCache@588307f7
+11:33:17.955 [main] DEBUG org.mortbay.log - resource base = null
+11:33:17.958 [main] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.DefaultServlet-703627308
+11:33:17.959 [main] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.Context@5bb8f9e2{/,null}
+11:33:17.961 [main] DEBUG org.mortbay.log - starting HandlerCollection@1ec7d8b3
+11:33:17.962 [main] DEBUG org.mortbay.log - started HandlerCollection@1ec7d8b3
+11:33:17.964 [main] DEBUG org.mortbay.log - starting Server@381cad29
+11:33:17.980 [main] INFO  org.mortbay.log - Started SocketConnector@0.0.0.0:8090
+11:33:17.982 [main] DEBUG org.mortbay.log - started SocketConnector@0.0.0.0:8090
+11:33:17.982 [main] DEBUG org.mortbay.log - started Server@381cad29
+11:33:18.049 [main] INFO  c.n.config.util.ConfigurationUtils - Loaded properties file file:/home/ilegra0088/%c3%81rea%20de%20Trabalho/Cloud-Native/jts.cloud-native.2018.2/felipe-grings/Tema-8-PowMicroservices/sum-microservice/build/resources/main/eureka-client.properties
+11:34:29.075 [rxnetty-nio-eventloop-3-1] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+11:34:29.093 [rxnetty-nio-eventloop-3-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xa167239e, /127.0.0.1:38780 => /127.0.0.1:6004] ACTIVE
+11:34:29.105 [rxnetty-nio-eventloop-3-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xa167239e, /127.0.0.1:38780 => /127.0.0.1:6004] USER_EVENT: io.reactivex.netty.channel.NewRxConnectionEvent@2804e42b
+11:34:29.114 [rxnetty-nio-eventloop-3-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxCapacity.default: 262144
+11:34:29.121 [rxnetty-nio-eventloop-3-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xa167239e, /127.0.0.1:38780 => /127.0.0.1:6004] RECEIVED(90B)
+         +-------------------------------------------------+
+         |  0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f |
++--------+-------------------------------------------------+----------------+
+|00000000| 47 45 54 20 2f 6d 61 74 68 2f 73 75 6d 2f 36 2f |GET /math/sum/6/|
+|00000010| 36 20 48 54 54 50 2f 31 2e 31 0d 0a 48 6f 73 74 |6 HTTP/1.1..Host|
+|00000020| 3a 20 31 32 37 2e 30 2e 30 2e 31 3a 36 30 30 34 |: 127.0.0.1:6004|
+|00000030| 0d 0a 55 73 65 72 2d 41 67 65 6e 74 3a 20 63 75 |..User-Agent: cu|
+|00000040| 72 6c 2f 37 2e 35 38 2e 30 0d 0a 41 63 63 65 70 |rl/7.58.0..Accep|
+|00000050| 74 3a 20 2a 2f 2a 0d 0a 0d 0a                   |t: */*....      |
++--------+-------------------------------------------------+----------------+
+11:34:29.138 [rx-request-processor-5-1] DEBUG n.k.t.h.ServletStyleUriConstraintKey - Prefix match result for servlet style uri constraint for uri path /math/sum/6/6/ and constraint / : true
+11:34:29.138 [rx-request-processor-5-1] INFO  c.g.d.s.j.n.k.LoggingInterceptor - Logging interceptor with id 1 invoked for direction IN.
+11:34:29.139 [rx-request-processor-5-1] DEBUG n.k.t.h.ServletStyleUriConstraintKey - Exact match result for servlet style uri constraint for uri path /math/sum/6/6/ and constraint /math : false
+11:34:29.139 [rx-request-processor-5-1] DEBUG n.k.t.h.ServletStyleUriConstraintKey - Exact match result for servlet style uri constraint for uri path /math/sum/6/6/ and constraint /math/ : false
+11:34:29.151 [rx-request-processor-5-1] DEBUG n.k.t.util.HttpContentInputStream - Processing complete
+11:34:29.152 [rxnetty-nio-eventloop-3-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xa167239e, /127.0.0.1:38780 => /127.0.0.1:6004] FLUSH
+11:34:29.165 [rxnetty-nio-eventloop-3-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xa167239e, /127.0.0.1:38780 => /127.0.0.1:6004] WRITE(73B)
+         +-------------------------------------------------+
+         |  0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f |
++--------+-------------------------------------------------+----------------+
+|00000000| 48 54 54 50 2f 31 2e 31 20 32 30 30 20 4f 4b 0d |HTTP/1.1 200 OK.|
+|00000010| 0a 43 6f 6e 74 65 6e 74 2d 54 79 70 65 3a 20 74 |.Content-Type: t|
+|00000020| 65 78 74 2f 70 6c 61 69 6e 0d 0a 54 72 61 6e 73 |ext/plain..Trans|
+|00000030| 66 65 72 2d 45 6e 63 6f 64 69 6e 67 3a 20 63 68 |fer-Encoding: ch|
+|00000040| 75 6e 6b 65 64 0d 0a 0d 0a                      |unked....       |
++--------+-------------------------------------------------+----------------+
+11:34:29.167 [rxnetty-nio-eventloop-3-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xa167239e, /127.0.0.1:38780 => /127.0.0.1:6004] WRITE(3B)
+         +-------------------------------------------------+
+         |  0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f |
++--------+-------------------------------------------------+----------------+
+|00000000| 34 0d 0a                                        |4..             |
++--------+-------------------------------------------------+----------------+
+11:34:29.167 [rxnetty-nio-eventloop-3-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xa167239e, /127.0.0.1:38780 => /127.0.0.1:6004] WRITE(4B)
+         +-------------------------------------------------+
+         |  0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f |
++--------+-------------------------------------------------+----------------+
+|00000000| 31 32 2e 30                                     |12.0            |
++--------+-------------------------------------------------+----------------+
+11:34:29.167 [rxnetty-nio-eventloop-3-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xa167239e, /127.0.0.1:38780 => /127.0.0.1:6004] WRITE(2B)
+         +-------------------------------------------------+
+         |  0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f |
++--------+-------------------------------------------------+----------------+
+|00000000| 0d 0a                                           |..              |
++--------+-------------------------------------------------+----------------+
+11:34:29.167 [rxnetty-nio-eventloop-3-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xa167239e, /127.0.0.1:38780 => /127.0.0.1:6004] FLUSH
+11:34:29.169 [RxCachedThreadScheduler-1] INFO  c.g.d.s.j.n.k.LoggingInterceptor - Logging interceptor with id 2 invoked for direction OUT.
+11:34:29.170 [rxnetty-nio-eventloop-3-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xa167239e, /127.0.0.1:38780 => /127.0.0.1:6004] WRITE(5B)
+         +-------------------------------------------------+
+         |  0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f |
++--------+-------------------------------------------------+----------------+
+|00000000| 30 0d 0a 0d 0a                                  |0....           |
++--------+-------------------------------------------------+----------------+
+11:34:29.170 [rxnetty-nio-eventloop-3-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xa167239e, /127.0.0.1:38780 => /127.0.0.1:6004] FLUSH
+11:34:29.170 [rxnetty-nio-eventloop-3-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xa167239e, /127.0.0.1:38780 => /127.0.0.1:6004] FLUSH
+11:34:29.172 [rxnetty-nio-eventloop-3-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xa167239e, /127.0.0.1:38780 :> /127.0.0.1:6004] FLUSH
+11:34:29.172 [rxnetty-nio-eventloop-3-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xa167239e, /127.0.0.1:38780 :> /127.0.0.1:6004] INACTIVE
+11:34:29.172 [rxnetty-nio-eventloop-3-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xa167239e, /127.0.0.1:38780 :> /127.0.0.1:6004] UNREGISTERED
+11:34:29.179 [rxnetty-nio-eventloop-3-1] DEBUG i.n.handler.logging.LoggingHandler - [id: 0xa167239e, /127.0.0.1:38780 :> /127.0.0.1:6004] CLOSE()
+Daemon is stopping immediately stop command received

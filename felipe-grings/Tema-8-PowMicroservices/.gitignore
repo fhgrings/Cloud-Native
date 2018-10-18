@@ -1,0 +1,27 @@
+.idea/*
+out/*
+*/build/*
+
+*.iml
+*.xml
+
+.idea
+idea/*
+*.class
+
+.gradle
+gradle/*
+
+*.zip
+*.tar
+
+
+# ======= NetFlixOss-pocs =========
+*.bat
+*.project
+*.classpath
+
+
+*org.eclipse.jdt.core.prefs
+*.jar
+*.sh

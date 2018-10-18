@@ -1,0 +1,83 @@
+Starting a Gradle Daemon, 48 stopped Daemons could not be reused, use --status for details
+:calc-microservice:compileJava UP-TO-DATE
+:calc-microservice:processResources UP-TO-DATE
+:calc-microservice:classes UP-TO-DATE
+:calc-microservice:run
+11:33:09.182 [main] WARN  c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+11:33:09.185 [main] INFO  c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+Using main class: com.github.diegopacheco.sandbox.java.netflixoss.karyon.msa.KaryonJerseyServerApp
+11:33:09.757 [main] INFO  c.n.g.guice.LifecycleInjector - Found bootstrap annotation netflix.karyon.archaius.ArchaiusBootstrap
+11:33:09.759 [main] INFO  c.n.g.guice.LifecycleInjector - Adding BootstrapModule class netflix.karyon.archaius.ArchaiusBootstrapModule
+11:33:09.761 [main] INFO  c.n.g.guice.LifecycleInjector - Found bootstrap annotation netflix.karyon.KaryonBootstrap
+11:33:09.761 [main] INFO  c.n.g.guice.LifecycleInjector - Adding BootstrapModule class netflix.karyon.KaryonBootstrapModule
+11:33:09.762 [main] INFO  c.n.g.guice.LifecycleInjector - Found bootstrap annotation com.netflix.governator.annotations.Modules
+11:33:09.764 [main] INFO  c.n.g.guice.LifecycleInjector - Adding BootstrapModule class com.netflix.governator.guice.bootstrap.ModulesBootstrap
+11:33:09.846 [main] DEBUG c.n.g.lifecycle.ClasspathScanner - Starting classpath scanning...
+11:33:09.846 [main] WARN  c.n.g.lifecycle.ClasspathScanner - No base packages specified - no classpath scanning will be done
+11:33:09.846 [main] DEBUG c.n.g.lifecycle.ClasspathScanner - Classpath scanning done
+11:33:09.859 [main] INFO  c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@1623b78d
+11:33:10.120 [main] INFO  n.k.archaius.DefaultPropertiesLoader - Loading application properties with app id: calc-microservice and environment: dev
+11:33:10.246 [main] INFO  c.n.config.util.ConfigurationUtils - Loaded properties file file:/home/ilegra0088/%c3%81rea%20de%20Trabalho/Cloud-Native/jts.cloud-native.2018.2/felipe-grings/Tema-8-PowMicroservices/calc-microservice/build/resources/main/calc-microservice.properties
+11:33:10.308 [main] INFO  org.hibernate.validator.util.Version - Hibernate Validator 4.1.0.Final
+11:33:10.313 [main] DEBUG o.h.v.e.r.DefaultTraversableResolver - Cannot find javax.persistence.PersistenceUtil on classpath. All properties will per default be traversable.
+11:33:10.316 [main] DEBUG o.h.v.xml.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only
+11:33:10.331 [main] INFO  c.n.g.guice.ModuleListBuilder - Getting instance of : com.github.diegopacheco.sandbox.java.netflixoss.karyon.msa.ShutdownModule
+11:33:10.332 [main] INFO  c.n.g.guice.ModuleListBuilder - Adding module 'com.github.diegopacheco.sandbox.java.netflixoss.karyon.msa.ShutdownModule
+11:33:10.333 [main] INFO  c.n.g.guice.ModuleListBuilder - Getting instance of : netflix.adminresources.resources.KaryonWebAdminModule
+11:33:10.334 [main] INFO  c.n.g.guice.ModuleListBuilder - Adding module 'netflix.adminresources.resources.KaryonWebAdminModule
+11:33:10.335 [main] INFO  c.n.g.guice.ModuleListBuilder - Getting instance of : netflix.karyon.servo.KaryonServoModule
+11:33:10.336 [main] INFO  c.n.g.guice.ModuleListBuilder - Adding module 'netflix.karyon.servo.KaryonServoModule
+11:33:10.337 [main] INFO  c.n.g.guice.ModuleListBuilder - Getting instance of : netflix.karyon.eureka.KaryonEurekaModule
+11:33:10.339 [main] INFO  c.n.g.guice.ModuleListBuilder - Adding module 'netflix.karyon.eureka.KaryonEurekaModule
+11:33:10.340 [main] INFO  c.n.g.guice.ModuleListBuilder - Getting instance of : com.github.diegopacheco.sandbox.java.netflixoss.karyon.msa.GuiceBindingsModule
+11:33:10.343 [main] INFO  c.n.g.guice.ModuleListBuilder - Adding module 'com.github.diegopacheco.sandbox.java.netflixoss.karyon.msa.GuiceBindingsModule
+11:33:10.344 [main] INFO  c.n.g.guice.ModuleListBuilder - Getting instance of : com.github.diegopacheco.sandbox.java.netflixoss.karyon.msa.KaryonJerseyServerApp$KaryonJerseyModuleImpl
+11:33:10.446 [main] INFO  c.n.g.guice.ModuleListBuilder - Adding module 'com.github.diegopacheco.sandbox.java.netflixoss.karyon.msa.KaryonJerseyServerApp$KaryonJerseyModuleImpl
+11:33:10.872 [main] DEBUG i.n.u.i.l.InternalLoggerFactory - Using SLF4J as the default logging framework
+11:33:10.939 [main] DEBUG i.n.c.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 8
+11:33:11.077 [main] DEBUG i.n.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+11:33:11.077 [main] DEBUG i.n.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+11:33:11.077 [main] DEBUG i.n.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+11:33:11.078 [main] DEBUG i.n.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+11:33:11.078 [main] DEBUG i.n.util.internal.PlatformDependent - Java version: 8
+11:33:11.078 [main] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+11:33:11.078 [main] DEBUG i.n.util.internal.PlatformDependent - sun.misc.Unsafe: available
+11:33:11.078 [main] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+11:33:11.371 [main] DEBUG i.n.util.internal.PlatformDependent - Javassist: available
+11:33:11.371 [main] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+11:33:11.371 [main] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+11:33:11.371 [main] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+11:33:11.372 [main] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+11:33:11.372 [main] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+11:33:11.530 [main] DEBUG i.n.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numHeapArenas: 8
+11:33:11.530 [main] DEBUG i.n.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numDirectArenas: 8
+11:33:11.530 [main] DEBUG i.n.buffer.PooledByteBufAllocator - -Dio.netty.allocator.pageSize: 8192
+11:33:11.530 [main] DEBUG i.n.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxOrder: 11
+11:33:11.530 [main] DEBUG i.n.buffer.PooledByteBufAllocator - -Dio.netty.allocator.chunkSize: 16777216
+11:33:11.530 [main] DEBUG i.n.buffer.PooledByteBufAllocator - -Dio.netty.allocator.tinyCacheSize: 512
+11:33:11.530 [main] DEBUG i.n.buffer.PooledByteBufAllocator - -Dio.netty.allocator.smallCacheSize: 256
+11:33:11.530 [main] DEBUG i.n.buffer.PooledByteBufAllocator - -Dio.netty.allocator.normalCacheSize: 64
+11:33:11.530 [main] DEBUG i.n.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+11:33:11.530 [main] DEBUG i.n.buffer.PooledByteBufAllocator - -Dio.netty.allocator.cacheTrimInterval: 8192
+11:33:12.473 [main] DEBUG c.n.g.lifecycle.LifecycleManager - Starting com.github.diegopacheco.sandbox.java.netflixoss.karyon.msa.JerseyHystrixBasedRouter
+11:33:12.475 [main] DEBUG c.n.g.lifecycle.LifecycleManager - 	init()
+11:33:12.477 [main] DEBUG c.n.g.lifecycle.LifecycleManager - 	start()
+11:33:12.582 [main] INFO  n.k.j.b.PropertiesBasedResourceConfig - Packages to scan by jersey [com.github.diegopacheco.sandbox.java.netflixoss.karyon.rest]
+11:33:14.797 [main] INFO  n.k.j.blocking.JerseyBasedRouter - Started Jersey based request router.
+11:33:15.204 [main] DEBUG io.netty.channel.DefaultChannelId - -Dio.netty.processId: 20044 (auto-detected)
+11:33:15.211 [main] DEBUG io.netty.channel.DefaultChannelId - -Dio.netty.machineId: 74:e6:e2:ff:fe:d2:c0:f1 (auto-detected)
+11:33:15.212 [main] DEBUG i.n.util.internal.ThreadLocalRandom - -Dio.netty.initialSeedUniquifier: 0x4f1c78042f206da7 (took 5 ms)
+11:33:15.284 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: pooled
+11:33:15.290 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 65536
+11:33:15.296 [main] DEBUG io.netty.util.NetUtil - Loopback interface: lo (lo, 127.0.0.1)
+11:33:15.297 [main] DEBUG io.netty.util.NetUtil - /proc/sys/net/core/somaxconn: 128
+11:33:15.363 [main] INFO  i.r.netty.server.AbstractServer - Rx server started at port: 6005
+11:33:15.363 [main] INFO  n.k.t.http.HttpRxServerProvider - Starting server KaryonHystrixJerseyModule on port 6005...
+11:33:15.364 [main] DEBUG c.n.g.lifecycle.LifecycleManager - Starting netflix.karyon.transport.http.HttpRxServerProvider
+11:33:15.403 [main] DEBUG c.n.g.lifecycle.LifecycleManager - Starting netflix.karyon.ShutdownModule$ShutdownServer
+11:33:15.403 [main] DEBUG c.n.g.lifecycle.LifecycleManager - 	start()
+:calc-microservice:run FAILED
+
+BUILD FAILED
+
+Total time: 53.558 secs
