@@ -17,7 +17,7 @@ public class Main {
 
     public static void main (String[] args){
 
-        int port = 8080;
+        final int PORT = 8080;
 
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         Calculator calculator = (Calculator) applicationContext.getBean(Calculator.class);
@@ -27,7 +27,7 @@ public class Main {
         System.setProperty("archaius.deployment.environment","dev");
 
 
-        Karyon.forRequestHandler(port,
+        Karyon.forRequestHandler(PORT,
                 new RxNettyHandler("/calculator", calculator),
                 new ArchaiusBootstrapModule("rxnetty-calculator"),
                 Karyon.toBootstrapModule(KaryonWebAdminModule.class),
