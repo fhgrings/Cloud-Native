@@ -8,6 +8,8 @@ import org.apache.commons.lang.StringUtils;
 
 import com.github.rafaritter44.cloud_native.rxnetty.calculator.Calculator;
 import com.github.rafaritter44.cloud_native.rxnetty.calculator.Operation;
+import com.github.rafaritter44.cloud_native.rxnetty.exception.DivisionByZeroException;
+import com.github.rafaritter44.cloud_native.rxnetty.exception.NoSuchOperationException;
 import com.google.gson.Gson;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -33,7 +35,7 @@ public class RxNettyHandler implements RequestHandler<ByteBuf, ByteBuf> {
 		injector = Guice.createInjector();
 		calculator = injector.getInstance(Calculator.class);
 	}
-	
+
 	@Override
 	public Observable<Void> handle(HttpServerRequest<ByteBuf> request, HttpServerResponse<ByteBuf> response) {
 		String uri = request.getUri();
@@ -48,28 +50,28 @@ public class RxNettyHandler implements RequestHandler<ByteBuf, ByteBuf> {
 			return response.close();
 		}
 	}
-	
+
 	private boolean validOperation(String uri) {
 		return Stream.of("/Addition/", "/Subtraction/", "/Multiplication/", "/Division/", "/Exponentiation/")
 				.anyMatch(uri::startsWith);
 	}
-	
+
 	private boolean validOperands(String[] operands) {
 		return operands.length == 2 && Stream.of(operands).allMatch(StringUtils::isNumeric);
 	}
-	
+
 	private String historyToJson() {
 		List<Object> history = new ArrayList<>();
 		for (Operation operation : calculator.getHistory()) {
 			try {
 				history.add(operation.calculate());
-			} catch (ArithmeticException exception) {
+			} catch (DivisionByZeroException exception) {
 				history.add(exception.getMessage());
 			}
 		}
 		return new Gson().toJson(history);
 	}
-	
+
 	private Observable<Void> processOperation(String uri, HttpServerResponse<ByteBuf> response) {
 		int prefixLength = uri.indexOf("/", 1);
 		String[] operands = uri.substring(prefixLength + 1).split("/");
@@ -78,7 +80,7 @@ public class RxNettyHandler implements RequestHandler<ByteBuf, ByteBuf> {
 			try {
 				return response.writeStringAndFlush("{\"Result\":" + calculator.calculate(operationName,
 						Double.parseDouble(operands[0]), Double.parseDouble(operands[1])) + "}");
-			} catch (ArithmeticException | ReflectiveOperationException exception) {
+			} catch (NoSuchOperationException | DivisionByZeroException exception) {
 				return response.writeStringAndFlush("{\"Error\":\"" + exception.getMessage() + "\"}");
 			}
 		} else {

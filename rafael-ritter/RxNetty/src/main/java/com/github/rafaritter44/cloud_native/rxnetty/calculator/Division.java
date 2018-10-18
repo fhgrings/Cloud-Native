@@ -1,5 +1,7 @@
 package com.github.rafaritter44.cloud_native.rxnetty.calculator;
 
+import com.github.rafaritter44.cloud_native.rxnetty.exception.DivisionByZeroException;
+
 public class Division implements Operation {
 
 	private double operand1;
@@ -12,7 +14,7 @@ public class Division implements Operation {
 
     public double calculate() {
         if(operand2 == 0D)
-            throw new ArithmeticException("Cannot divide by zero");
+            throw new DivisionByZeroException("Cannot divide by zero");
         return operand1 / operand2;
     }
 	
