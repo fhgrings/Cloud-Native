@@ -1,0 +1,10 @@
+FROM openjdk:8
+
+ENV PATH_JAR build/libs/TotalizerApi-0.0.1-SNAPSHOT.jar
+RUN mkdir /opt/app
+COPY "$PATH_JAR" /opt/app
+WORKDIR /opt/app
+
+EXPOSE 8081
+CMD ["java", "-jar", "TotalizerApi-0.0.1-SNAPSHOT.jar"]
+	
