@@ -1,8 +1,15 @@
-/.gradle/
-/bin/
-/build/
-/.settings/
-.classpath
+.metadata
+bin/
+
 .project
-*.log
+.classpath
+.settings/
+.loadpath
+
+*.class
+
+*.jar
+
+.gradle
+build/
 
