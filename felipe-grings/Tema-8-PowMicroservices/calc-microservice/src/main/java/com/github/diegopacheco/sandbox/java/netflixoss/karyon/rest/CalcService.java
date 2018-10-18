@@ -33,7 +33,7 @@ public class CalcService {
 		     
 		     if (" ".equals(s1)) continue;
 		     
-		     if(s1.equals("+") || s1.equals("-") || s1.equals("*") || s1.equals("/") || s1.equals("^")){
+		     if(s1.contains("+-*/^")){
 		          switch (s1){
 		                case "+":
 		                    a = new Double(stack.pop());

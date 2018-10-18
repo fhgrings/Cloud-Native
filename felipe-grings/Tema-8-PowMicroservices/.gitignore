@@ -7,14 +7,9 @@ out/*
 
 .idea
 idea/*
-*.class
 
 .gradle
 gradle/*
-
-*.zip
-*.tar
-
 
 # ======= NetFlixOss-pocs =========
 *.bat
