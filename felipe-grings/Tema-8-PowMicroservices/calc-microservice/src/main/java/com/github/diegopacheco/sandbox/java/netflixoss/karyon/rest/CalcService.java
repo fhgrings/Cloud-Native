@@ -33,7 +33,7 @@ public class CalcService {
 		     
 		     if (" ".equals(s1)) continue;
 		     
-		     if(s1.equals("+") || s1.equals("-") || s1.equals("*") || s1.equals("/")){
+		     if(s1.equals("+") || s1.equals("-") || s1.equals("*") || s1.equals("/") || s1.equals("^")){
 		          switch (s1){
 		                case "+":
 		                    a = new Double(stack.pop());
@@ -51,6 +51,12 @@ public class CalcService {
 		                    result = client.div(a, b).toBlocking().first();
 		                    break;
 		                case "*":
+		                	a = new Double(stack.pop());
+		                    b = new Double(stack.pop());
+		                    result = client.mul(a, b).toBlocking().first();
+		                    break;
+
+						case "^":
 		                	a = new Double(stack.pop());
 		                    b = new Double(stack.pop());
 		                    result = client.mul(a, b).toBlocking().first();
