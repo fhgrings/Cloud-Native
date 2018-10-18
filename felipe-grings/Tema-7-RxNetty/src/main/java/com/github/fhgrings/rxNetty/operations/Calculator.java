@@ -20,12 +20,12 @@ public class Calculator {
         listHistoryCalculator = new ArrayList<>();
     }
 
-    public Double calculate(Double value1, Double value2, String operator)throws Exception{
+    public Double calculate(Double value1, Double value2, String operator){
 
-        Operation calculatorResult = calculatorConstructor(operator,value1,value2);
-        listHistoryCalculator.add(calculatorResult);
+        Operation operation = operationBuilder(operator,value1,value2);
+        listHistoryCalculator.add(operation);
 
-        return calculatorResult.calculate();
+        return operation.calculate();
 
     }
 
@@ -39,7 +39,7 @@ public class Calculator {
 
 
 
-    public Operation calculatorConstructor(String operator,Double value1, Double value2) {
+    public Operation operationBuilder(String operator,Double value1, Double value2) {
         Class operation = mapOperations.get(operator);
 
         if (operation == null)
