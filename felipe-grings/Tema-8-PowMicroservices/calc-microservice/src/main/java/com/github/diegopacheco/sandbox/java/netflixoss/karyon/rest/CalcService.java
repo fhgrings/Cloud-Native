@@ -59,7 +59,7 @@ public class CalcService {
 						case "^":
 		                	a = new Double(stack.pop());
 		                    b = new Double(stack.pop());
-		                    result = client.mul(a, b).toBlocking().first();
+		                    result = client.pow(a, b).toBlocking().first();
 		                    break;
 		                }
 		         }else{
