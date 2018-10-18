@@ -33,42 +33,59 @@ public class RxNettyHandler implements RequestHandler<ByteBuf, ByteBuf> {
 		injector = Guice.createInjector();
 		calculator = injector.getInstance(Calculator.class);
 	}
-
+	
 	@Override
 	public Observable<Void> handle(HttpServerRequest<ByteBuf> request, HttpServerResponse<ByteBuf> response) {
 		String uri = request.getUri();
 		if (uri.startsWith(healthCheckUri)) {
 			return healthCheckEndpoint.handle(request, response);
 		} else if (uri.startsWith("/History")) {
-			List<Object> history = new ArrayList<>();
-			for (Operation operation : calculator.getHistory()) {
-				try {
-					history.add(operation.calculate());
-				} catch (ArithmeticException exception) {
-					history.add(exception.getMessage());
-				}
-			}
-			return response.writeStringAndFlush(new Gson().toJson(history));
-		} else if (Stream.of("/Addition/", "/Subtraction/", "/Multiplication/", "/Division/", "/Exponentiation/")
-				.anyMatch(uri::startsWith)) {
-			int prefixLength = uri.indexOf("/", 1);
-			String[] operands = uri.substring(prefixLength + 1).split("/");
-			if (operands.length == 2 && Stream.of(operands).allMatch(StringUtils::isNumeric)) {
-				String operationName = uri.substring(1, prefixLength);
-				try {
-					return response.writeStringAndFlush("{\"Result\":" + calculator.calculate(operationName,
-							Double.parseDouble(operands[0]), Double.parseDouble(operands[1])) + "}");
-				} catch (ArithmeticException | ReflectiveOperationException exception) {
-					return response.writeStringAndFlush("{\"Error\":\"" + exception.getMessage() + "\"}");
-				}
-			} else {
-				response.setStatus(HttpResponseStatus.BAD_REQUEST);
-				return response.writeStringAndFlush(
-						"{\"Error\":\"Please provide operands. The URI should be /{operation}/{operand1}/{operand2}\"}");
-			}
+			return response.writeStringAndFlush(historyToJson());
+		} else if (validOperation(uri)) {
+			return processOperation(uri, response);
 		} else {
 			response.setStatus(HttpResponseStatus.NOT_FOUND);
 			return response.close();
 		}
 	}
+	
+	private boolean validOperation(String uri) {
+		return Stream.of("/Addition/", "/Subtraction/", "/Multiplication/", "/Division/", "/Exponentiation/")
+				.anyMatch(uri::startsWith);
+	}
+	
+	private boolean validOperands(String[] operands) {
+		return operands.length == 2 && Stream.of(operands).allMatch(StringUtils::isNumeric);
+	}
+	
+	private String historyToJson() {
+		List<Object> history = new ArrayList<>();
+		for (Operation operation : calculator.getHistory()) {
+			try {
+				history.add(operation.calculate());
+			} catch (ArithmeticException exception) {
+				history.add(exception.getMessage());
+			}
+		}
+		return new Gson().toJson(history);
+	}
+	
+	private Observable<Void> processOperation(String uri, HttpServerResponse<ByteBuf> response) {
+		int prefixLength = uri.indexOf("/", 1);
+		String[] operands = uri.substring(prefixLength + 1).split("/");
+		if (validOperands(operands)) {
+			String operationName = uri.substring(1, prefixLength);
+			try {
+				return response.writeStringAndFlush("{\"Result\":" + calculator.calculate(operationName,
+						Double.parseDouble(operands[0]), Double.parseDouble(operands[1])) + "}");
+			} catch (ArithmeticException | ReflectiveOperationException exception) {
+				return response.writeStringAndFlush("{\"Error\":\"" + exception.getMessage() + "\"}");
+			}
+		} else {
+			response.setStatus(HttpResponseStatus.BAD_REQUEST);
+			return response.writeStringAndFlush(
+					"{\"Error\":\"Please provide operands. The URI should be /{operation}/{operand1}/{operand2}\"}");
+		}
+	}
+
 }
