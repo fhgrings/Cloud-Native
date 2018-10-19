@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.github.vinifkroth.cloudnative.tema10.exception.InvalidUsernameException;
 import com.github.vinifkroth.cloudnative.tema10.service.GitHubApiService;
 import com.github.vinifkroth.cloudnative.tema10.service.TwitterApiService;
-
 @EnableCircuitBreaker
 @RequestMapping("/api")
 @RestController

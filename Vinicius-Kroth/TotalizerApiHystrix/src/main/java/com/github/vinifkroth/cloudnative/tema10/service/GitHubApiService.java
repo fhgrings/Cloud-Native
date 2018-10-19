@@ -8,12 +8,17 @@ import org.springframework.web.client.RestTemplate;
 import com.github.vinifkroth.cloudnative.tema10.config.AppConfig;
 import com.github.vinifkroth.cloudnative.tema10.exception.InvalidUsernameException;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
+
 @Service
 public class GitHubApiService {
 	private static final String URI = "http://172.18.0.22:8081";
 	private static final ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
-	@HystrixCommand(fallbackMethod = "gitHubFallback")
+	@HystrixCommand(fallbackMethod = "gitHubFallback", commandProperties = {
+			@HystrixProperty(name = "execution.timeout.enabled", value = "true"),
+			@HystrixProperty(name = "execution.isolation.thread.interruptOnTimeout", value = "true"),
+			@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "10000") })
 	public String getUserRepositories(String username) throws InvalidUsernameException {
 		RestTemplate restTemplate = (RestTemplate) appContext.getBean("restTemplate");
 		try {

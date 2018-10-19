@@ -16,8 +16,11 @@ public class TwitterApiService {
 	private static final String uri = "http://172.18.0.23:8081";
 	private static final ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
-	@HystrixProperty(name="hystrix.command.default.execution.timeout.enabled", value= "true")
-	@HystrixCommand(fallbackMethod = "twitterFallback")
+	@HystrixCommand(fallbackMethod = "twitterFallback", commandProperties = {
+			@HystrixProperty(name = "execution.timeout.enabled", value = "true"),
+			@HystrixProperty(name = "execution.isolation.thread.interruptOnTimeout", value = "true"),
+			@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "10000")
+			})
 	public String getTweetsTotalCount(String username) throws InvalidUsernameException {
 		RestTemplate restTemplate = (RestTemplate) appContext.getBean("restTemplate");
 		try {
