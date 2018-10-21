@@ -1,6 +1,9 @@
 package com.github.diegopacheco.sandbox.java.netflixoss.karyon.rest;
 
-import javax.inject.Inject;
+import com.google.inject.Inject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.inject.Singleton;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -9,32 +12,29 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 @Singleton
 @Path("/math")
-public class MulResource {
+public class PowResource {
 
-	private static final Logger logger = LoggerFactory.getLogger(MulResource.class);
-			
-	private MulService service;
+	private static final Logger logger = LoggerFactory.getLogger(PowResource.class);
 	
+	private PowService service;
+
 	@Inject
-	public MulResource(MulService service) {
+	public PowResource(PowService service) {
 		this.service = service;
 	}
 	
 	@GET
-	@Path("mul/{a}/{b}")
+	@Path("pow/{a}/{b}")
 	@Produces(MediaType.TEXT_PLAIN)
 	public Response set(@PathParam("a") Double a,@PathParam("b") Double b) {
 		try {
-			return Response.ok( service.mul(a, b) + "" ).build();
+			return Response.ok( service.pow(a, b) + "" ).build();
 		} catch (Exception e) {
 			logger.error("Error creating json response.", e);
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
 		}
 	}
-
+	
 }
