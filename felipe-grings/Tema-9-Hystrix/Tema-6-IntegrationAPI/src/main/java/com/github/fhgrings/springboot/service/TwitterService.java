@@ -1,4 +1,4 @@
-package com.github.fhgrings.springboot.twitter;
+package com.github.fhgrings.springboot.service;
 
 import com.github.fhgrings.springboot.exception.FailedConnection;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class TotalTweets {
+public class TwitterService {
 
     private RestTemplate restTemplate = new RestTemplate();
 

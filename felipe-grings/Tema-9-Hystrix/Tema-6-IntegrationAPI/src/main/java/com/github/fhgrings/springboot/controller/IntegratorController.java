@@ -1,8 +1,8 @@
 package com.github.fhgrings.springboot.controller;
 
 
-import com.github.fhgrings.springboot.github.TotalRepos;
-import com.github.fhgrings.springboot.twitter.TotalTweets;
+import com.github.fhgrings.springboot.service.GithubService;
+import com.github.fhgrings.springboot.service.TwitterService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class IntegratorController {
-    private TotalRepos totalRepos = new TotalRepos();
-    private TotalTweets totalTweets = new TotalTweets();
+    private GithubService githubService = new GithubService();
+    private TwitterService twitterService = new TwitterService();
 
     @RequestMapping(value = "/search", params = {"user"})
     @ResponseBody
@@ -21,7 +21,7 @@ public class IntegratorController {
         stringBuffer.append("GitHub repos: ");
 
         try {
-            stringBuffer.append(totalRepos.execute(user))
+            stringBuffer.append(githubService.execute(user))
                     .append("\n");
         } catch (Exception exception) {
             stringBuffer.append(exception.getMessage())
@@ -31,7 +31,7 @@ public class IntegratorController {
         stringBuffer.append("Twitter tweets: ");
 
         try {
-            stringBuffer.append(totalTweets.execute(user))
+            stringBuffer.append(twitterService.execute(user))
                     .append("\n");
         } catch (Exception exception) {
             stringBuffer.append(exception.getMessage())

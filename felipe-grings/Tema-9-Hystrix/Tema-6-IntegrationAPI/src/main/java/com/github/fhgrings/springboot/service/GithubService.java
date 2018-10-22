@@ -1,4 +1,4 @@
-package com.github.fhgrings.springboot.github;
+package com.github.fhgrings.springboot.service;
 
 import com.github.fhgrings.springboot.exception.FailedConnection;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 
 
 @Service
-public class TotalRepos {
+public class GithubService {
 
     private RestTemplate restTemplate = new RestTemplate();
 
