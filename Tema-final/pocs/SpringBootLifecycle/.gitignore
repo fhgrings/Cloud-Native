@@ -2,6 +2,12 @@
 .metadata
 bin/
 
+## STS ###
+.apt_generated
+.factorypath
+.springBeans
+.sts4-cache
+
 ### Eclipse Patch ###
 # Eclipse Core
 .project
