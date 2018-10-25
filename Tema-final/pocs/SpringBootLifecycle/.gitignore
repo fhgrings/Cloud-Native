@@ -1,0 +1,23 @@
+### springbootLifecycle poc ###
+.metadata
+bin/
+
+### Eclipse Patch ###
+# Eclipse Core
+.project
+.classpath
+.settings/
+.loadpath
+
+### Java ###
+# Compiled class file
+*.class
+# Package Files #
+*.jar
+*.war
+*.zip
+*.tar.gz
+*.rar
+
+.gradle
+build/
