@@ -47,7 +47,7 @@ public class CalcResource {
 	public Response ops() {
 		try {
 			
-			String result = new SimpleCommand("+-/*").observe().toBlocking().first();
+			String result = new SimpleCommand("+-/*^").observe().toBlocking().first();
 			
 			return Response.ok( result ).
 							header("CREATED_BY", ArchaiusPropsManager.getInstance().getCreator()).

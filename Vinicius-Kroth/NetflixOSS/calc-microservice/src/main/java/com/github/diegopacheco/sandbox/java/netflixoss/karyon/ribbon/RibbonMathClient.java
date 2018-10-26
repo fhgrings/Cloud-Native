@@ -7,6 +7,8 @@ import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.EurekaClient;
 import com.netflix.governator.guice.LifecycleInjector;
 import com.netflix.governator.guice.LifecycleInjectorBuilder;
+import com.netflix.hystrix.HystrixCommandProperties;
+import com.netflix.hystrix.HystrixObservableCommand;
 import com.netflix.ribbon.ClientOptions;
 import com.netflix.ribbon.Ribbon;
 import com.netflix.ribbon.RibbonResponse;
@@ -45,10 +47,14 @@ public class RibbonMathClient {
 		HttpResourceGroup httpRG = Ribbon.createHttpResourceGroup("apiGroup",
 	            ClientOptions.create()
                 .withMaxAutoRetriesNextServer(1)
+                .withConnectTimeout(5000)
                 .withConfigurationBasedServerList(getServerIP(microservice)));
+	
+		
+		
 		
 		HttpRequestTemplate<ByteBuf> apiTemplate = httpRG.newTemplateBuilder("apiCall",ByteBuf.class)
-		            .withMethod("GET")
+		            .withMethod("GET")		         
 		            .withUriTemplate(path + a + "/" + b)
 		            .withFallbackProvider(new DefaultFallback())
 		            .withResponseValidator(new SimpleResponseValidator())
@@ -77,6 +83,10 @@ public class RibbonMathClient {
 	
 	public Observable<Double> div(Double a, Double b){
 		return Observable.just(new Double(callService("div-service", "/math/div/",a,b)));
+	}
+	
+	public Observable<Double> pow(Double a, Double b){
+		return Observable.just(new Double(callService("pow-service", "/math/pow/",a,b)));
 	}
 	
 }
