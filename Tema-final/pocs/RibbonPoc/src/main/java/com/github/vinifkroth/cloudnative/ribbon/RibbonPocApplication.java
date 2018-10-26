@@ -1,7 +1,6 @@
 package com.github.vinifkroth.cloudnative.ribbon;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import com.google.common.collect.Lists;
 import com.netflix.loadbalancer.BaseLoadBalancer;
@@ -18,13 +17,14 @@ public class RibbonPocApplication {
 
 		ArrayList<Server> servers = Lists.newArrayList(new Server("www.google.com", 80),
 				new Server("www.linkedin.com", 80), new Server("www.yahoo.com", 80));
+		BaseLoadBalancer loadBalancer = LoadBalancerBuilder.newBuilder().buildFixedServerListLoadBalancer(servers);
 		
-		System.out.println(call(servers));
+		for (int i = 0; i < 10; i++)
+			System.out.println(call(loadBalancer));
 	}
 
-	private static String call(List<Server> serverList) {
-
-		BaseLoadBalancer loadBalancer = LoadBalancerBuilder.newBuilder().buildFixedServerListLoadBalancer(serverList);
+	private static String call(BaseLoadBalancer loadBalancer) {
+		
 		return LoadBalancerCommand
 				.<String>builder()
 				.withLoadBalancer(loadBalancer)
