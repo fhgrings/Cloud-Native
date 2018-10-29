@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 public class GithubService {
 
     private RestTemplate restTemplate = new RestTemplate();
-    final String URL = "http://172.18.0.25:8080/repos?user=";
+    private final String URL = "http://172.18.0.25:8080/repos?user=";
 
 
     @HystrixCommand(fallbackMethod = "defaultRepos", commandProperties = @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1000"))

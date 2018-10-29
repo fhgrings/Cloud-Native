@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 public class TwitterService {
 
     private RestTemplate restTemplate = new RestTemplate();
-    final String URL = "http://172.18.0.23:8080/tweet?user=";
+    private final String URL = "http://172.18.0.23:8080/tweet?user=";
 
 
     @HystrixCommand(fallbackMethod = "defaultRepos", commandProperties = @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1000"))

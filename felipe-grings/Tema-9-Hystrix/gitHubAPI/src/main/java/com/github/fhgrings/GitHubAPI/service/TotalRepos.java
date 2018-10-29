@@ -5,7 +5,7 @@ import org.springframework.web.client.RestTemplate;
 
 public class TotalRepos {
     private RestTemplate restTemplate = new RestTemplate();
-    final String URL = "https://api.github.com/users/";
+    private final String URL = "https://api.github.com/users/";
 
     public int execute(String user) {
 
