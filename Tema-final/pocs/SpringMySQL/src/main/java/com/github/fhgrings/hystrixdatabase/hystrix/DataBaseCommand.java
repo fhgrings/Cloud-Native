@@ -1,5 +1,6 @@
-package com.github.fhgrings.hystrixdatabase;
+package com.github.fhgrings.hystrixdatabase.hystrix;
 
+import com.github.fhgrings.hystrixdatabase.database.ConnectionFactory;
 import com.netflix.hystrix.HystrixCommand;
 
 import java.sql.Connection;

@@ -1,5 +1,6 @@
-package com.github.fhgrings.hystrixdatabase;
+package com.github.fhgrings.hystrixdatabase.controller;
 
+import com.github.fhgrings.hystrixdatabase.hystrix.DataBaseCommand;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.netflix.hystrix.HystrixCommandProperties;

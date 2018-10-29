@@ -33,5 +33,6 @@ dependencies {
     ])
     implementation('org.springframework.boot:spring-boot-starter-web')
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.12'
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.1'
     testCompile("junit:junit")
 }
