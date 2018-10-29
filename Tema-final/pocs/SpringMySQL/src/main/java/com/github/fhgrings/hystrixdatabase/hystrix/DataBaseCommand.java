@@ -18,10 +18,10 @@ public class DataBaseCommand extends HystrixCommand<String> {
     protected String run() throws Exception {
 
         StringBuffer sb = new StringBuffer();
-        try (Connection con = ConnectionFactory.getConnection(); PreparedStatement stmt = con.prepareStatement("SELECT * FROM contato")) {
+        try (Connection con = ConnectionFactory.getConnection(); PreparedStatement stmt = con.prepareStatement("SELECT * FROM song")) {
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                String lastName = rs.getString("nome");
+                String lastName = rs.getString("name");
                 sb.append(lastName + "\n");
             }
         } catch (Exception exception) {

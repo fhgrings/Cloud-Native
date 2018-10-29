@@ -18,13 +18,14 @@ public class Controller {
     public String helloWorld() {
         HystrixCommand.Setter config = HystrixCommand
                 .Setter
-                .withGroupKey(HystrixCommandGroupKey.Factory.asKey("HelloSongSample"));
+                .withGroupKey(HystrixCommandGroupKey.Factory.asKey("song_service"));
 
 
         HystrixCommandProperties.Setter commandProperties = HystrixCommandProperties.Setter();
         commandProperties.withExecutionTimeoutInMilliseconds(5_000);
         config.andCommandPropertiesDefaults(commandProperties);
 
-        return new DataBaseCommand( config).execute();
+        return new DataBaseCommand(config).execute();
+
     }
 }
