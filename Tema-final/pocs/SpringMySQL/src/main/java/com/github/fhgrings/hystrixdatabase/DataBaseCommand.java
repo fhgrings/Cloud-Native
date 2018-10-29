@@ -1,4 +1,4 @@
-package database;
+package com.github.fhgrings.hystrixdatabase;
 
 import com.netflix.hystrix.HystrixCommand;
 

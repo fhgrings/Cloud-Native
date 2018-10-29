@@ -1,4 +1,4 @@
-package database;
+package com.github.fhgrings.hystrixdatabase;
 
 
 public class Contato {

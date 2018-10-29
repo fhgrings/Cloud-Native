@@ -1,4 +1,4 @@
-package database;
+package com.github.fhgrings.hystrixdatabase;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
