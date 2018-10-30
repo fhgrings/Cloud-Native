@@ -1,0 +1,20 @@
+---
+- name: all
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Create WORKDIR
+    shell: mkdir -p opt/tomcat
+
+  - name: Download jetty9
+    get_url: url=https://www.apache.org/dist/tomcat/tomcat-8/v8.5.34/bin/apache-tomcat-8.5.34.tar.gz dest=opt/tomcat.tar.gz
+
+  - name: Unpac
+    shell: tar xzvf /opt/tomcat.tar.gz --strip-components=1 chdir=/opt/tomcat
+
+  - name: Download folder
+    shell: curl -u admin:ilegra -O "http://10.99.1.17:8081/artifactory/ilegra/HelloWorld.war"
+
+  - name: Copy folder
+    shell: mv HelloWorld.war /opt/tomcat/webapps/HelloWorld.war
