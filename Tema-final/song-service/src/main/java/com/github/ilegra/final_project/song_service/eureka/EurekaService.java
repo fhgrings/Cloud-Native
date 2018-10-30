@@ -7,7 +7,10 @@ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
 import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
 import java.util.Arrays;
+import java.util.Enumeration;
 
 public class EurekaService {
 	
@@ -16,7 +19,7 @@ public class EurekaService {
 	}
 
 	private final RestTemplate REST_TEMPLATE;
-	private final String PORT = "8081";
+	private final int PORT = 8081;
 	private final String STATUS = "UP";
 	private final String URL;
 	
@@ -76,11 +79,20 @@ public class EurekaService {
 	}
 
 	private static String getIP() {
+		NetworkInterface networkInterface = null;
 		try {
-			return InetAddress.getLocalHost().getHostAddress();
-		} catch(Exception exception) {
-			exception.printStackTrace();
-			return "localhost";
+			networkInterface = NetworkInterface.getByName("eno1");
+		} catch (SocketException e) {
+			e.printStackTrace();
 		}
+		Enumeration<InetAddress> inetAdresses = networkInterface.getInetAddresses();
+		String hostAdress = "";
+		while (inetAdresses.hasMoreElements()) {
+			String inetAdress = inetAdresses.nextElement().getHostAddress();
+			if(inetAdress.length() <=15)
+				hostAdress = inetAdress;
+		}
+		return hostAdress;
 	}
 }
+

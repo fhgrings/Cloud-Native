@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class SongController {
 
-
     @RequestMapping("song-service/songs/{id}")
     @ResponseBody
     public ResponseEntity detailSong (@PathVariable("id") int id) {
