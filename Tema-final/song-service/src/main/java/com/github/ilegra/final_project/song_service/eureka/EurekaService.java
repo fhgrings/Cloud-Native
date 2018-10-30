@@ -63,7 +63,7 @@ public class EurekaService {
 				"        \"app\": \""+ appID + "\",\n" + 
 				"        \"vipAddress\": \"com.automationrhapsody.eureka.app\",\n" + 
 				"        \"secureVipAddress\": \"com.automationrhapsody.eureka.app\",\n" + 
-				"        \"ipAddr\": \"" + getIP() + "\",\n" +
+				"        \"ipAddr\": \"" + getMachineIp() + "\",\n" +
 				"        \"status\": \"" + STATUS + "\",\n" +
 				"        \"port\": {\"$\": \"" + PORT + "\", \"@enabled\": \"true\"},\n" +
 				"        \"securePort\": {\"$\": \"8443\", \"@enabled\": \"true\"},\n" + 
@@ -78,12 +78,14 @@ public class EurekaService {
 				"}";
 	}
 
-	private static String getIP() {
-		NetworkInterface networkInterface = null;
+
+	public static String getMachineIp() {
+		NetworkInterface networkInterface;
 		try {
 			networkInterface = NetworkInterface.getByName("eno1");
-		} catch (SocketException e) {
-			e.printStackTrace();
+		} catch(Exception exception) {
+			exception.printStackTrace();
+			return "localhost";
 		}
 		Enumeration<InetAddress> inetAdresses = networkInterface.getInetAddresses();
 		String hostAdress = "";
@@ -95,4 +97,5 @@ public class EurekaService {
 		return hostAdress;
 	}
 }
+
 
