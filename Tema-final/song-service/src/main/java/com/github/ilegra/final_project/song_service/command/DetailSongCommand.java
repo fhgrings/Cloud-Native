@@ -6,6 +6,7 @@ import com.github.ilegra.final_project.song_service.model.Song;
 import com.google.gson.Gson;
 import com.netflix.hystrix.HystrixCommand;
 
+import java.lang.management.OperatingSystemMXBean;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,7 +23,6 @@ public class DetailSongCommand extends HystrixCommand<Optional<Song>> {
 
     @Override
     protected Optional<Song> run() throws DataBaseFailedConnection {
-        Song song = null;
 
         try (Connection con = ConnectionFactory.getConnection(); PreparedStatement stmt = con.prepareStatement("SELECT * FROM song WHERE id = " + id )) {
             ResultSet rs = stmt.executeQuery();
@@ -33,12 +33,12 @@ public class DetailSongCommand extends HystrixCommand<Optional<Song>> {
                 String singer = rs.getString("singer");
                 String album = rs.getString("album");
 
-                song = new Song(id,name,album,singer);
+                return Optional.ofNullable(new Song(id,name,album,singer));
             }
         } catch (Exception exception) {
             throw new DataBaseFailedConnection("Connection database failed");
         }
-        return Optional.ofNullable(song);
+        return Optional.empty();
     }
 
 
