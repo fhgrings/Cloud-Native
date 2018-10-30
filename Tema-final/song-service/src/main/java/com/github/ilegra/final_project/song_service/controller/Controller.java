@@ -1,6 +1,6 @@
 package com.github.ilegra.final_project.song_service.controller;
 
-import com.github.ilegra.final_project.song_service.command.SearchByPlaylistCommand;
+import com.github.ilegra.final_project.song_service.command.DetailSongCommand;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.netflix.hystrix.HystrixCommandProperties;
@@ -13,7 +13,7 @@ public class Controller {
 
     @RequestMapping("song-eureka/songs/{id}")
     @ResponseBody
-    public String searchPlaylist (@PathVariable("id") int id) {
+    public String detailSong (@PathVariable("id") int id) {
         HystrixCommand.Setter config = HystrixCommand
                 .Setter
                 .withGroupKey(HystrixCommandGroupKey.Factory.asKey("song_service"));
@@ -23,7 +23,7 @@ public class Controller {
         commandProperties.withExecutionTimeoutInMilliseconds(5_000);
         config.andCommandPropertiesDefaults(commandProperties);
 
-        return new SearchByPlaylistCommand(config, id).execute();
+        return new DetailSongCommand(config, id).execute();
 
     }
 }

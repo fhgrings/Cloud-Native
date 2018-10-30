@@ -5,6 +5,7 @@ import org.springframework.http.*;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
+import java.net.InetAddress;
 import java.util.Arrays;
 
 public class EurekaService {
@@ -14,6 +15,8 @@ public class EurekaService {
 	}
 	
 	private final RestTemplate REST_TEMPLATE;
+	private final int PORT = 8081;
+	private final String STATUS = "UP";
 	private final String URL;
 	
 	private EurekaService() {
@@ -56,9 +59,9 @@ public class EurekaService {
 				"        \"app\": \""+ appID + "\",\n" + 
 				"        \"vipAddress\": \"com.automationrhapsody.eureka.app\",\n" + 
 				"        \"secureVipAddress\": \"com.automationrhapsody.eureka.app\",\n" + 
-				"        \"ipAddr\": \"10.99.1.3\",\n" +
-				"        \"status\": \"UP\",\n" +
-				"        \"port\": {\"$\": \"8081\", \"@enabled\": \"true\"},\n" +
+				"        \"ipAddr\": \"" + getIP() + "\",\n" +
+				"        \"status\": \"" + STATUS + "\",\n" +
+				"        \"port\": {\"$\": \"" + PORT + "\", \"@enabled\": \"true\"},\n" +
 				"        \"securePort\": {\"$\": \"8443\", \"@enabled\": \"true\"},\n" + 
 				"        \"healthCheckUrl\": \"<a class=\\\"vglnk\\\" href=\\\"http://WKS-SOF-L011:8080/healthcheck\\\" rel=\\\"nofollow\\\"><span>http</span><span>://</span><span>WKS</span><span>-</span><span>SOF</span><span>-</span><span>L011</span><span>:</span><span>8080</span><span>/</span><span>healthcheck</span></a>\",\n" + 
 				"        \"statusPageUrl\": \"<a class=\\\"vglnk\\\" href=\\\"http://WKS-SOF-L011:8080/status\\\" rel=\\\"nofollow\\\"><span>http</span><span>://</span><span>WKS</span><span>-</span><span>SOF</span><span>-</span><span>L011</span><span>:</span><span>8080</span><span>/</span><span>status</span></a>\",\n" + 
@@ -69,5 +72,14 @@ public class EurekaService {
 				"        }\n" + 
 				"    }\n" + 
 				"}";
+	}
+
+	private static String getIP() {
+		try {
+			return InetAddress.getLocalHost().getHostAddress();
+		} catch(Exception exception) {
+			exception.printStackTrace();
+			return "localhost";
+		}
 	}
 }

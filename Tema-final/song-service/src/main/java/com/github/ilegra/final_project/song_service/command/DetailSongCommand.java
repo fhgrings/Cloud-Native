@@ -9,20 +9,20 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class SearchByPlaylistCommand extends HystrixCommand<String> {
+public class DetailSongCommand extends HystrixCommand<String> {
 
-    private int id_song;
+    private int id;
 
-    public SearchByPlaylistCommand(Setter config, int id_song) {
+    public DetailSongCommand(Setter config, int id) {
         super(config);
-        this.id_song = id_song;
+        this.id = id;
     }
 
     @Override
     protected String run() throws Exception {
 
         StringBuffer sb = new StringBuffer();
-        try (Connection con = ConnectionFactory.getConnection(); PreparedStatement stmt = con.prepareStatement("SELECT * FROM song WHERE id = " + id_song )) {
+        try (Connection con = ConnectionFactory.getConnection(); PreparedStatement stmt = con.prepareStatement("SELECT * FROM song WHERE id = " + id )) {
             ResultSet rs = stmt.executeQuery();
             Song song = new Song();
 
@@ -48,6 +48,6 @@ public class SearchByPlaylistCommand extends HystrixCommand<String> {
 
     @Override
     protected String getFallback() {
-        return "Hello Failure !";
+        return "Failure!";
     }
 }
