@@ -1,4 +1,4 @@
-package com.github.fhgrings.hystrixdatabase.database;
+package com.github.ilegra.final_project.song_service.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

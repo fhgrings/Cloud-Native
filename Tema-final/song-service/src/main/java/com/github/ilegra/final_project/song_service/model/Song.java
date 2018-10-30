@@ -1,4 +1,4 @@
-package com.github.fhgrings.hystrixdatabase.model;
+package com.github.ilegra.final_project.song_service.model;
 
 
 public class Song {

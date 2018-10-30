@@ -1,7 +1,7 @@
-package com.github.fhgrings.hystrixdatabase.command;
+package com.github.ilegra.final_project.song_service.command;
 
-import com.github.fhgrings.hystrixdatabase.database.ConnectionFactory;
-import com.github.fhgrings.hystrixdatabase.model.Song;
+import com.github.ilegra.final_project.song_service.database.ConnectionFactory;
+import com.github.ilegra.final_project.song_service.model.Song;
 import com.google.gson.Gson;
 import com.netflix.hystrix.HystrixCommand;
 
@@ -9,11 +9,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class SearchByPlaylist extends HystrixCommand<String> {
+public class SearchByPlaylistCommand extends HystrixCommand<String> {
 
     private int id_song;
 
-    public SearchByPlaylist(Setter config, int id_song) {
+    public SearchByPlaylistCommand(Setter config, int id_song) {
         super(config);
         this.id_song = id_song;
     }

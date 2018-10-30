@@ -1,4 +1,4 @@
-package com.github.fhgrings.hystrixdatabase.service;
+package com.github.ilegra.final_project.song_service.eureka;
 
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.springframework.http.*;
@@ -70,8 +70,4 @@ public class EurekaService {
 				"    }\n" + 
 				"}";
 	}
-
-
-
-	
 }

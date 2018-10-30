@@ -1,6 +1,6 @@
-package com.github.fhgrings.hystrixdatabase.controller;
+package com.github.ilegra.final_project.song_service.controller;
 
-import com.github.fhgrings.hystrixdatabase.command.SearchByPlaylist;
+import com.github.ilegra.final_project.song_service.command.SearchByPlaylistCommand;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.netflix.hystrix.HystrixCommandProperties;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 public class Controller {
 
 
-    @RequestMapping("song-service/songs/{id}")
+    @RequestMapping("song-eureka/songs/{id}")
     @ResponseBody
     public String searchPlaylist (@PathVariable("id") int id) {
         HystrixCommand.Setter config = HystrixCommand
@@ -23,7 +23,7 @@ public class Controller {
         commandProperties.withExecutionTimeoutInMilliseconds(5_000);
         config.andCommandPropertiesDefaults(commandProperties);
 
-        return new SearchByPlaylist(config, id).execute();
+        return new SearchByPlaylistCommand(config, id).execute();
 
     }
 }
