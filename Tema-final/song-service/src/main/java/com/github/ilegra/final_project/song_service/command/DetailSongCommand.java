@@ -1,6 +1,7 @@
 package com.github.ilegra.final_project.song_service.command;
 
 import com.github.ilegra.final_project.song_service.database.ConnectionFactory;
+import com.github.ilegra.final_project.song_service.exception.DataBaseFailedConnection;
 import com.github.ilegra.final_project.song_service.model.Song;
 import com.google.gson.Gson;
 import com.netflix.hystrix.HystrixCommand;
@@ -8,8 +9,9 @@ import com.netflix.hystrix.HystrixCommand;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Optional;
 
-public class DetailSongCommand extends HystrixCommand<String> {
+public class DetailSongCommand extends HystrixCommand<Optional<Song>> {
 
     private int id;
 
@@ -19,12 +21,11 @@ public class DetailSongCommand extends HystrixCommand<String> {
     }
 
     @Override
-    protected String run() throws Exception {
+    protected Optional<Song> run() throws DataBaseFailedConnection {
+        Song song = null;
 
-        StringBuffer sb = new StringBuffer();
         try (Connection con = ConnectionFactory.getConnection(); PreparedStatement stmt = con.prepareStatement("SELECT * FROM song WHERE id = " + id )) {
             ResultSet rs = stmt.executeQuery();
-            Song song = new Song();
 
             while (rs.next()) {
                 int id = rs.getInt("id");
@@ -34,20 +35,15 @@ public class DetailSongCommand extends HystrixCommand<String> {
 
                 song = new Song(id,name,album,singer);
             }
-
-            Gson gson = new Gson();
-            sb.append(gson.toJson(song));
-
-
         } catch (Exception exception) {
-            throw exception;
+            throw new DataBaseFailedConnection("Connection database failed");
         }
-        return sb.toString();
+        return Optional.ofNullable(song);
     }
 
 
     @Override
-    protected String getFallback() {
-        return "Failure!";
+    protected Optional<Song> getFallback() {
+        return Optional.empty();
     }
 }

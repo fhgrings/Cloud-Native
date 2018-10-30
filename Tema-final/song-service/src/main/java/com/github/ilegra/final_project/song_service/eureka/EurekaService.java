@@ -1,6 +1,7 @@
 package com.github.ilegra.final_project.song_service.eureka;
 
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.springframework.core.env.Environment;
 import org.springframework.http.*;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
@@ -13,9 +14,9 @@ public class EurekaService {
 	private static class ServiceHolder {
 		static final EurekaService INSTANCE = new EurekaService();
 	}
-	
+
 	private final RestTemplate REST_TEMPLATE;
-	private final int PORT = 8081;
+	private final String PORT = "8081";
 	private final String STATUS = "UP";
 	private final String URL;
 	

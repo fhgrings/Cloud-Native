@@ -10,8 +10,6 @@ public class EurekaRegistry {
     @EventListener(ApplicationStartedEvent.class)
     public void resgistry(){
         EurekaService service = EurekaService.getInstance();
-        String appID = "teste";
-        System.out.println(service.post(appID));
-        System.out.println(service.get(appID));
+        String appID = "song-service";
     }
 }
