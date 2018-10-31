@@ -1,6 +1,5 @@
 package com.github.ilegra.final_project.song_service.app;
 
-import com.github.ilegra.final_project.song_service.eureka.EurekaService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
