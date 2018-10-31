@@ -17,7 +17,7 @@ public class PlaylistsCommand extends HystrixCommand<List<Playlist>> {
 
 	public PlaylistsCommand(Setter config, String url, String userID) {
 		super(config);
-		this.url = url;
+		this.url = "http://" + url;
 		this.userID = userID;
 	}
 

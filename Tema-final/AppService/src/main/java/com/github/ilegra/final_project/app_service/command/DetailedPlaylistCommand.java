@@ -16,7 +16,7 @@ public class DetailedPlaylistCommand extends HystrixCommand<Optional<DetailedPla
 	
 	public DetailedPlaylistCommand(Setter config, String url, String playlistID) {
         super(config);
-        this.url = url;
+        this.url = "http://" + url;
         this.playlistID = playlistID;
     }
 	

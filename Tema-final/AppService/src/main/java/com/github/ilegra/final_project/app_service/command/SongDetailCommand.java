@@ -16,7 +16,7 @@ public class SongDetailCommand extends HystrixCommand<Optional<SongImpl>> {
 	
     public SongDetailCommand(Setter config, String url, String songID) {
         super(config);
-        this.url = url;
+        this.url = "http://" + url;
         this.songID = songID;
     }
 

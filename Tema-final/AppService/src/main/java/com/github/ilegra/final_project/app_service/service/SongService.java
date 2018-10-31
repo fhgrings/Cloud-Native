@@ -40,7 +40,13 @@ public class SongService {
 		List<SongImpl> songs = new ArrayList<>();
 		for(String id: playlist.get().getSongIdList()) {
 			SongDetailCommand songCommand = new SongDetailCommand(setter, loadBalancer.getURL(), id);
-			songCommand.execute().ifPresent(songs::add);
+			Optional<SongImpl> song = songCommand.execute();
+			if(song.isPresent())
+				songs.add(song.get());
+			else {
+				songCommand = new SongDetailCommand(setter, loadBalancer.getURL(), id);
+				songCommand.execute().ifPresent(songs::add);
+			}
 		}
 		return songs;
 	}

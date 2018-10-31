@@ -14,7 +14,7 @@ public class RegistryBuilder {
 	static {
 		CONTENT = "{\n" + 
 				"    \"instance\": {\n" + 
-				"        \"hostName\": \"WKS-SOF-L011\",\n" + 
+				"        \"hostName\": \"" + buildInstanceID() + "\",\n" + 
 				"        \"app\": \"" + NAME_VARIABLE + "\",\n" + 
 				"        \"vipAddress\": \"com.automationrhapsody.eureka.app\",\n" + 
 				"        \"secureVipAddress\": \"com.automationrhapsody.eureka.app\",\n" + 
@@ -39,6 +39,9 @@ public class RegistryBuilder {
 	
 	private static String getIP() {
 		return GetHostIp.getMachineIp();
+	}
+	public static String buildInstanceID() {
+		return String.format("%s_%s", getIP(), PORT);
 	}
 	
 }
