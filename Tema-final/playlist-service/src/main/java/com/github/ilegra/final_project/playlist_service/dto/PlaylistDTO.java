@@ -2,22 +2,22 @@ package com.github.ilegra.final_project.playlist_service.dto;
 
 public class PlaylistDTO {
 
-    private int user_id;
+    private int userId;
     private int id;
     private String name;
 
-    public PlaylistDTO(int user_id, int id, String name) {
-        this.user_id = user_id;
+    public PlaylistDTO(int userId, int id, String name) {
+        this.userId = userId;
         this.id = id;
         this.name = name;
     }
 
     public int getUser_id() {
-        return user_id;
+        return userId;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public void setUser_id(int userId) {
+        this.userId = userId;
     }
 
     public int getId() {

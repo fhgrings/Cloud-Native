@@ -21,10 +21,10 @@ public class PlaylistService {
 	
 	public List<PlaylistDTO> getUserPlaylists(int userId) throws InvalidIdException {
 		RetrieveUserPlaylistCommand command = new RetrieveUserPlaylistCommand(userId, config.getCommandConfig());
-		List<PlaylistDTO> playlists = command.execute();
-		if(playlists.isEmpty())
+		Optional<List<PlaylistDTO>> playlists = command.execute();
+		if(!playlists.isPresent())
 			throw new InvalidIdException("The given userId does not have any playlists in our database.");
-		return playlists;
+		return playlists.get();
 	}
 	
 	public DetailedPlaylistDTO getPlayList(int playlistId) throws InvalidIdException {

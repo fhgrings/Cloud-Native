@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
 public class HystrixConfiguration {
 
    @Autowired
-   HystrixProperties hystrixProperties;
+   private HystrixProperties hystrixProperties;
 
    @Bean
    @ConditionalOnClass(HystrixCommandAspect.class)

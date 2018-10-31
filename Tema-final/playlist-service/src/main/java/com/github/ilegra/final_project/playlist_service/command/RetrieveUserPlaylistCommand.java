@@ -6,10 +6,12 @@ import com.netflix.hystrix.HystrixCommand;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-public class RetrieveUserPlaylistCommand extends HystrixCommand<List<PlaylistDTO>> {
+public class RetrieveUserPlaylistCommand extends HystrixCommand<Optional<List<PlaylistDTO>>> {
 
 	private int userId;
 
@@ -19,26 +21,33 @@ public class RetrieveUserPlaylistCommand extends HystrixCommand<List<PlaylistDTO
 	}
 
 	@Override
-	protected List<PlaylistDTO> run() throws Exception {
-		List<PlaylistDTO> playlists = new ArrayList<PlaylistDTO>();
+	protected Optional<List<PlaylistDTO>> run() throws Exception {
+
 		try (Connection connection = ConnectionFactory.getConnection();
 				PreparedStatement statement = connection
 						.prepareStatement("SELECT * FROM Playlists WHERE user_id = " + userId)) {
 			ResultSet resultSet = statement.executeQuery();
-			PlaylistDTO playlist;
-			while (resultSet.next()) {
-				playlist = new PlaylistDTO(resultSet.getInt("user_id"), resultSet.getInt("id"),
-						resultSet.getString("name"));
-				playlists.add(playlist);
-			}
+			return Optional.ofNullable(resultParser(resultSet));
 		} catch (Exception e) {
-			throw e;
+			e.printStackTrace();
+			return Optional.empty();
 		}
+	}
+
+	private List<PlaylistDTO> resultParser(ResultSet resultset) throws SQLException {
+		List<PlaylistDTO> playlists = new ArrayList<PlaylistDTO>();
+		while (resultset.next()) {
+			PlaylistDTO playlist = new PlaylistDTO(resultset.getInt("user_id"), resultset.getInt("id"),
+					resultset.getString("name"));
+			playlists.add(playlist);
+		}
+		if (playlists.isEmpty())
+			return null;
 		return playlists;
 	}
 
 	@Override
-	protected List<PlaylistDTO> getFallback() {
-		return new ArrayList<>();
+	protected Optional<List<PlaylistDTO>> getFallback() {
+		return Optional.empty();
 	}
 }

@@ -27,7 +27,7 @@ public class RetrievePlaylistCommand extends HystrixCommand<Optional<DetailedPla
 				PreparedStatement statement = connection
 						.prepareStatement("SELECT * FROM Playlists_songs WHERE playlist_id = " + playlistId)) {
 			ResultSet resultSet = statement.executeQuery();
-			return Optional.of(resultParser(resultSet));
+			return Optional.ofNullable(resultParser(resultSet));
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -42,6 +42,8 @@ public class RetrievePlaylistCommand extends HystrixCommand<Optional<DetailedPla
 		while (resultset.next()) {
 			songsId.add(resultset.getString("song_id"));
 		}
+		if (songsId.isEmpty())
+			return null;
 
 		return new DetailedPlaylistDTO(songsId);
 	}

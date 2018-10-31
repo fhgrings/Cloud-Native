@@ -16,7 +16,7 @@ public class EurekaConfiguration {
 	}
 
 	private final RestTemplate REST_TEMPLATE;
-	private final int PORT = 8081;
+	private final int PORT = 8082;
 	private final String STATUS = "UP";
 	private final String URL;
 	
@@ -36,21 +36,21 @@ public class EurekaConfiguration {
 	    return headers;
 	}
 	
-	public String get(String appID) {
+	public String retrieveAppInfo(String appID) {
 	    HttpEntity<String> entity = new HttpEntity<>(jsonHeaders());
 	    ResponseEntity<String> response =
 	    		REST_TEMPLATE.exchange(URL + appID, HttpMethod.GET, entity, String.class);
 		return response.getBody();
 	}
 	
-	public int post(String appID) {
+	public int registerApp(String appID) {
 		HttpEntity<String> entity = new HttpEntity<String>(postJsonBody(appID), jsonHeaders());
 		ResponseEntity<String> response =
 		    		REST_TEMPLATE.exchange(URL + appID, HttpMethod.POST, entity, String.class);
 		return response.getStatusCodeValue();
 	}
 
-	public int put(String appID, String appInstance) {
+	public int renewLease(String appID, String appInstance) {
 		HttpEntity<String> entity = new HttpEntity<String>(jsonHeaders());
 		ResponseEntity<String> response =
 		    		REST_TEMPLATE.exchange(URL + appID + "/" + buildInstanceID(), HttpMethod.PUT, entity, String.class);

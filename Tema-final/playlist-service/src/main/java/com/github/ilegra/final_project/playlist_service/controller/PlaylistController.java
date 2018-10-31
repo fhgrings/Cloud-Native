@@ -20,11 +20,11 @@ public class PlaylistController {
 		return "pong";
 	}
 
-	@GetMapping("/users/{userId}/playlist")
+	@GetMapping("/users/{userId}/playlists")
 	public ResponseEntity<String> getUserPlaylists(@PathVariable("userId") int userId) {
 		try {
-			return new ResponseEntity<String>(new Gson().toJson(playlistService.getUserPlaylists(userId)),
-					HttpStatus.OK);
+			String responseBody = new Gson().toJson(playlistService.getUserPlaylists(userId));
+			return new ResponseEntity<String>(responseBody, HttpStatus.OK);
 		} catch (InvalidIdException e) {
 			e.printStackTrace();
 			return new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
@@ -33,11 +33,11 @@ public class PlaylistController {
 		}
 	}
 
-	@GetMapping("/playlist/{playlistId}")
+	@GetMapping("/playlists/{playlistId}")
 	public ResponseEntity<String> getPlaylist(@PathVariable("playlistId") int playlistId) {
 		try {
-			return new ResponseEntity<String>(new Gson().toJson(playlistService.getPlayList(playlistId)),
-					HttpStatus.OK);
+			String responseBody = new Gson().toJson(playlistService.getPlayList(playlistId));
+			return new ResponseEntity<String>(responseBody, HttpStatus.OK);
 		} catch (InvalidIdException e) {
 			e.printStackTrace();
 			return new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);

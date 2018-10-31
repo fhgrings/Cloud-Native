@@ -7,20 +7,17 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class EurekaRegistry {
-	private EurekaConfiguration config;
 	private static final String APP_ID = "playlist-service";
 	private static final String APP_INSTANCE = "playlist-service";
 
 	@EventListener(ApplicationStartedEvent.class)
 	public void registry() {
-		config = EurekaConfiguration.getInstance();
-		System.out.println(config.post(APP_ID));
+		System.out.println(EurekaConfiguration.getInstance().registerApp(APP_ID));
 	}
 
 	@Scheduled(fixedRate = 20000, initialDelay = 5000)
 	public void renewLease() {
-		config = EurekaConfiguration.getInstance();
-		System.out.println(config.put(APP_ID, APP_INSTANCE));
+		System.out.println(EurekaConfiguration.getInstance().renewLease(APP_ID, APP_INSTANCE));
 	}
 
 }
