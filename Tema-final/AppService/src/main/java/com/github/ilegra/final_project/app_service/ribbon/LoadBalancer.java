@@ -30,7 +30,7 @@ public class LoadBalancer {
 					@Override
 					public Observable<String> call(Server server) {
 						try {
-							return Observable.just(server.getHost() + ":" + server.getHostPort());
+							return Observable.just(server.getHostPort());
 						} catch (Exception e) {
 							return Observable.error(e);
 						}
