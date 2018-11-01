@@ -50,7 +50,7 @@ public class EurekaConfiguration {
 		return response.getStatusCodeValue();
 	}
 
-	public int renewLease(String appID, String appInstance) {
+	public int renewLease(String appID) {
 		HttpEntity<String> entity = new HttpEntity<String>(jsonHeaders());
 		ResponseEntity<String> response =
 		    		REST_TEMPLATE.exchange(URL + appID + "/" + buildInstanceID(), HttpMethod.PUT, entity, String.class);
