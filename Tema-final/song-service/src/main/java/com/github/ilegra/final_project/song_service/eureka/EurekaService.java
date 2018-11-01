@@ -26,7 +26,7 @@ public class EurekaService{
 		HttpComponentsClientHttpRequestFactory clientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory(
 				HttpClientBuilder.create().build());
 		REST_TEMPLATE = new RestTemplate(clientHttpRequestFactory);
-		URL = "http://10.99.1.86:8080/eureka/v2/apps/";
+		URL = "http://10.99.1.3:8080/eureka/v2/apps/";
 	}
 
 	public static EurekaService getInstance() { return ServiceHolder.INSTANCE; }
@@ -103,8 +103,4 @@ public class EurekaService{
         }
         return hostAdress;
     }
-
-
 }
-
-
