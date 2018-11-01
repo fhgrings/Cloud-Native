@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties(prefix = "hystrix", ignoreUnknownFields = true)
 class HystrixProperties {
-    boolean enabled = true;
-    boolean streamEnabled = false;
-    String streamUrl = "/song-service/hystrix.stream";
+    public boolean enabled = true;
+    public boolean streamEnabled = false;
+    public String streamUrl = "/song-service/hystrix.stream";
 }

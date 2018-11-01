@@ -3,10 +3,8 @@ package com.github.ilegra.final_project.song_service.command;
 import com.github.ilegra.final_project.song_service.database.ConnectionFactory;
 import com.github.ilegra.final_project.song_service.exception.DataBaseFailedConnection;
 import com.github.ilegra.final_project.song_service.model.Song;
-import com.google.gson.Gson;
 import com.netflix.hystrix.HystrixCommand;
 
-import java.lang.management.OperatingSystemMXBean;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
