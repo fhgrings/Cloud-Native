@@ -26,18 +26,20 @@ dependencies {
 	def feignVersion = '8.18.0'
 	def ribbonVersion = '2.2.0'
 	def hystrixVersion = '1.5.4'
-	runtime group: 'com.netflix.feign', name: 'feign-core', version: feignVersion
-	compile group: 'com.netflix.feign', name: 'feign-gson', version: feignVersion
-	implementation('org.springframework.boot:spring-boot-starter-actuator')
-	implementation('org.springframework.boot:spring-boot-starter-web')
+	implementation([
+		'org.springframework.boot:spring-boot-starter-actuator',
+		'org.springframework.boot:spring-boot-starter-web'
+	])
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
-	compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.1'
+	runtime group: 'com.netflix.feign', name: 'feign-core', version: feignVersion
 	compile([
+		'com.netflix.feign:feign-gson:' + feignVersion,
 		'com.netflix.hystrix:hystrix-core:' + hystrixVersion,
 		'com.netflix.ribbon:ribbon:' + ribbonVersion,
 		'com.netflix.ribbon:ribbon-core:' + ribbonVersion,
 		'com.netflix.hystrix:hystrix-javanica:' + hystrixVersion,
-        'com.netflix.hystrix:hystrix-metrics-event-stream:' + hystrixVersion
+        'com.netflix.hystrix:hystrix-metrics-event-stream:' + hystrixVersion,
+        'com.netflix.ribbon:ribbon-loadbalancer:' + ribbonVersion,
+        'org.apache.httpcomponents:httpclient:4.5.1'
 	])
-	compile group: 'com.netflix.ribbon', name: 'ribbon-loadbalancer', version: ribbonVersion
 }

@@ -4,31 +4,26 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.http.impl.client.HttpClientBuilder;
+import org.springframework.context.ApplicationContext;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import com.github.ilegra.final_project.app_service.config.ContextSingleton;
 import com.github.ilegra.final_project.app_service.util.GetHostIp;
 
 @Component
 public class Discovery {
 	
-	private final RestTemplate REST_TEMPLATE;
+	private final ApplicationContext CONTEXT = ContextSingleton.getInstance();
+	private final RestTemplate REST_TEMPLATE = CONTEXT.getBean(RestTemplate.class);
 	private final String URL = "http://" + GetHostIp.getMachineIp() + ":8080/eureka/v2/apps/";
 	private final String IP_KEY = "\"ipAddr\":\"";
 	private final String PORT_KEY = "\"port\":";
-	
-	public Discovery() {
-		HttpComponentsClientHttpRequestFactory clientHttpRequestFactory =
-				new HttpComponentsClientHttpRequestFactory(HttpClientBuilder.create().build());
-		REST_TEMPLATE = new RestTemplate(clientHttpRequestFactory);
-	}
 	
 	private HttpHeaders jsonHeaders() {
 		HttpHeaders headers = new HttpHeaders();
