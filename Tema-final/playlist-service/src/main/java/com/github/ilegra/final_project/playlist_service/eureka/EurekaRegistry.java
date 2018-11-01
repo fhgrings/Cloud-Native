@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class EurekaRegistry {
 	private static final String APP_ID = "playlist-service";
-	private static final String APP_INSTANCE = "playlist-service";
 
 	@EventListener(ApplicationStartedEvent.class)
 	public void registry() {
@@ -17,7 +16,7 @@ public class EurekaRegistry {
 
 	@Scheduled(fixedRate = 20000, initialDelay = 5000)
 	public void renewLease() {
-		System.out.println(EurekaConfiguration.getInstance().renewLease(APP_ID, APP_INSTANCE));
+		System.out.println(EurekaConfiguration.getInstance().renewLease(APP_ID));
 	}
 
 }
