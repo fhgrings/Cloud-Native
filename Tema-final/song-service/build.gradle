@@ -40,7 +40,7 @@ dependencies {
              'com.netflix.hystrix:hystrix-metrics-event-stream:1.5.12',
              'org.springframework.boot:spring-boot-starter-actuator:2.0.6.RELEASE',
              'com.netflix.hystrix:hystrix-javanica:' + hystrixVersion,
-             "com.netflix.hystrix:hystrix-metrics-event-stream:" + hystrixVersion
+             'com.netflix.hystrix:hystrix-metrics-event-stream:' + hystrixVersion
     ])
     implementation('org.springframework.boot:spring-boot-starter-web')
     testCompile("junit:junit")
