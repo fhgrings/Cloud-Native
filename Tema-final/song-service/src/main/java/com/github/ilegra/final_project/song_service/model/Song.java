@@ -8,11 +8,6 @@ public class Song {
     private String album;
     private String singer;
 
-    public Song() {
-
-    }
-
-
     public Song(int id, String name, String album, String singer) {
         this.id = id;
         this.name = name;
