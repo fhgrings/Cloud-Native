@@ -44,23 +44,23 @@ Change the permission of /opt/jetty9 directory.
 
 In project file, create .WAR project
 
-		./gradlew clean war
+		$ ./gradlew clean war
 
 Move to jetty webapp
 
-		mv build/lib/exampleProject /opt/jetty9/webapp
+		$ mv build/lib/exampleProject /opt/jetty9/webapp
 
 
 Enter jetty path
 
-		cd /opt/jetty9
+		$ cd /opt/jetty9
 
 Start Jetty
 
-		java -jar start.jar
+		$ java -jar start.jar
 
 
-Test API
+## Test API
 
 Access URL
 
