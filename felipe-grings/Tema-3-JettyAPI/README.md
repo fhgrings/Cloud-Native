@@ -61,6 +61,8 @@ Start Jetty
 
 
 Test API
+
 Access URL
--http://localhost:8080/CalculatorAPI-1.0-SNAPSHOT/rest/calculator/calculate?value1=2&value2=3&operator=div
+
+- http://localhost:8080/CalculatorAPI-1.0-SNAPSHOT/rest/calculator/calculate?value1=2&value2=3&operator=div
 
