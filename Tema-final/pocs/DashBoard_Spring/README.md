@@ -3,4 +3,4 @@
 
 Add hystrix file in spring project
 
-Access in localhost:<porta>/hystrix.stream
+Access in localhost:<port>/hystrix.stream
